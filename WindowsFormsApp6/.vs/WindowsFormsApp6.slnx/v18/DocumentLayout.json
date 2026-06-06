@@ -1,0 +1,51 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\h\u1EC7 th\u1ED1ng- ti\u1EC3u lu\u1EADn\\Bai_Lam_Nhom_LTHDT\\WindowsFormsApp6\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E3FD6BBA-8DC8-412F-8AE2-1AF93DFE1155}|WindowsFormsApp6\\Bai_Lam_Nhom_LTHDT.csproj|d:\\h\u1EC7 th\u1ED1ng- ti\u1EC3u lu\u1EADn\\bai_lam_nhom_lthdt\\windowsformsapp6\\windowsformsapp6\\gui\\trangchubacsi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E3FD6BBA-8DC8-412F-8AE2-1AF93DFE1155}|WindowsFormsApp6\\Bai_Lam_Nhom_LTHDT.csproj|solutionrelative:windowsformsapp6\\gui\\trangchubacsi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3FD6BBA-8DC8-412F-8AE2-1AF93DFE1155}|WindowsFormsApp6\\Bai_Lam_Nhom_LTHDT.csproj|D:\\h\u1EC7 th\u1ED1ng- ti\u1EC3u lu\u1EADn\\Bai_Lam_Nhom_LTHDT\\WindowsFormsApp6\\windowsformsapp6\\gui\\frmtiepnhan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E3FD6BBA-8DC8-412F-8AE2-1AF93DFE1155}|WindowsFormsApp6\\Bai_Lam_Nhom_LTHDT.csproj|solutionrelative:windowsformsapp6\\gui\\frmtiepnhan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 160,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TrangChuBacSi.cs [Design]",
+              "DocumentMoniker": "D:\\h\u1EC7 th\u1ED1ng- ti\u1EC3u lu\u1EADn\\Bai_Lam_Nhom_LTHDT\\WindowsFormsApp6\\WindowsFormsApp6\\GUI\\TrangChuBacSi.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp6\\GUI\\TrangChuBacSi.cs",
+              "ToolTip": "D:\\h\u1EC7 th\u1ED1ng- ti\u1EC3u lu\u1EADn\\Bai_Lam_Nhom_LTHDT\\WindowsFormsApp6\\WindowsFormsApp6\\GUI\\TrangChuBacSi.cs [Design]",
+              "RelativeToolTip": "WindowsFormsApp6\\GUI\\TrangChuBacSi.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-04T01:18:08.211Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FrmTiepNhan.cs [Design]",
+              "DocumentMoniker": "D:\\h\u1EC7 th\u1ED1ng- ti\u1EC3u lu\u1EADn\\Bai_Lam_Nhom_LTHDT\\WindowsFormsApp6\\WindowsFormsApp6\\GUI\\FrmTiepNhan.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp6\\GUI\\FrmTiepNhan.cs",
+              "ToolTip": "D:\\h\u1EC7 th\u1ED1ng- ti\u1EC3u lu\u1EADn\\Bai_Lam_Nhom_LTHDT\\WindowsFormsApp6\\WindowsFormsApp6\\GUI\\FrmTiepNhan.cs [Design]",
+              "RelativeToolTip": "WindowsFormsApp6\\GUI\\FrmTiepNhan.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-04T01:17:55.412Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
