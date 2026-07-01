@@ -1,1 +1,25 @@
+## Ignore Visual Studio Temporary Files, Build Results, and Artifacts
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userbg
+*.usertasks
+*.developer-program-user-id
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Release]/
+[Ree]lease/
+x64/
+x86/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ex]itCode/
+
+# Visual Studio 2015/2017/2019/2022 cache directories or files
+.vs/
 
