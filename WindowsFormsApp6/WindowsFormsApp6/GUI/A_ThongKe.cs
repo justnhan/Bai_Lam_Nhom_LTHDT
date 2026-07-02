@@ -145,7 +145,7 @@ namespace WindowsFormsApp6
             dgvLichHen.Rows.Add("5", "BN005", "Võ Quốc Khánh", "09:30", "BS Mai", "Quá giờ");
             dgvLichHen.Rows.Add("6", "BN006", "Đặng Thị Ly", "10:00", "BS Lan", "Quá giờ");
             dgvLichHen.Rows.Add("7", "BN007", "Bùi Thanh Tùng", "10:15", "BS Hùng", "Quá giờ");
-            dgvLichHen.Rows.Add("8", "BN008", "Nguyễn Thảo Vy", "10:30", "BS Nam", "Quá giờ");
+            dgvLichHen.Rows.Add("8", "BN008", "Nguyễn Thả", "10:30", "BS Nam", "Quá giờ");
 
             foreach (DataGridViewRow row in dgvLichHen.Rows)
             {
