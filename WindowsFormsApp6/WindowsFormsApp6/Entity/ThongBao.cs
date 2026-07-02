@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp6
 {
-    public class thongbap
+    public class ThongBao
     {
         public string MATB { get; set; }
         public string TIEUDE { get; set; }
         public string NOIDUNG { get; set; }
         public string NGAYTAO { get; set; }
         public string NGUOITAO { get; set; }
-        public thongbap()
+        public ThongBao()
         {
         }
 
-        public thongbap(string matb, string tieude, string noidung, string ngaytao, string nguoitao)
+        public ThongBao(string matb, string tieude, string noidung, string ngaytao, string nguoitao)
         {
             this.MATB = matb;
             this.TIEUDE = tieude;

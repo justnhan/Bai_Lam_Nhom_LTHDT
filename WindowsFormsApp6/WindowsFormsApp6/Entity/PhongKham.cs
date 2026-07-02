@@ -8,17 +8,17 @@ namespace Bai_Lam_Nhom_LTHDT
 {
     public class PhongKham
     {
-        public string MaPhongKham { get; set; }
-        public string TenPhongKham { get; set; }
+        public string MaPhong { get; set; }
+        public string TenPhong { get; set; }
         public string TrangThai { get; set; }
         public string GhiChu { get; set; }
         public string MaChuyenKhoa { get; set; }    
         
         public PhongKham() { }
-        public PhongKham(string maPhongKham, string tenPhongKham, string trangThai, string ghiChu, string maChuyenKhoa)
+        public PhongKham(string maPhong, string tenPhong, string trangThai, string ghiChu, string maChuyenKhoa)
         {
-            MaPhongKham = maPhongKham;
-            TenPhongKham = tenPhongKham;
+            MaPhong = maPhong;
+            TenPhong = tenPhong;
             TrangThai = trangThai;
             GhiChu = ghiChu;
             MaChuyenKhoa = maChuyenKhoa;

@@ -112,7 +112,7 @@ namespace Bai_Lam_Nhom_LTHDT
                     continue;
                 }
 
-                DuLieuSlot.DanhSachSlot.Add(new SlotInfo
+                DuLieuSlot.DanhSachSlot.Add(new LichTruc
                 {
                     STT = (DuLieuSlot.DanhSachSlot.Count + 1).ToString(),
                     Ngay = ngay,
