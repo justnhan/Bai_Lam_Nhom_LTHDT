@@ -54,163 +54,163 @@
     <Compile Include="Entity\ChuyenKhoa.cs" />
     <Compile Include="Entity\LichHen.cs" />
     <Compile Include="Entity\PhongKham.cs" />
-    <Compile Include="GUI\ChiTietLichHen.cs">
+    <Compile Include="GUI\N_ChiTietLichHen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\ChiTietLichHen.Designer.cs">
-      <DependentUpon>ChiTietLichHen.cs</DependentUpon>
+    <Compile Include="GUI\N_ChiTietLichHen.Designer.cs">
+      <DependentUpon>N_ChiTietLichHen.cs</DependentUpon>
     </Compile>
     <Compile Include="Entity\DuLieuSlot.cs" />
-    <Compile Include="GUI\DanhSachBenhNhan.cs">
+    <Compile Include="GUI\T_DanhSachBenhNhan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\DanhSachBenhNhan.Designer.cs">
-      <DependentUpon>DanhSachBenhNhan.cs</DependentUpon>
+    <Compile Include="GUI\T_DanhSachBenhNhan.Designer.cs">
+      <DependentUpon>T_DanhSachBenhNhan.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\DatLichHen.cs">
+    <Compile Include="GUI\T_DatLichHen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\DatLichHen.Designer.cs">
-      <DependentUpon>DatLichHen.cs</DependentUpon>
+    <Compile Include="GUI\T_DatLichHen.Designer.cs">
+      <DependentUpon>T_DatLichHen.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\FrmTiepNhan.cs">
+    <Compile Include="GUI\T_TrangChuTiepNhan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\FrmTiepNhan.Designer.cs">
-      <DependentUpon>FrmTiepNhan.cs</DependentUpon>
+    <Compile Include="GUI\T_TrangChuTiepNhan.Designer.cs">
+      <DependentUpon>T_TrangChuTiepNhan.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\FormMenu.cs">
+    <Compile Include="GUI\V_TrangChuDieuPhoi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\FormMenu.Designer.cs">
-      <DependentUpon>FormMenu.cs</DependentUpon>
+    <Compile Include="GUI\V_TrangChuDieuPhoi.Designer.cs">
+      <DependentUpon>V_TrangChuDieuPhoi.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\FrmDangKy.cs">
+    <Compile Include="GUI\Main_DangKy.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\FrmDangKy.Designer.cs">
-      <DependentUpon>FrmDangKy.cs</DependentUpon>
+    <Compile Include="GUI\Main_DangKy.Designer.cs">
+      <DependentUpon>Main_DangKy.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\FrmDangNhap.cs">
+    <Compile Include="GUI\Main_DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\FrmDangNhap.Designer.cs">
-      <DependentUpon>FrmDangNhap.cs</DependentUpon>
+    <Compile Include="GUI\Main_DangNhap.Designer.cs">
+      <DependentUpon>Main_DangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\FrmDanhSachSlot.cs">
+    <Compile Include="GUI\V_DanhSachSlot.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\FrmDanhSachSlot.Designer.cs">
-      <DependentUpon>FrmDanhSachSlot.cs</DependentUpon>
+    <Compile Include="GUI\V_DanhSachSlot.Designer.cs">
+      <DependentUpon>V_DanhSachSlot.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\FrmPhanCong.cs">
+    <Compile Include="GUI\V_PhanCong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\FrmPhanCong.Designer.cs">
-      <DependentUpon>FrmPhanCong.cs</DependentUpon>
+    <Compile Include="GUI\V_PhanCong.Designer.cs">
+      <DependentUpon>V_PhanCong.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\FrmQuanLyPhong.cs">
+    <Compile Include="GUI\V_QuanLyPhong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\FrmQuanLyPhong.Designer.cs">
-      <DependentUpon>FrmQuanLyPhong.cs</DependentUpon>
+    <Compile Include="GUI\V_QuanLyPhong.Designer.cs">
+      <DependentUpon>V_QuanLyPhong.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\FrmQuanLySlot.cs">
+    <Compile Include="GUI\V_QuanLySlot.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\FrmQuanLySlot.Designer.cs">
-      <DependentUpon>FrmQuanLySlot.cs</DependentUpon>
+    <Compile Include="GUI\V_QuanLySlot.Designer.cs">
+      <DependentUpon>V_QuanLySlot.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\FrmThongKe.cs">
+    <Compile Include="GUI\A_ThongKe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\FrmThongKe.Designer.cs">
-      <DependentUpon>FrmThongKe.cs</DependentUpon>
+    <Compile Include="GUI\A_ThongKe.Designer.cs">
+      <DependentUpon>A_ThongKe.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\FrmThongKe1.cs">
+    <Compile Include="GUI\V_ThongKeSlot.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\FrmThongKe1.Designer.cs">
-      <DependentUpon>FrmThongKe1.cs</DependentUpon>
+    <Compile Include="GUI\V_ThongKeSlot.Designer.cs">
+      <DependentUpon>V_ThongKeSlot.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\LichLamViec.cs">
+    <Compile Include="GUI\N_LichLamViec.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\LichLamViec.Designer.cs">
-      <DependentUpon>LichLamViec.cs</DependentUpon>
+    <Compile Include="GUI\N_LichLamViec.Designer.cs">
+      <DependentUpon>N_LichLamViec.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\QuanLyBacSi.cs">
+    <Compile Include="GUI\N_QuanLyBacSi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\QuanLyBacSi.Designer.cs">
-      <DependentUpon>QuanLyBacSi.cs</DependentUpon>
+    <Compile Include="GUI\N_QuanLyBacSi.Designer.cs">
+      <DependentUpon>N_QuanLyBacSi.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\QuanLyChuyenKhoa.cs">
+    <Compile Include="GUI\N_QuanLyChuyenKhoa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\QuanLyChuyenKhoa.Designer.cs">
-      <DependentUpon>QuanLyChuyenKhoa.cs</DependentUpon>
+    <Compile Include="GUI\N_QuanLyChuyenKhoa.Designer.cs">
+      <DependentUpon>N_QuanLyChuyenKhoa.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\TrangChuBacSi.cs">
+    <Compile Include="GUI\N_TrangChuBacSi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\TrangChuBacSi.Designer.cs">
-      <DependentUpon>TrangChuBacSi.cs</DependentUpon>
+    <Compile Include="GUI\N_TrangChuBacSi.Designer.cs">
+      <DependentUpon>N_TrangChuBacSi.cs</DependentUpon>
     </Compile>
     <Compile Include="UiHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entity\thongbap.cs" />
-    <EmbeddedResource Include="GUI\ChiTietLichHen.resx">
-      <DependentUpon>ChiTietLichHen.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\N_ChiTietLichHen.resx">
+      <DependentUpon>N_ChiTietLichHen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\DanhSachBenhNhan.resx">
-      <DependentUpon>DanhSachBenhNhan.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\T_DanhSachBenhNhan.resx">
+      <DependentUpon>T_DanhSachBenhNhan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\DatLichHen.resx">
-      <DependentUpon>DatLichHen.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\T_DatLichHen.resx">
+      <DependentUpon>T_DatLichHen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\FrmTiepNhan.resx">
-      <DependentUpon>FrmTiepNhan.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\T_TrangChuTiepNhan.resx">
+      <DependentUpon>T_TrangChuTiepNhan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\FormMenu.resx">
-      <DependentUpon>FormMenu.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\V_TrangChuDieuPhoi.resx">
+      <DependentUpon>V_TrangChuDieuPhoi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\FrmDangKy.resx">
-      <DependentUpon>FrmDangKy.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Main_DangKy.resx">
+      <DependentUpon>Main_DangKy.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\FrmDangNhap.resx">
-      <DependentUpon>FrmDangNhap.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Main_DangNhap.resx">
+      <DependentUpon>Main_DangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\FrmDanhSachSlot.resx">
-      <DependentUpon>FrmDanhSachSlot.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\V_DanhSachSlot.resx">
+      <DependentUpon>V_DanhSachSlot.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\FrmPhanCong.resx">
-      <DependentUpon>FrmPhanCong.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\V_PhanCong.resx">
+      <DependentUpon>V_PhanCong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\FrmQuanLyPhong.resx">
-      <DependentUpon>FrmQuanLyPhong.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\V_QuanLyPhong.resx">
+      <DependentUpon>V_QuanLyPhong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\FrmQuanLySlot.resx">
-      <DependentUpon>FrmQuanLySlot.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\V_QuanLySlot.resx">
+      <DependentUpon>V_QuanLySlot.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\FrmThongKe.resx">
-      <DependentUpon>FrmThongKe.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\A_ThongKe.resx">
+      <DependentUpon>A_ThongKe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\FrmThongKe1.resx">
-      <DependentUpon>FrmThongKe1.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\V_ThongKeSlot.resx">
+      <DependentUpon>V_ThongKeSlot.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\LichLamViec.resx">
-      <DependentUpon>LichLamViec.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\N_LichLamViec.resx">
+      <DependentUpon>N_LichLamViec.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\QuanLyBacSi.resx">
-      <DependentUpon>QuanLyBacSi.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\N_QuanLyBacSi.resx">
+      <DependentUpon>N_QuanLyBacSi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\QuanLyChuyenKhoa.resx">
-      <DependentUpon>QuanLyChuyenKhoa.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\N_QuanLyChuyenKhoa.resx">
+      <DependentUpon>N_QuanLyChuyenKhoa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\TrangChuBacSi.resx">
-      <DependentUpon>TrangChuBacSi.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\N_TrangChuBacSi.resx">
+      <DependentUpon>N_TrangChuBacSi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
