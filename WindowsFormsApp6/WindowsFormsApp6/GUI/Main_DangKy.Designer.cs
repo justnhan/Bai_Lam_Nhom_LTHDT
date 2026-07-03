@@ -1,4 +1,4 @@
-﻿namespace _Bai_Lam_Nhom_LTHDT
+﻿namespace WindowFormApp6
 {
     partial class Main_DangKy
     {

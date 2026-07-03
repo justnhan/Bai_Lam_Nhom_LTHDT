@@ -18,7 +18,7 @@ namespace Bai_Lam_Nhom_LTHDT
         
         public LichTruc() { }
 
-        public LichTruc(string maLich, string maBS, string maPhong, DateTime ngayTruc, string gioBatDau, string gioKetThuc, int soLuongToiDa)
+        public LichTruc(string maLich, string maBS, string maPhong, DateTime ngayTruc, TimeSpan gioBatDau, TimeSpan gioKetThuc, int soLuongToiDa)
         {
             MaLich = maLich;
             MaBS = maBS;
