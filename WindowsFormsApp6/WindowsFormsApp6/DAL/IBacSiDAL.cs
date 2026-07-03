@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WindowsFormsApp6.DAL
+namespace _Bai_Lam_Nhom_LTHDT.DAL
 {
     public interface IBacSiDAL
     {

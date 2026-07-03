@@ -413,7 +413,7 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox3.Size = new System.Drawing.Size(1196, 289);
+            this.groupBox3.Size = new System.Drawing.Size(1196, 445);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Danh sách bác sĩ";
@@ -428,7 +428,7 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             this.dgvDanhSachBacSi.Name = "dgvDanhSachBacSi";
             this.dgvDanhSachBacSi.RowHeadersWidth = 51;
             this.dgvDanhSachBacSi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDanhSachBacSi.Size = new System.Drawing.Size(1186, 254);
+            this.dgvDanhSachBacSi.Size = new System.Drawing.Size(1186, 410);
             this.dgvDanhSachBacSi.TabIndex = 0;
             // 
             // N_QuanLyBacSi
@@ -436,7 +436,7 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1217, 581);
+            this.ClientSize = new System.Drawing.Size(1217, 749);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

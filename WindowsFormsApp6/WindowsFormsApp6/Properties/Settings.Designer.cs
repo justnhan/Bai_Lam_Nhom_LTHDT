@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WindowsFormsApp6.Properties
+namespace _Bai_Lam_Nhom_LTHDT.Properties
 {
 
 

@@ -14,49 +14,12 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
         public N_QuanLyChuyenKhoa()
         {
             InitializeComponent();
-            DuLieuMau();
             MauDGV(dgvBSThuocKhoa);
             MauDGV(dgvDanhSachChuyenKhoa);
             MauDGV(dgvDanhSachPhongKham);
         }
 
-        private void DuLieuMau()
-        {
-            txtMaKhoa.Text = "CK01";
-            txtTenKhoa.Text = "Chuyên khoa 1";
-            txtSDT.Text = "0123456789";
-            txtEmail.Text = "chuyenkhoa1@example.com";
-            dtpNgayThanhLap.Value = new DateTime(2020, 1, 1);
-            nudSoLuongBS.Value = 10;
-            nudSoLuongPK.Value = 5;
-            cboLoai.Items.AddRange(new string[] { "Mã", "Tên", "SDT", "Email"  });
-            dgvBSThuocKhoa.DataSource = new List<BacSi>
-            {
-                new BacSi { MaBS = "BS01", HoTenBS = "Bác sĩ 1", Sdt = "0123456789", Email = "bacsi1@example.com" },
-                new BacSi { MaBS = "BS02", HoTenBS = "Bác sĩ 2", Sdt = "0123456789", Email = "bacsi2@example.com" },
-                new BacSi { MaBS = "BS03", HoTenBS = "Bác sĩ 3", Sdt = "0123456789", Email = "bacsi3@example.com" }
-            };
-            dgvDanhSachChuyenKhoa.DataSource = new List<ChuyenKhoa>
-            {
-                new ChuyenKhoa { MaChuyenKhoa = "CK01", TenChuyenKhoa = "Chuyên khoa 1", SDT = "0123456789" }
-            };
-            DataTable dt = new DataTable();
-
-            // 2. Thêm các cột (DataColumn) cho DataTable
-            dt.Columns.Add("MaPhongKham", typeof(string));
-            dt.Columns.Add("TenPhongKham", typeof(string));
-            dt.Columns.Add("ChuyenKhoa", typeof(string));
-            dt.Columns.Add("TrangThai", typeof(string));
-
-            // 3. Thêm các hàng (DataRow) dữ liệu mẫu
-            dt.Rows.Add("PK001", "Phòng khám Đa khoa Quốc tế", "Đa khoa", "Hoạt động");
-            dt.Rows.Add("PK002", "Phòng khám Nhi đồng", "Nhi khoa", "Hoạt động");
-            dt.Rows.Add("PK003", "Phòng khám Răng Hàm Mặt", "Răng Hàm Mặt", "Bảo trì");
-
-            // 4. Gán DataTable làm nguồn dữ liệu cho DataGridView
-            dgvDanhSachPhongKham.DataSource = dt;
-
-        }
+ 
         private void MauDGV(DataGridView dgv)
         {
             dgv.EnableHeadersVisualStyles = false;

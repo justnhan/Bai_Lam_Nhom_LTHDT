@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 
-namespace WindowsFormsApp6
+namespace _Bai_Lam_Nhom_LTHDT
 {
     public partial class A_ThongKe : Form
     {

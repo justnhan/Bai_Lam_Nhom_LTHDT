@@ -1,4 +1,5 @@
 ﻿using Bai_Lam_Nhom_LTHDT.Entity;
+using _Bai_Lam_Nhom_LTHDT.DAL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -7,39 +8,48 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
+
 namespace Bai_Lam_Nhom_LTHDT.GUI
 {
     public partial class N_QuanLyBacSi : Form
     {
-        List<BacSi> dsbs = new List<BacSi>();
-   
+
+        BacSiDAL dal = new BacSiDAL();
         public N_QuanLyBacSi()
         {
             InitializeComponent();
-            DuLieuMau();
+            RefreshData();
             MauDGV(dgvDanhSachBacSi);
 
         }
-        private void DuLieuMau()
-        {
-            txtMaBS.Text = "BS01";
-            txtHoTenBS.Text = "Bác sĩ 1";
-            txtSDT.Text = "0123456789";
-            txtEmail.Text = "bacsi1@example.com";
-            dtpNgaySinh.Value = new DateTime(1990, 1, 1);
-            cboChucVu.Items.AddRange(new string[] { "Bác sĩ", "Y tá", "Nhân viên" });
-            cboChuyenKhoa.Items.AddRange(new string[] { "Đa khoa", "Nhi khoa", "Răng Hàm Mặt" });
-            cboGioiTinh.Items.AddRange(new string[] { "Nam", "Nữ", "Khác" });
-            cboLoai.Items.AddRange(new string[] { "Mã", "Họ và tên", "sdt" });
-            
-            dgvDanhSachBacSi.DataSource = new List<BacSi>
-            {
-                new BacSi { MaBS = "BS01",GioiTinh="Nam", HoTenBS = "Bác sĩ 1", Sdt = "0123456789", Email = "bacsi1@example.com",MaChuyenKhoa="CK01" },
-                new BacSi { MaBS = "BS02",GioiTinh="Nữ", HoTenBS = "Bác sĩ 2", Sdt = "0123456789", Email = "bacsi2@example.com",MaChuyenKhoa="CK02" },
-                new BacSi { MaBS = "BS03",GioiTinh="Nam", HoTenBS = "Bác sĩ 3", Sdt = "0123456789", Email = "bacsi3@example.com",MaChuyenKhoa="CK03" }
-            };
-        }
 
+        private void RefreshData()
+        {
+            DataTable dt = new DataTable();
+
+            dt.Columns.Add("Mã BS");
+            dt.Columns.Add("Họ tên");
+            dt.Columns.Add("Giới tính");
+            dt.Columns.Add("SĐT");
+            dt.Columns.Add("Email");
+            dt.Columns.Add("Chuyên khoa");
+            dt.Columns.Add("Ngày sinh");
+
+            foreach (BacSi bs in dal.GetAllBacSi())
+            {
+                dt.Rows.Add(
+                    bs.MaBS,
+                    bs.HoTen,
+                    bs.GioiTinh,
+                    bs.Sdt,
+                    bs.Email,
+                    bs.MaChuyenKhoa,
+                    bs.NgaySinh.ToShortDateString()
+                );
+            }
+
+            dgvDanhSachBacSi.DataSource = dt;
+        }
         private void MauDGV(DataGridView dgv)
         {
             dgv.EnableHeadersVisualStyles = false;
@@ -106,91 +116,27 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            BacSi bs = new BacSi();
-            bs.MaBS = txtMaBS.Text;
-            bs.HoTenBS = txtHoTenBS.Text;
-            bs.Sdt = txtSDT.Text;
-            bs.Email = txtEmail.Text;
-            bs.GioiTinh = cboGioiTinh.Text;
-            bs.MaChuyenKhoa = cboChuyenKhoa.Text;
 
-            dsbs.Add(bs);
-
-            dgvDanhSachBacSi.DataSource = null;
-            dgvDanhSachBacSi.DataSource = dsbs;
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            if (dgvDanhSachBacSi.CurrentRow == null) return;
 
-            int index = dgvDanhSachBacSi.CurrentRow.Index;
-
-            dsbs[index].MaBS = txtMaBS.Text;
-            dsbs[index].HoTenBS = txtHoTenBS.Text;
-            dsbs[index].Sdt = txtSDT.Text;
-            dsbs[index].Email = txtEmail.Text;
-            dsbs[index].GioiTinh = cboGioiTinh.Text;
-            dsbs[index].MaChuyenKhoa = cboChuyenKhoa.Text;
-
-            dgvDanhSachBacSi.Refresh();
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (dgvDanhSachBacSi.CurrentRow == null) return;
-
-            int index = dgvDanhSachBacSi.CurrentRow.Index;
-            dsbs.RemoveAt(index);
-
-            dgvDanhSachBacSi.DataSource = null;
-            dgvDanhSachBacSi.DataSource = dsbs;
+            
         }
 
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
-            txtMaBS.Clear();
-            txtHoTenBS.Clear();
-            txtSDT.Clear();
-            txtEmail.Clear();
-            cboGioiTinh.SelectedIndex = -1;
-            cboChuyenKhoa.SelectedIndex = -1;
+
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            string keyword = txtKey.Text.Trim().ToLower();
-            string loai = cboLoai.Text;
-
-            if (string.IsNullOrEmpty(loai))
-            {
-                MessageBox.Show("Vui lòng chọn loại tìm kiếm");
-                return;
-            }
-
-            List<BacSi> ketQua = new List<BacSi>();
-
-            foreach (BacSi bs in dsbs)
-            {
-                if (loai == "Mã")
-                {
-                    if (bs.MaBS != null && bs.MaBS.ToLower().Contains(keyword))
-                        ketQua.Add(bs);
-                }
-                else if (loai == "Họ và tên")
-                {
-                    if (bs.HoTenBS != null && bs.HoTenBS.ToLower().Contains(keyword))
-                        ketQua.Add(bs);
-                }
-                else if (loai == "sdt")
-                {
-                    if (bs.Sdt != null && bs.Sdt.Contains(keyword))
-                        ketQua.Add(bs);
-                }
-            }
-
-            dgvDanhSachBacSi.DataSource = null;
-            dgvDanhSachBacSi.DataSource = ketQua;
+            
         }
     }
 }

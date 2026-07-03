@@ -1,18 +1,19 @@
-﻿using System;
+﻿using System.Data.SQLite;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WindowsFormsApp6.DAL
+namespace _Bai_Lam_Nhom_LTHDT.DAL
 {
     public static class Database
     {
         private const string CONN = "Data Source=CSDL.sqlite";
 
-        public static SqliteConnection GetConnection()
+        public static SQLiteConnection GetConnection()
         {
-            return new SqliteConnection(CONN);
+            return new SQLiteConnection(CONN);
         }
     }
 }

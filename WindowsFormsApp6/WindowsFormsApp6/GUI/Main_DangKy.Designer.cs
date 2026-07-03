@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp6
+﻿namespace _Bai_Lam_Nhom_LTHDT
 {
     partial class Main_DangKy
     {

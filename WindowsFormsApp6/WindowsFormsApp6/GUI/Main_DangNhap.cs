@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp6
+namespace _Bai_Lam_Nhom_LTHDT
 {
     public partial class Main_DangNhap : Form
     {
@@ -89,7 +89,28 @@ namespace WindowsFormsApp6
         private void button1_Click(object sender, EventArgs e)
         {
             N_TrangChuBacSi f = new N_TrangChuBacSi();
-            f.Show();
+            f.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            T_TrangChuTiepNhan f = new T_TrangChuTiepNhan();
+            f.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            
+            V_TrangChuDieuPhoi f = new V_TrangChuDieuPhoi();
+            f.ShowDialog();
+        }
+
+        
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            A_ThongKe f = new A_ThongKe();
+            f.ShowDialog();
         }
     }
 }

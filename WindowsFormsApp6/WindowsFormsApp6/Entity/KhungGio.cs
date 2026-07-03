@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WindowsFormsApp6.Entity
+namespace _Bai_Lam_Nhom_LTHDT.Entity
 {
     public class KhungGio
     {

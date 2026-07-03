@@ -18,10 +18,10 @@ namespace Bai_Lam_Nhom_LTHDT.Entity
         public BacSi() {
         }
 
-        public BacSi(string maBS, string hoTenBS, string gioiTinh, string sdt, string email, string maChuyenKhoa, DateTime ngaySinh)
+        public BacSi(string maBS, string hoTen, string gioiTinh, string sdt, string email, string maChuyenKhoa, DateTime ngaySinh)
         {
             MaBS = maBS;
-            HoTenBS = hoTenBS;
+            HoTen = hoTen;
             GioiTinh = gioiTinh;
             Sdt = sdt;
             Email = email;
