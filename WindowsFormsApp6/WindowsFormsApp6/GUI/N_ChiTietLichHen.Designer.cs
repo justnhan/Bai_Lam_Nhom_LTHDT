@@ -78,35 +78,36 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             this.panel1.Location = new System.Drawing.Point(12, 59);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1159, 129);
+            this.panel1.Size = new System.Drawing.Size(1159, 152);
             this.panel1.TabIndex = 0;
             // 
             // btTimKiem
             // 
             this.btTimKiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(140)))), ((int)(((byte)(0)))));
+            this.btTimKiem.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btTimKiem.ForeColor = System.Drawing.Color.White;
-            this.btTimKiem.Location = new System.Drawing.Point(936, 29);
+            this.btTimKiem.Location = new System.Drawing.Point(978, 84);
             this.btTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btTimKiem.Name = "btTimKiem";
-            this.btTimKiem.Size = new System.Drawing.Size(142, 41);
+            this.btTimKiem.Size = new System.Drawing.Size(157, 52);
             this.btTimKiem.TabIndex = 19;
-            this.btTimKiem.Text = "Tìm kiếm";
+            this.btTimKiem.Text = "🔎 Tìm kiếm";
             this.btTimKiem.UseVisualStyleBackColor = false;
             // 
             // dtpNgayLamViec
             // 
             this.dtpNgayLamViec.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpNgayLamViec.Location = new System.Drawing.Point(565, 42);
+            this.dtpNgayLamViec.Location = new System.Drawing.Point(677, 8);
             this.dtpNgayLamViec.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpNgayLamViec.Name = "dtpNgayLamViec";
-            this.dtpNgayLamViec.Size = new System.Drawing.Size(246, 34);
+            this.dtpNgayLamViec.Size = new System.Drawing.Size(458, 34);
             this.dtpNgayLamViec.TabIndex = 18;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(411, 45);
+            this.label3.Location = new System.Drawing.Point(519, 13);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(139, 28);
             this.label3.TabIndex = 17;
@@ -116,17 +117,17 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             // 
             this.cboChuyenKhoa.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.cboChuyenKhoa.FormattingEnabled = true;
-            this.cboChuyenKhoa.Location = new System.Drawing.Point(159, 87);
+            this.cboChuyenKhoa.Location = new System.Drawing.Point(173, 95);
             this.cboChuyenKhoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboChuyenKhoa.Name = "cboChuyenKhoa";
-            this.cboChuyenKhoa.Size = new System.Drawing.Size(213, 36);
+            this.cboChuyenKhoa.Size = new System.Drawing.Size(294, 36);
             this.cboChuyenKhoa.TabIndex = 16;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label6.Location = new System.Drawing.Point(17, 87);
+            this.label6.Location = new System.Drawing.Point(17, 98);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(134, 28);
             this.label6.TabIndex = 15;
@@ -135,26 +136,26 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             // txtHoTenBS
             // 
             this.txtHoTenBS.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtHoTenBS.Location = new System.Drawing.Point(159, 48);
+            this.txtHoTenBS.Location = new System.Drawing.Point(173, 51);
             this.txtHoTenBS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtHoTenBS.Name = "txtHoTenBS";
-            this.txtHoTenBS.Size = new System.Drawing.Size(213, 34);
+            this.txtHoTenBS.Size = new System.Drawing.Size(294, 34);
             this.txtHoTenBS.TabIndex = 13;
             // 
             // txtMaBS
             // 
             this.txtMaBS.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtMaBS.Location = new System.Drawing.Point(159, 11);
+            this.txtMaBS.Location = new System.Drawing.Point(173, 5);
             this.txtMaBS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMaBS.Name = "txtMaBS";
-            this.txtMaBS.Size = new System.Drawing.Size(213, 34);
+            this.txtMaBS.Size = new System.Drawing.Size(294, 34);
             this.txtMaBS.TabIndex = 12;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label2.Location = new System.Drawing.Point(17, 45);
+            this.label2.Location = new System.Drawing.Point(17, 54);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 28);
             this.label2.TabIndex = 11;
@@ -175,11 +176,11 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(242)))), ((int)(((byte)(253)))));
             this.groupBox1.Controls.Add(this.dgvDanhSachBenhNhan);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 192);
+            this.groupBox1.Location = new System.Drawing.Point(12, 215);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(1163, 218);
+            this.groupBox1.Size = new System.Drawing.Size(1163, 227);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách bệnh nhân";
@@ -188,7 +189,7 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             // 
             this.dgvDanhSachBenhNhan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDanhSachBenhNhan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDanhSachBenhNhan.Location = new System.Drawing.Point(11, 23);
+            this.dgvDanhSachBenhNhan.Location = new System.Drawing.Point(11, 31);
             this.dgvDanhSachBenhNhan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvDanhSachBenhNhan.MultiSelect = false;
             this.dgvDanhSachBenhNhan.Name = "dgvDanhSachBenhNhan";
@@ -202,15 +203,15 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(242)))), ((int)(((byte)(253)))));
             this.panel2.Controls.Add(this.txtGhiChu);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(13, 415);
+            this.panel2.Location = new System.Drawing.Point(12, 446);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1162, 138);
+            this.panel2.Size = new System.Drawing.Size(1162, 161);
             this.panel2.TabIndex = 2;
             // 
             // txtGhiChu
             // 
-            this.txtGhiChu.Location = new System.Drawing.Point(10, 33);
+            this.txtGhiChu.Location = new System.Drawing.Point(10, 38);
             this.txtGhiChu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtGhiChu.Multiline = true;
             this.txtGhiChu.Name = "txtGhiChu";
@@ -232,10 +233,10 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             this.btnLamMoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(193)))));
             this.btnLamMoi.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.btnLamMoi.ForeColor = System.Drawing.Color.White;
-            this.btnLamMoi.Location = new System.Drawing.Point(645, 559);
+            this.btnLamMoi.Location = new System.Drawing.Point(614, 654);
             this.btnLamMoi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.Size = new System.Drawing.Size(143, 35);
+            this.btnLamMoi.Size = new System.Drawing.Size(143, 47);
             this.btnLamMoi.TabIndex = 12;
             this.btnLamMoi.Text = "🔄 Làm mới";
             this.btnLamMoi.UseVisualStyleBackColor = false;
@@ -245,10 +246,10 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             this.btnThemGhiChu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(101)))), ((int)(((byte)(192)))));
             this.btnThemGhiChu.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.btnThemGhiChu.ForeColor = System.Drawing.Color.White;
-            this.btnThemGhiChu.Location = new System.Drawing.Point(419, 559);
+            this.btnThemGhiChu.Location = new System.Drawing.Point(379, 654);
             this.btnThemGhiChu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThemGhiChu.Name = "btnThemGhiChu";
-            this.btnThemGhiChu.Size = new System.Drawing.Size(178, 35);
+            this.btnThemGhiChu.Size = new System.Drawing.Size(178, 47);
             this.btnThemGhiChu.TabIndex = 11;
             this.btnThemGhiChu.Text = "📝 Thêm ghi chú";
             this.btnThemGhiChu.UseVisualStyleBackColor = false;
@@ -258,10 +259,10 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             this.btnTuChoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(57)))), ((int)(((byte)(53)))));
             this.btnTuChoi.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.btnTuChoi.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnTuChoi.Location = new System.Drawing.Point(241, 558);
+            this.btnTuChoi.Location = new System.Drawing.Point(210, 653);
             this.btnTuChoi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTuChoi.Name = "btnTuChoi";
-            this.btnTuChoi.Size = new System.Drawing.Size(130, 36);
+            this.btnTuChoi.Size = new System.Drawing.Size(130, 48);
             this.btnTuChoi.TabIndex = 10;
             this.btnTuChoi.Text = "❌ Từ chối";
             this.btnTuChoi.UseVisualStyleBackColor = false;
@@ -271,10 +272,10 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             this.btnDuyet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(160)))), ((int)(((byte)(71)))));
             this.btnDuyet.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.btnDuyet.ForeColor = System.Drawing.Color.White;
-            this.btnDuyet.Location = new System.Drawing.Point(54, 554);
+            this.btnDuyet.Location = new System.Drawing.Point(45, 654);
             this.btnDuyet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDuyet.Name = "btnDuyet";
-            this.btnDuyet.Size = new System.Drawing.Size(120, 39);
+            this.btnDuyet.Size = new System.Drawing.Size(120, 47);
             this.btnDuyet.TabIndex = 9;
             this.btnDuyet.Text = "✅ Duyệt";
             this.btnDuyet.UseVisualStyleBackColor = false;
@@ -283,10 +284,10 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             // 
             this.btnInDanhSach.BackColor = System.Drawing.Color.LimeGreen;
             this.btnInDanhSach.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnInDanhSach.Location = new System.Drawing.Point(975, 559);
+            this.btnInDanhSach.Location = new System.Drawing.Point(992, 659);
             this.btnInDanhSach.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnInDanhSach.Name = "btnInDanhSach";
-            this.btnInDanhSach.Size = new System.Drawing.Size(175, 35);
+            this.btnInDanhSach.Size = new System.Drawing.Size(175, 47);
             this.btnInDanhSach.TabIndex = 13;
             this.btnInDanhSach.Text = "🖨️ In danh sách";
             this.btnInDanhSach.UseVisualStyleBackColor = false;
@@ -330,7 +331,7 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1190, 629);
+            this.ClientSize = new System.Drawing.Size(1190, 717);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.btnInDanhSach);
             this.Controls.Add(this.btnLamMoi);
@@ -344,6 +345,7 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "N_ChiTietLichHen";
             this.Text = "Chi tiết lịch hẹn";
+            this.Load += new System.EventHandler(this.N_ChiTietLichHen_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);

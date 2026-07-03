@@ -1,5 +1,5 @@
 ﻿using Bai_Lam_Nhom_LTHDT;
-
+using Bai_Lam_Nhom_LTHDT.GUI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -110,6 +110,12 @@ namespace Bai_Lam_Nhom_LTHDT
         private void button4_Click(object sender, EventArgs e)
         {
             A_ThongKe f = new A_ThongKe();
+            f.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Main_TrangChu f = new Main_TrangChu();
             f.ShowDialog();
         }
     }
