@@ -66,6 +66,9 @@ namespace Bai_Lam_Nhom_LTHDT.Properties {
         internal static System.Drawing.Bitmap _08d6a61e_20b9_4d66_ad7c_c6c5e5744253 {
             get {
                 object obj = ResourceManager.GetObject("08d6a61e-20b9-4d66-ad7c-c6c5e5744253", resourceCulture);
+        internal static System.Drawing.Bitmap ChatGPT_Image_21_02_13_3_thg_7__2026 {
+            get {
+                object obj = ResourceManager.GetObject("ChatGPT Image 21_02_13 3 thg 7, 2026", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -76,6 +79,9 @@ namespace Bai_Lam_Nhom_LTHDT.Properties {
         internal static System.Drawing.Bitmap _381870a2_29a4_4306_8e04_84b9ebc5ed5e {
             get {
                 object obj = ResourceManager.GetObject("381870a2-29a4-4306-8e04-84b9ebc5ed5e", resourceCulture);
+        internal static System.Drawing.Bitmap ChatGPT_Image_21_02_13_3_thg_7__20261 {
+            get {
+                object obj = ResourceManager.GetObject("ChatGPT Image 21_02_13 3 thg 7, 20261", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -116,6 +122,9 @@ namespace Bai_Lam_Nhom_LTHDT.Properties {
         internal static System.Drawing.Bitmap aedb1e12_791b_48a5_9036_62193f38c946 {
             get {
                 object obj = ResourceManager.GetObject("aedb1e12-791b-48a5-9036-62193f38c946", resourceCulture);
+        internal static System.Drawing.Bitmap ChatGPT_Image_21_49_05_3_thg_7__2026 {
+            get {
+                object obj = ResourceManager.GetObject("ChatGPT Image 21_49_05 3 thg 7, 2026", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

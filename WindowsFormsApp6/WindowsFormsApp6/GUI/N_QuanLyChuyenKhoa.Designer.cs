@@ -64,6 +64,8 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             this.dgvBSThuocKhoa = new System.Windows.Forms.DataGridView();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dgvDanhSachPhongKham = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -75,6 +77,7 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             ((System.ComponentModel.ISupportInitialize)(this.dgvBSThuocKhoa)).BeginInit();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachPhongKham)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -87,11 +90,11 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             this.groupBox1.Controls.Add(this.btnSua);
             this.groupBox1.Controls.Add(this.btnThem);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 10);
+            this.groupBox1.Location = new System.Drawing.Point(12, 76);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(1196, 282);
+            this.groupBox1.Size = new System.Drawing.Size(1216, 282);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin ";
@@ -118,11 +121,11 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.btnTimKiem);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(896, 28);
+            this.groupBox2.Location = new System.Drawing.Point(924, 31);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(278, 194);
+            this.groupBox2.Size = new System.Drawing.Size(278, 199);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tìm kiếm";
@@ -207,10 +210,10 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(18, 25);
+            this.panel1.Location = new System.Drawing.Point(18, 31);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(852, 199);
+            this.panel1.Size = new System.Drawing.Size(885, 199);
             this.panel1.TabIndex = 0;
             // 
             // nudSoLuongPK
@@ -273,7 +276,7 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label2.Location = new System.Drawing.Point(36, 146);
+            this.label2.Location = new System.Drawing.Point(28, 149);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 28);
             this.label2.TabIndex = 15;
@@ -300,7 +303,7 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             // txtMaKhoa
             // 
             this.txtMaKhoa.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtMaKhoa.Location = new System.Drawing.Point(178, 25);
+            this.txtMaKhoa.Location = new System.Drawing.Point(178, 19);
             this.txtMaKhoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMaKhoa.Name = "txtMaKhoa";
             this.txtMaKhoa.Size = new System.Drawing.Size(206, 34);
@@ -378,11 +381,11 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             this.groupBox3.Controls.Add(this.dgvDanhSachChuyenKhoa);
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.groupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(136)))), ((int)(((byte)(229)))));
-            this.groupBox3.Location = new System.Drawing.Point(12, 299);
+            this.groupBox3.Location = new System.Drawing.Point(12, 362);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox3.Size = new System.Drawing.Size(1174, 210);
+            this.groupBox3.Size = new System.Drawing.Size(1216, 195);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Danh sách chuyên khoa";
@@ -391,13 +394,13 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             // 
             this.dgvDanhSachChuyenKhoa.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDanhSachChuyenKhoa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDanhSachChuyenKhoa.Location = new System.Drawing.Point(27, 31);
+            this.dgvDanhSachChuyenKhoa.Location = new System.Drawing.Point(6, 31);
             this.dgvDanhSachChuyenKhoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvDanhSachChuyenKhoa.MultiSelect = false;
             this.dgvDanhSachChuyenKhoa.Name = "dgvDanhSachChuyenKhoa";
             this.dgvDanhSachChuyenKhoa.RowHeadersWidth = 51;
             this.dgvDanhSachChuyenKhoa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDanhSachChuyenKhoa.Size = new System.Drawing.Size(1126, 175);
+            this.dgvDanhSachChuyenKhoa.Size = new System.Drawing.Size(1204, 157);
             this.dgvDanhSachChuyenKhoa.TabIndex = 0;
             // 
             // groupBox4
@@ -406,11 +409,11 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             this.groupBox4.Controls.Add(this.dgvBSThuocKhoa);
             this.groupBox4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.groupBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(136)))), ((int)(((byte)(229)))));
-            this.groupBox4.Location = new System.Drawing.Point(12, 513);
+            this.groupBox4.Location = new System.Drawing.Point(12, 566);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox4.Size = new System.Drawing.Size(573, 172);
+            this.groupBox4.Size = new System.Drawing.Size(603, 172);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Bác sĩ thuộc khoa";
@@ -424,7 +427,7 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             this.dgvBSThuocKhoa.Name = "dgvBSThuocKhoa";
             this.dgvBSThuocKhoa.RowHeadersWidth = 51;
             this.dgvBSThuocKhoa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBSThuocKhoa.Size = new System.Drawing.Size(549, 124);
+            this.dgvBSThuocKhoa.Size = new System.Drawing.Size(591, 124);
             this.dgvBSThuocKhoa.TabIndex = 0;
             // 
             // groupBox5
@@ -433,11 +436,11 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             this.groupBox5.Controls.Add(this.dgvDanhSachPhongKham);
             this.groupBox5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.groupBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(136)))), ((int)(((byte)(229)))));
-            this.groupBox5.Location = new System.Drawing.Point(591, 513);
+            this.groupBox5.Location = new System.Drawing.Point(621, 566);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox5.Size = new System.Drawing.Size(601, 172);
+            this.groupBox5.Size = new System.Drawing.Size(607, 172);
             this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Danh sách phòng khám";
@@ -452,22 +455,47 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             this.dgvDanhSachPhongKham.Name = "dgvDanhSachPhongKham";
             this.dgvDanhSachPhongKham.RowHeadersWidth = 51;
             this.dgvDanhSachPhongKham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDanhSachPhongKham.Size = new System.Drawing.Size(581, 124);
+            this.dgvDanhSachPhongKham.Size = new System.Drawing.Size(591, 124);
             this.dgvDanhSachPhongKham.TabIndex = 0;
             // 
-            // QuanLyChuyenKhoa
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(136)))), ((int)(((byte)(229)))));
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Controls.Add(this.label8);
+            this.panel2.ForeColor = System.Drawing.Color.White;
+            this.panel2.Location = new System.Drawing.Point(-2, 1);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1243, 71);
+            this.panel2.TabIndex = 5;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(447, 8);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(416, 54);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Quản lý chuyên khoa";
+            // 
+            // N_QuanLyChuyenKhoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1194, 696);
+            this.ClientSize = new System.Drawing.Size(1240, 749);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "QuanLyChuyenKhoa";
+            this.Name = "N_QuanLyChuyenKhoa";
             this.Text = "Quản lý chuyên khoa";
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -482,6 +510,8 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             ((System.ComponentModel.ISupportInitialize)(this.dgvBSThuocKhoa)).EndInit();
             this.groupBox5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachPhongKham)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -520,5 +550,7 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
         private Button btnXoa;
         private Button btnSua;
         private Button btnThem;
+        private Panel panel2;
+        private Label label8;
     }
 }

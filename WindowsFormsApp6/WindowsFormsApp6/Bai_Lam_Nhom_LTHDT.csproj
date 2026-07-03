@@ -103,6 +103,11 @@
     </Compile>
     <Compile Include="GUI\AdminHomeForm.Designer.cs">
       <DependentUpon>AdminHomeForm.cs</DependentUpon>
+    <Compile Include="GUI\Main_TrangChu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Main_TrangChu.Designer.cs">
+      <DependentUpon>Main_TrangChu.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\N_ChiTietLichHen.cs">
       <SubType>Form</SubType>
@@ -213,6 +218,8 @@
     <Compile Include="Entity\ThongBao.cs" />
     <EmbeddedResource Include="GUI\AdminHomeForm.resx">
       <DependentUpon>AdminHomeForm.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Main_TrangChu.resx">
+      <DependentUpon>Main_TrangChu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\N_ChiTietLichHen.resx">
       <DependentUpon>N_ChiTietLichHen.cs</DependentUpon>
@@ -342,6 +349,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\aedb1e12-791b-48a5-9036-62193f38c946.png" />
+    <None Include="Resources\ChatGPT Image 21_49_05 3 thg 7, 2026.png" />
+    <None Include="Resources\ChatGPT Image 21_02_13 3 thg 7, 2026.png" />
+    <Content Include="Resources\nền.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

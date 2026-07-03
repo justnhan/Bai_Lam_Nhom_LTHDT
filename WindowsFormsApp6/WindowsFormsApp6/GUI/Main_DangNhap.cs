@@ -122,5 +122,11 @@ namespace Bai_Lam_Nhom_LTHDT
             A_ThongKe f = new A_ThongKe();
             f.ShowDialog();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Main_TrangChu f = new Main_TrangChu();
+            f.ShowDialog();
+        }
     }
 }
