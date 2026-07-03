@@ -98,6 +98,12 @@
     <Compile Include="Entity\LichHen.cs" />
     <Compile Include="Entity\PhongKham.cs" />
     <Compile Include="Entity\TaiKhoan.cs" />
+    <Compile Include="GUI\AdminHomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\AdminHomeForm.Designer.cs">
+      <DependentUpon>AdminHomeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\N_ChiTietLichHen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +211,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entity\ThongBao.cs" />
+    <EmbeddedResource Include="GUI\AdminHomeForm.resx">
+      <DependentUpon>AdminHomeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\N_ChiTietLichHen.resx">
       <DependentUpon>N_ChiTietLichHen.cs</DependentUpon>
     </EmbeddedResource>
@@ -307,7 +316,33 @@
   <ItemGroup>
     <None Include="Resources\chiakhoa.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6ba93812-f032-44dd-a854-cb65ecdeabc7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\381870a2-29a4-4306-8e04-84b9ebc5ed5e.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\08d6a61e-20b9-4d66-ad7c-c6c5e5744253.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3ae66226-b6cb-47fb-8d2f-7c404b9a40c2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\f17c3c57-9789-47f0-8b64-a3c07f318c87.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4fe92996-20dd-4e9c-8518-3d80af06c5fa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aedb1e12-791b-48a5-9036-62193f38c946.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
