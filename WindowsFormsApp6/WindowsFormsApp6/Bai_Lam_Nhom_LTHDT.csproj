@@ -76,6 +76,12 @@
     <Compile Include="DAL\ILichHenDAL.cs" />
     <Compile Include="DAL\KhungGioDAL.cs" />
     <Compile Include="DAL\LichHenDAL.cs" />
+    <Compile Include="DAL\IPhongKhamDAL.cs" />
+    <Compile Include="DAL\ITaiKhoanDAL.cs" />
+    <Compile Include="DAL\IThongBaoDAL.cs" />
+    <Compile Include="DAL\PhongKhamDAL.cs" />
+    <Compile Include="DAL\TaiKhoanDAL.cs" />
+    <Compile Include="DAL\ThongBaoDAL.cs" />
     <Compile Include="Entity\BacSi.cs" />
     <Compile Include="Entity\BenhNhan.cs" />
     <Compile Include="Entity\ChuyenKhoa.cs" />
