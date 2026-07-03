@@ -9,6 +9,11 @@ namespace _Bai_Lam_Nhom_LTHDT.DAL
 {
     public interface IBacSiDAL
     {
+        // Validate
+        bool ExistsMaBS(string maBS);
+        bool ExistsEmail(string email);
+        bool ExistsSdt(string sdt);
+        bool ExistsByMaChuyenKhoa(string maCK);
         List<BacSi> GetAllBacSi();
         BacSi GetByMaBS(string maBS);
         bool Add(BacSi bacSi);
