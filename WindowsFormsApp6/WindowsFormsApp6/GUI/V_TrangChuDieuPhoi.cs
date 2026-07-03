@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Bai_Lam_Nhom_LTHDT.GUI;
 
 namespace Bai_Lam_Nhom_LTHDT
 {
@@ -20,12 +21,20 @@ namespace Bai_Lam_Nhom_LTHDT
             pnlMenu.BackColor = UiHelper.MenuTrai;
 
             UiHelper.StyleButton(btnTaoSlot, UiHelper.MenuTrai);
-            UiHelper.StyleButton(btnDanhSachSlot, UiHelper.MenuTrai);
             UiHelper.StyleButton(btnQuanLyPhong, UiHelper.MenuTrai);
             UiHelper.StyleButton(btnPhanCong, UiHelper.MenuTrai);
-            UiHelper.StyleButton(btnThongKe, UiHelper.MenuTrai);
         }
+        private void MoForm(Form frm)
+        {
+            pnlNoiDung.Controls.Clear();
 
+            frm.TopLevel = false;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.Dock = DockStyle.Fill;
+
+            pnlNoiDung.Controls.Add(frm);
+            frm.Show();
+        }
         private void ChinhButtonMenu(Button btn)
         {
             btn.FlatStyle = FlatStyle.Flat;
@@ -38,31 +47,22 @@ namespace Bai_Lam_Nhom_LTHDT
 
         private void btnTaoSlot_Click(object sender, EventArgs e)
         {
-            V_QuanLySlot f = new V_QuanLySlot();
-            f.ShowDialog();
+            MoForm(new V_QuanLySlotTong());
         }
 
-        private void btnDanhSachSlot_Click(object sender, EventArgs e)
-        {
-            V_DanhSachSlot f = new V_DanhSachSlot();
-            f.ShowDialog();
-        }
 
         private void btnQuanLyPhong_Click(object sender, EventArgs e)
         {
-            V_QuanLyPhong f = new V_QuanLyPhong();
-            f.ShowDialog();
+            MoForm(new V_QuanLyPhong());
         }
 
         private void btnPhanCong_Click(object sender, EventArgs e)
         {
-            V_PhanCong f = new V_PhanCong();
-            f.ShowDialog();
+            MoForm(new V_PhanCong());
         }
         private void btnThongKe_Click(object sender, EventArgs e)
         {
-            FrmThongKe f = new FrmThongKe();
-            f.ShowDialog();
+            MoForm(new FrmThongKe());
         }
     }
 }

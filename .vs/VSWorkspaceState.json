@@ -2,8 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\WindowsFormsApp6",
-    "\\WindowsFormsApp6\\WindowsFormsApp6"
+    "\\WindowsFormsApp6\\WindowsFormsApp6",
+    "\\WindowsFormsApp6\\WindowsFormsApp6\\DAL",
+    "\\WindowsFormsApp6\\WindowsFormsApp6\\GUI"
   ],
-  "SelectedNode": "\\WindowsFormsApp6\\WindowsFormsApp6.slnx",
+  "SelectedNode": "\\WindowsFormsApp6\\WindowsFormsApp6\\GUI\\V_QuanLySlot.cs",
   "PreviewInSolutionExplorer": false
 }

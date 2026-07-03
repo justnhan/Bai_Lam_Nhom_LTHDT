@@ -20,7 +20,8 @@ namespace Bai_Lam_Nhom_LTHDT
             UiHelper.StyleTitle(lblTitle);
             UiHelper.StyleLabel(lblLoc);
             UiHelper.StyleGrid(dgvSlot);
-
+            TopLevel = false;
+            Dock = DockStyle.Fill;
 
 
         }
