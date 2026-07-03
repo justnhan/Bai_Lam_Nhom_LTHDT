@@ -27,8 +27,7 @@ namespace Bai_Lam_Nhom_LTHDT
 
             UiHelper.StyleButton(btnTaoSlot, UiHelper.Luu);
 
-            cboBacSi.SelectedIndex = 0;
-            cboPhong.SelectedIndex = 0;
+
 
             dtGioBatDau.Format = DateTimePickerFormat.Time;
             dtGioBatDau.ShowUpDown = true;
@@ -37,6 +36,8 @@ namespace Bai_Lam_Nhom_LTHDT
             dtGioKetThuc.ShowUpDown = true;
 
             numThoiLuong.Value = 20;
+            TopLevel = false;
+            Dock = DockStyle.Fill;
         }
 
         private void btnTaoSlot_Click(object sender, EventArgs e)
@@ -75,6 +76,81 @@ namespace Bai_Lam_Nhom_LTHDT
         }
 
         private void lblPhong_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlMain_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void numThoiLuong_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblBatDau_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPhong_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblThoiLuong_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblKetThuc_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblNgay_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblBacSi_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTitle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTaoSlot_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboPhong_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtNgayLamViec_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtGioKetThuc_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtGioBatDau_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboBacSi_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

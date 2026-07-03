@@ -144,19 +144,19 @@
             this.colBenhNhan.MinimumWidth = 6;
             this.colBenhNhan.Name = "colBenhNhan";
             // 
-            // FrmDanhSachSlot
+            // V_DanhSachSlot
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(932, 553);
             this.Controls.Add(this.dgvSlot);
             this.Controls.Add(this.cboLocBacSi);
             this.Controls.Add(this.lblLoc);
             this.Controls.Add(this.lblTitle);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FrmDanhSachSlot";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Name = "V_DanhSachSlot";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "FrmDanhSachSlot";
             ((System.ComponentModel.ISupportInitialize)(this.dgvSlot)).EndInit();
             this.ResumeLayout(false);
