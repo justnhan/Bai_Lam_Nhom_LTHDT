@@ -12,8 +12,8 @@ namespace Bai_Lam_Nhom_LTHDT
         public string MaBS { get; set; }
         public string MaPhong { get; set; }
         public DateTime NgayTruc { get; set; }
-        public string GioBatDau { get; set; }
-        public string GioKetThuc { get; set; }
+        public TimeSpan GioBatDau { get; set; }
+        public TimeSpan GioKetThuc { get; set; }
         public int SoLuongToiDa { get; set; }
         
         public LichTruc() { }
