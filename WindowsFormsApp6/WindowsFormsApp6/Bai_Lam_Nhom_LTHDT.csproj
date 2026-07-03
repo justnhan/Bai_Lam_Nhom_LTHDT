@@ -211,6 +211,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entity\ThongBao.cs" />
+    <Compile Include="Validator.cs" />
     <EmbeddedResource Include="GUI\Main_TrangChu.resx">
       <DependentUpon>Main_TrangChu.cs</DependentUpon>
     </EmbeddedResource>
