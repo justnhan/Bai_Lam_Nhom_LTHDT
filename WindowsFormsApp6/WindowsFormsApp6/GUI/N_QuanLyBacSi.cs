@@ -84,10 +84,6 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
                 Color.FromArgb(227, 242, 253); // #E3F2FD
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void FrmQuanLyBacSi_Load(object sender, EventArgs e)
         {
@@ -137,6 +133,36 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void dgvDanhSachBacSi_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvDanhSachBacSi_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+
+            DataGridViewRow row = dgvDanhSachBacSi.Rows[e.RowIndex];
+
+            txtMaBS.Text = row.Cells["Mã BS"].Value?.ToString();
+            txtHoTen.Text = row.Cells["Họ tên"].Value?.ToString();
+            cboGioiTinh.Text = row.Cells["Giới tính"].Value?.ToString();
+            txtSDT.Text = row.Cells["SĐT"].Value?.ToString();
+            txtEmail.Text = row.Cells["Email"].Value?.ToString();
+
+            // Nếu ComboBox của bạn đang bind DataSource
+            cboChuyenKhoa.SelectedValue = row.Cells["Chuyên khoa"].Value;
+
+            // Nếu ComboBox chỉ thêm Items thì dùng:
+            // cboChuyenKhoa.Text = row.Cells["Chuyên khoa"].Value?.ToString();
+
+            if (row.Cells["Ngày sinh"].Value != null)
+            {
+                dtpNgaySinh.Value = Convert.ToDateTime(row.Cells["Ngày sinh"].Value);
+            }
         }
     }
 }

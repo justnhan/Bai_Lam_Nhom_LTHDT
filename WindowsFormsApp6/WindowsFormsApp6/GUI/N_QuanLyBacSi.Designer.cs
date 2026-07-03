@@ -48,13 +48,11 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.cboGioiTinh = new System.Windows.Forms.ComboBox();
             this.cboChuyenKhoa = new System.Windows.Forms.ComboBox();
-            this.cboChucVu = new System.Windows.Forms.ComboBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtSDT = new System.Windows.Forms.TextBox();
-            this.txtHoTenBS = new System.Windows.Forms.TextBox();
+            this.txtHoTen = new System.Windows.Forms.TextBox();
             this.txtMaBS = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -228,13 +226,11 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             this.panel1.Controls.Add(this.dtpNgaySinh);
             this.panel1.Controls.Add(this.cboGioiTinh);
             this.panel1.Controls.Add(this.cboChuyenKhoa);
-            this.panel1.Controls.Add(this.cboChucVu);
             this.panel1.Controls.Add(this.txtEmail);
             this.panel1.Controls.Add(this.txtSDT);
-            this.panel1.Controls.Add(this.txtHoTenBS);
+            this.panel1.Controls.Add(this.txtHoTen);
             this.panel1.Controls.Add(this.txtMaBS);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
@@ -249,7 +245,7 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             // 
             // dtpNgaySinh
             // 
-            this.dtpNgaySinh.Location = new System.Drawing.Point(566, 148);
+            this.dtpNgaySinh.Location = new System.Drawing.Point(566, 120);
             this.dtpNgaySinh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
             this.dtpNgaySinh.Size = new System.Drawing.Size(250, 34);
@@ -268,20 +264,11 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             // cboChuyenKhoa
             // 
             this.cboChuyenKhoa.FormattingEnabled = true;
-            this.cboChuyenKhoa.Location = new System.Drawing.Point(566, 102);
+            this.cboChuyenKhoa.Location = new System.Drawing.Point(566, 74);
             this.cboChuyenKhoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboChuyenKhoa.Name = "cboChuyenKhoa";
             this.cboChuyenKhoa.Size = new System.Drawing.Size(200, 36);
             this.cboChuyenKhoa.TabIndex = 14;
-            // 
-            // cboChucVu
-            // 
-            this.cboChucVu.FormattingEnabled = true;
-            this.cboChucVu.Location = new System.Drawing.Point(566, 61);
-            this.cboChucVu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cboChucVu.Name = "cboChucVu";
-            this.cboChucVu.Size = new System.Drawing.Size(200, 36);
-            this.cboChucVu.TabIndex = 13;
             // 
             // txtEmail
             // 
@@ -300,14 +287,14 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             this.txtSDT.Size = new System.Drawing.Size(190, 34);
             this.txtSDT.TabIndex = 10;
             // 
-            // txtHoTenBS
+            // txtHoTen
             // 
-            this.txtHoTenBS.ForeColor = System.Drawing.Color.Black;
-            this.txtHoTenBS.Location = new System.Drawing.Point(178, 62);
-            this.txtHoTenBS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtHoTenBS.Name = "txtHoTenBS";
-            this.txtHoTenBS.Size = new System.Drawing.Size(190, 34);
-            this.txtHoTenBS.TabIndex = 9;
+            this.txtHoTen.ForeColor = System.Drawing.Color.Black;
+            this.txtHoTen.Location = new System.Drawing.Point(178, 62);
+            this.txtHoTen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtHoTen.Name = "txtHoTen";
+            this.txtHoTen.Size = new System.Drawing.Size(190, 34);
+            this.txtHoTen.TabIndex = 9;
             // 
             // txtMaBS
             // 
@@ -323,29 +310,18 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(428, 147);
+            this.label8.Location = new System.Drawing.Point(428, 119);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(99, 28);
             this.label8.TabIndex = 7;
             this.label8.Text = "Ngày sinh";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(424, 58);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(86, 28);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Chức vụ:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(424, 102);
+            this.label6.Location = new System.Drawing.Point(424, 74);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(134, 28);
             this.label6.TabIndex = 5;
@@ -423,16 +399,21 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             // 
             // dgvDanhSachBacSi
             // 
+            this.dgvDanhSachBacSi.AllowUserToAddRows = false;
+            this.dgvDanhSachBacSi.AllowUserToDeleteRows = false;
             this.dgvDanhSachBacSi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDanhSachBacSi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDanhSachBacSi.Location = new System.Drawing.Point(4, 31);
             this.dgvDanhSachBacSi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvDanhSachBacSi.MultiSelect = false;
             this.dgvDanhSachBacSi.Name = "dgvDanhSachBacSi";
+            this.dgvDanhSachBacSi.ReadOnly = true;
             this.dgvDanhSachBacSi.RowHeadersWidth = 51;
             this.dgvDanhSachBacSi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDanhSachBacSi.Size = new System.Drawing.Size(1186, 256);
             this.dgvDanhSachBacSi.TabIndex = 0;
+            this.dgvDanhSachBacSi.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachBacSi_CellClick);
+            this.dgvDanhSachBacSi.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachBacSi_CellContentClick);
             // 
             // panel2
             // 
@@ -489,7 +470,6 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
         private GroupBox groupBox1;
         private Panel panel1;
         private Label label8;
-        private Label label7;
         private Label label6;
         private Label label5;
         private Label label4;
@@ -498,10 +478,9 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
         private Label label1;
         private ComboBox cboGioiTinh;
         private ComboBox cboChuyenKhoa;
-        private ComboBox cboChucVu;
         private TextBox txtEmail;
         private TextBox txtSDT;
-        private TextBox txtHoTenBS;
+        private TextBox txtHoTen;
         private TextBox txtMaBS;
         private GroupBox groupBox2;
         private TextBox txtKey;

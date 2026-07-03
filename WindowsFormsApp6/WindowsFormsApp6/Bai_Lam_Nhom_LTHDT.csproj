@@ -73,8 +73,6 @@
     <Compile Include="DAL\BacSiDAL.cs" />
     <Compile Include="DAL\ChuyenKhoaDAL.cs" />
     <Compile Include="DAL\IChuyenKhoaDAL.cs" />
-    <Compile Include="DAL\Database.cs" />
-    <Compile Include="DAL\IBacSiDAL.cs" />
     <Compile Include="DAL\ILichTrucDAL.cs" />
     <Compile Include="DAL\LichTrucDAL.cs" />
     <Compile Include="DAL\BenhNhanDAL.cs" />
