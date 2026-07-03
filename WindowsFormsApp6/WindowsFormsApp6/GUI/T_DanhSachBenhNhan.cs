@@ -102,5 +102,25 @@ namespace Bai_Lam_Nhom_LTHDT
         {
 
         }
+
+        private void btnSuaThongTin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDong_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnXoaBenhNhan_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
