@@ -104,5 +104,10 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
         {
 
         }
+
+        private void N_ChiTietLichHen_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

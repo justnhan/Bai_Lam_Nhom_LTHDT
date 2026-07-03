@@ -63,6 +63,36 @@ namespace Bai_Lam_Nhom_LTHDT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ChatGPT_Image_21_02_13_3_thg_7__2026 {
+            get {
+                object obj = ResourceManager.GetObject("ChatGPT Image 21_02_13 3 thg 7, 2026", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ChatGPT_Image_21_02_13_3_thg_7__20261 {
+            get {
+                object obj = ResourceManager.GetObject("ChatGPT Image 21_02_13 3 thg 7, 20261", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ChatGPT_Image_21_49_05_3_thg_7__2026 {
+            get {
+                object obj = ResourceManager.GetObject("ChatGPT Image 21_49_05 3 thg 7, 2026", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap chiakhoa {
             get {
                 object obj = ResourceManager.GetObject("chiakhoa", resourceCulture);
