@@ -68,8 +68,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\BacSiDAL.cs" />
+    <Compile Include="DAL\BenhNhanDAL.cs" />
+    <Compile Include="DAL\IBenhNhanDAL.cs" />
     <Compile Include="DAL\Database.cs" />
     <Compile Include="DAL\IBacSiDAL.cs" />
+    <Compile Include="DAL\IKhungGioDAL.cs" />
+    <Compile Include="DAL\ILichHenDAL.cs" />
+    <Compile Include="DAL\KhungGioDAL.cs" />
+    <Compile Include="DAL\LichHenDAL.cs" />
     <Compile Include="Entity\BacSi.cs" />
     <Compile Include="Entity\BenhNhan.cs" />
     <Compile Include="Entity\ChuyenKhoa.cs" />
