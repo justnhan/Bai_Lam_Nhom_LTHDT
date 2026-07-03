@@ -1,5 +1,5 @@
 ﻿using Bai_Lam_Nhom_LTHDT.Entity;
-using _Bai_Lam_Nhom_LTHDT.DAL;
+using Bai_Lam_Nhom_LTHDT.DAL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

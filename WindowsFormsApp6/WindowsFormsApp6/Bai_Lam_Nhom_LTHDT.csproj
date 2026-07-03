@@ -5,8 +5,8 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{E3FD6BBA-8DC8-412F-8AE2-1AF93DFE1155}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>WindowsFormsApp6</RootNamespace>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Bai_Lam_Nhom_LTHDT</RootNamespace>
     <AssemblyName>WindowsFormsApp6</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

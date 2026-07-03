@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace _Bai_Lam_Nhom_LTHDT
+namespace Bai_Lam_Nhom_LTHDT
 {
     public partial class Main_DangNhap : Form
     {

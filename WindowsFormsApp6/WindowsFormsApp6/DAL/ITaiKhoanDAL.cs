@@ -1,8 +1,8 @@
-﻿using _Bai_Lam_Nhom_LTHDT.Entity;
+﻿using Bai_Lam_Nhom_LTHDT.Entity;
 using Bai_Lam_Nhom_LTHDT;
 using System.Collections.Generic;
 
-namespace _Bai_Lam_Nhom_LTHDT.DAL
+namespace Bai_Lam_Nhom_LTHDT.DAL
 {
     public interface ITaiKhoanDAL
     {

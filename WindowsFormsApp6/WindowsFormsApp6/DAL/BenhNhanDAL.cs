@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Drawing;
 
-namespace _Bai_Lam_Nhom_LTHDT.DAL
+namespace Bai_Lam_Nhom_LTHDT.DAL
 {
     public class BenhNhanDAL : IBenhNhanDAL
     {

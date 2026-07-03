@@ -1,4 +1,4 @@
-﻿using _Bai_Lam_Nhom_LTHDT.DAL;
+﻿using Bai_Lam_Nhom_LTHDT.DAL;
 using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Bai_Lam_Nhom_LTHDT;
 
 
-namespace WindowsFormsApp6.DAL
+namespace Bai_Lam_Nhom_LTHDT.DAL
 {
     public class LichTrucDAL : ILichTrucDAL
     {

@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Bai_Lam_Nhom_LTHDT.Entity;
 using System.Data.SQLite;
-using _Bai_Lam_Nhom_LTHDT.DAL;
+using Bai_Lam_Nhom_LTHDT.DAL;
 
-namespace WindowsFormsApp6.DAL
+namespace Bai_Lam_Nhom_LTHDT.DAL
 {
     internal class ChuyenKhoaDAL : IChuyenKhoaDAL
     {

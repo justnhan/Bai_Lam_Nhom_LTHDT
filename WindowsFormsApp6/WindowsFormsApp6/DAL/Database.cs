@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _Bai_Lam_Nhom_LTHDT.DAL
+namespace Bai_Lam_Nhom_LTHDT.DAL
 {
     public static class Database
     {

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Windows.Forms;
-using _Bai_Lam_Nhom_LTHDT;
+using Bai_Lam_Nhom_LTHDT;
 
-namespace _Bai_Lam_Nhom_LTHDT.DAL
+namespace Bai_Lam_Nhom_LTHDT.DAL
 {
     public class ThongBaoDAL : IThongBaoDAL
     {

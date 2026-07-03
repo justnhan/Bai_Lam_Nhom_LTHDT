@@ -1,4 +1,4 @@
-﻿namespace _Bai_Lam_Nhom_LTHDT
+﻿namespace Bai_Lam_Nhom_LTHDT
 {
     partial class A_ThongKe
     {
@@ -637,7 +637,7 @@
             // 
             // picLich
             // 
-            this.picLich.Image = global::_Bai_Lam_Nhom_LTHDT.Properties.Resources.tải_xuống;
+            this.picLich.Image = global::Bai_Lam_Nhom_LTHDT.Properties.Resources.tải_xuống;
             this.picLich.Location = new System.Drawing.Point(45, 24);
             this.picLich.Name = "picLich";
             this.picLich.Size = new System.Drawing.Size(113, 96);
@@ -671,7 +671,7 @@
             // 
             // picHuy
             // 
-            this.picHuy.Image = global::_Bai_Lam_Nhom_LTHDT.Properties.Resources.tải_xuống__4_;
+            this.picHuy.Image = global::Bai_Lam_Nhom_LTHDT.Properties.Resources.tải_xuống__4_;
             this.picHuy.Location = new System.Drawing.Point(12, 25);
             this.picHuy.Name = "picHuy";
             this.picHuy.Size = new System.Drawing.Size(113, 96);
@@ -716,7 +716,7 @@
             // 
             // picDangCho
             // 
-            this.picDangCho.Image = global::_Bai_Lam_Nhom_LTHDT.Properties.Resources.tải_xuống__1_;
+            this.picDangCho.Image = global::Bai_Lam_Nhom_LTHDT.Properties.Resources.tải_xuống__1_;
             this.picDangCho.Location = new System.Drawing.Point(8, 24);
             this.picDangCho.Name = "picDangCho";
             this.picDangCho.Size = new System.Drawing.Size(113, 97);
@@ -761,7 +761,7 @@
             // 
             // picDaKham
             // 
-            this.picDaKham.Image = global::_Bai_Lam_Nhom_LTHDT.Properties.Resources.tải_xuống__3_;
+            this.picDaKham.Image = global::Bai_Lam_Nhom_LTHDT.Properties.Resources.tải_xuống__3_;
             this.picDaKham.Location = new System.Drawing.Point(14, 24);
             this.picDaKham.Name = "picDaKham";
             this.picDaKham.Size = new System.Drawing.Size(113, 97);
@@ -831,7 +831,7 @@
             // 
             // pictureBox9
             // 
-            this.pictureBox9.Image = global::_Bai_Lam_Nhom_LTHDT.Properties.Resources.tải_xuống__1_;
+            this.pictureBox9.Image = global::Bai_Lam_Nhom_LTHDT.Properties.Resources.tải_xuống__1_;
             this.pictureBox9.Location = new System.Drawing.Point(20, 18);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(40, 40);
@@ -880,7 +880,7 @@
             // 
             // pictureBox10
             // 
-            this.pictureBox10.Image = global::_Bai_Lam_Nhom_LTHDT.Properties.Resources.tải_xuống1;
+            this.pictureBox10.Image = global::Bai_Lam_Nhom_LTHDT.Properties.Resources.tải_xuống1;
             this.pictureBox10.Location = new System.Drawing.Point(14, 15);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(50, 50);
@@ -926,7 +926,7 @@
             // 
             // pictureBox11
             // 
-            this.pictureBox11.Image = global::_Bai_Lam_Nhom_LTHDT.Properties.Resources.tải_xuống__6_;
+            this.pictureBox11.Image = global::Bai_Lam_Nhom_LTHDT.Properties.Resources.tải_xuống__6_;
             this.pictureBox11.Location = new System.Drawing.Point(20, 18);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(40, 40);
@@ -1740,7 +1740,7 @@
             // picBenhNhan
             // 
             this.picBenhNhan.BackColor = System.Drawing.Color.Transparent;
-            this.picBenhNhan.Image = global::_Bai_Lam_Nhom_LTHDT.Properties.Resources.tải_xuống1;
+            this.picBenhNhan.Image = global::Bai_Lam_Nhom_LTHDT.Properties.Resources.tải_xuống1;
             this.picBenhNhan.Location = new System.Drawing.Point(20, 18);
             this.picBenhNhan.Name = "picBenhNhan";
             this.picBenhNhan.Size = new System.Drawing.Size(48, 48);
@@ -1810,7 +1810,7 @@
             // picLich_BC
             // 
             this.picLich_BC.BackColor = System.Drawing.Color.Transparent;
-            this.picLich_BC.Image = global::_Bai_Lam_Nhom_LTHDT.Properties.Resources.tải_xuống;
+            this.picLich_BC.Image = global::Bai_Lam_Nhom_LTHDT.Properties.Resources.tải_xuống;
             this.picLich_BC.Location = new System.Drawing.Point(20, 18);
             this.picLich_BC.Name = "picLich_BC";
             this.picLich_BC.Size = new System.Drawing.Size(48, 48);
@@ -1857,7 +1857,7 @@
             // picBenhNhan_BC
             // 
             this.picBenhNhan_BC.BackColor = System.Drawing.Color.Transparent;
-            this.picBenhNhan_BC.Image = global::_Bai_Lam_Nhom_LTHDT.Properties.Resources.tải_xuống__5_;
+            this.picBenhNhan_BC.Image = global::Bai_Lam_Nhom_LTHDT.Properties.Resources.tải_xuống__5_;
             this.picBenhNhan_BC.Location = new System.Drawing.Point(20, 18);
             this.picBenhNhan_BC.Name = "picBenhNhan_BC";
             this.picBenhNhan_BC.Size = new System.Drawing.Size(48, 48);

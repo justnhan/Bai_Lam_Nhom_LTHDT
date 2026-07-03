@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using _Bai_Lam_Nhom_LTHDT;
+using Bai_Lam_Nhom_LTHDT;
 
-namespace _Bai_Lam_Nhom_LTHDT.DAL
+namespace Bai_Lam_Nhom_LTHDT.DAL
 {
     public interface IThongBaoDAL
     {

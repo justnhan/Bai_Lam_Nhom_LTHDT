@@ -1,11 +1,11 @@
-﻿using _Bai_Lam_Nhom_LTHDT.Entity;
+﻿using Bai_Lam_Nhom_LTHDT.Entity;
 using Bai_Lam_Nhom_LTHDT;
 using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Windows.Forms;
 
-namespace _Bai_Lam_Nhom_LTHDT.DAL
+namespace Bai_Lam_Nhom_LTHDT.DAL
 {
     public class TaiKhoanDAL : ITaiKhoanDAL
     {
