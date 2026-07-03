@@ -33,7 +33,6 @@
             this.btnDangXuat = new System.Windows.Forms.Button();
             this.btnDsBenhNhan = new System.Windows.Forms.Button();
             this.btnDatLichHen = new System.Windows.Forms.Button();
-            this.btnTiepNhan = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnHuyLichHen = new System.Windows.Forms.Button();
@@ -77,11 +76,10 @@
             // 
             // panelMenu
             // 
-            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(101)))), ((int)(((byte)(192)))));
+            this.panelMenu.BackColor = System.Drawing.Color.RoyalBlue;
             this.panelMenu.Controls.Add(this.btnDangXuat);
             this.panelMenu.Controls.Add(this.btnDsBenhNhan);
             this.panelMenu.Controls.Add(this.btnDatLichHen);
-            this.panelMenu.Controls.Add(this.btnTiepNhan);
             this.panelMenu.Controls.Add(this.label1);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
@@ -92,53 +90,44 @@
             // 
             // btnDangXuat
             // 
-            this.btnDangXuat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(57)))), ((int)(((byte)(53)))));
+            this.btnDangXuat.BackColor = System.Drawing.Color.Aquamarine;
             this.btnDangXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDangXuat.Location = new System.Drawing.Point(30, 641);
+            this.btnDangXuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDangXuat.Location = new System.Drawing.Point(25, 641);
             this.btnDangXuat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDangXuat.Name = "btnDangXuat";
-            this.btnDangXuat.Size = new System.Drawing.Size(270, 78);
+            this.btnDangXuat.Size = new System.Drawing.Size(283, 78);
             this.btnDangXuat.TabIndex = 4;
-            this.btnDangXuat.Text = "Đăng xuất";
+            this.btnDangXuat.Text = "➡️Đăng xuất";
             this.btnDangXuat.UseVisualStyleBackColor = false;
             // 
             // btnDsBenhNhan
             // 
             this.btnDsBenhNhan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnDsBenhNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDsBenhNhan.Location = new System.Drawing.Point(30, 270);
+            this.btnDsBenhNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDsBenhNhan.Location = new System.Drawing.Point(25, 212);
             this.btnDsBenhNhan.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDsBenhNhan.Name = "btnDsBenhNhan";
-            this.btnDsBenhNhan.Size = new System.Drawing.Size(270, 78);
+            this.btnDsBenhNhan.Size = new System.Drawing.Size(283, 78);
             this.btnDsBenhNhan.TabIndex = 3;
-            this.btnDsBenhNhan.Text = "Danh sách bệnh nhân";
+            this.btnDsBenhNhan.Text = "👥Danh sách bệnh nhân";
             this.btnDsBenhNhan.UseVisualStyleBackColor = false;
             this.btnDsBenhNhan.Click += new System.EventHandler(this.btnDsBenhNhan_Click);
             // 
             // btnDatLichHen
             // 
-            this.btnDatLichHen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(136)))), ((int)(((byte)(229)))));
+            this.btnDatLichHen.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnDatLichHen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDatLichHen.Location = new System.Drawing.Point(28, 183);
+            this.btnDatLichHen.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDatLichHen.Location = new System.Drawing.Point(25, 102);
             this.btnDatLichHen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDatLichHen.Name = "btnDatLichHen";
-            this.btnDatLichHen.Size = new System.Drawing.Size(270, 78);
+            this.btnDatLichHen.Size = new System.Drawing.Size(283, 78);
             this.btnDatLichHen.TabIndex = 2;
-            this.btnDatLichHen.Text = "Đặt lịch hẹn";
+            this.btnDatLichHen.Text = "📅Đặt lịch hẹn";
             this.btnDatLichHen.UseVisualStyleBackColor = false;
             this.btnDatLichHen.Click += new System.EventHandler(this.btnDatLichHen_Click);
-            // 
-            // btnTiepNhan
-            // 
-            this.btnTiepNhan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(160)))), ((int)(((byte)(71)))));
-            this.btnTiepNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTiepNhan.Location = new System.Drawing.Point(28, 95);
-            this.btnTiepNhan.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnTiepNhan.Name = "btnTiepNhan";
-            this.btnTiepNhan.Size = new System.Drawing.Size(270, 78);
-            this.btnTiepNhan.TabIndex = 1;
-            this.btnTiepNhan.Text = "Tiếp Nhận";
-            this.btnTiepNhan.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -170,38 +159,41 @@
             // 
             // btnHuyLichHen
             // 
-            this.btnHuyLichHen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            this.btnHuyLichHen.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.btnHuyLichHen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHuyLichHen.Location = new System.Drawing.Point(807, 655);
+            this.btnHuyLichHen.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuyLichHen.Location = new System.Drawing.Point(802, 655);
             this.btnHuyLichHen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnHuyLichHen.Name = "btnHuyLichHen";
-            this.btnHuyLichHen.Size = new System.Drawing.Size(270, 78);
+            this.btnHuyLichHen.Size = new System.Drawing.Size(283, 78);
             this.btnHuyLichHen.TabIndex = 5;
-            this.btnHuyLichHen.Text = "Hủy lịch hẹn";
+            this.btnHuyLichHen.Text = "❌Hủy lịch hẹn";
             this.btnHuyLichHen.UseVisualStyleBackColor = false;
             // 
             // btnDoiLichHen
             // 
             this.btnDoiLichHen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(193)))));
             this.btnDoiLichHen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDoiLichHen.Location = new System.Drawing.Point(447, 655);
+            this.btnDoiLichHen.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDoiLichHen.Location = new System.Drawing.Point(442, 655);
             this.btnDoiLichHen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDoiLichHen.Name = "btnDoiLichHen";
-            this.btnDoiLichHen.Size = new System.Drawing.Size(270, 78);
+            this.btnDoiLichHen.Size = new System.Drawing.Size(283, 78);
             this.btnDoiLichHen.TabIndex = 6;
-            this.btnDoiLichHen.Text = "Đổi lịch hẹn";
+            this.btnDoiLichHen.Text = "🗓️🔁Đổi lịch hẹn";
             this.btnDoiLichHen.UseVisualStyleBackColor = false;
             // 
             // btnCapNhatTT
             // 
-            this.btnCapNhatTT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(140)))), ((int)(((byte)(0)))));
+            this.btnCapNhatTT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnCapNhatTT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCapNhatTT.Location = new System.Drawing.Point(74, 655);
+            this.btnCapNhatTT.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCapNhatTT.Location = new System.Drawing.Point(69, 655);
             this.btnCapNhatTT.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCapNhatTT.Name = "btnCapNhatTT";
-            this.btnCapNhatTT.Size = new System.Drawing.Size(270, 78);
+            this.btnCapNhatTT.Size = new System.Drawing.Size(283, 78);
             this.btnCapNhatTT.TabIndex = 7;
-            this.btnCapNhatTT.Text = "Cập nhật trạng thái";
+            this.btnCapNhatTT.Text = "🔄Cập nhật trạng thái";
             this.btnCapNhatTT.UseVisualStyleBackColor = false;
             // 
             // groupBox2
@@ -476,7 +468,7 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "LỊCH HẸN HÔM NAY";
             // 
-            // FrmTiepNhan
+            // T_TrangChuTiepNhan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -487,7 +479,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "FrmTiepNhan";
+            this.Name = "T_TrangChuTiepNhan";
             this.Text = "Quản lý lịch hẹn khám bệnh - Tiếp tân ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -511,7 +503,6 @@
         private System.Windows.Forms.Button btnDangXuat;
         private System.Windows.Forms.Button btnDsBenhNhan;
         private System.Windows.Forms.Button btnDatLichHen;
-        private System.Windows.Forms.Button btnTiepNhan;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
