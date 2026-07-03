@@ -13,7 +13,7 @@ namespace Bai_Lam_Nhom_LTHDT.DAL
 
         public static SQLiteConnection GetConnection()
         {
-            return new SQLiteConnection(CONN);
+            return new SQLiteConnection(CONN);  
         }
     }
 }

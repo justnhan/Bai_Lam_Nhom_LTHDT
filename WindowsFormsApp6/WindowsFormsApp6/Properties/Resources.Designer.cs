@@ -63,6 +63,9 @@ namespace Bai_Lam_Nhom_LTHDT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _08d6a61e_20b9_4d66_ad7c_c6c5e5744253 {
+            get {
+                object obj = ResourceManager.GetObject("08d6a61e-20b9-4d66-ad7c-c6c5e5744253", resourceCulture);
         internal static System.Drawing.Bitmap ChatGPT_Image_21_02_13_3_thg_7__2026 {
             get {
                 object obj = ResourceManager.GetObject("ChatGPT Image 21_02_13 3 thg 7, 2026", resourceCulture);
@@ -73,6 +76,9 @@ namespace Bai_Lam_Nhom_LTHDT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _381870a2_29a4_4306_8e04_84b9ebc5ed5e {
+            get {
+                object obj = ResourceManager.GetObject("381870a2-29a4-4306-8e04-84b9ebc5ed5e", resourceCulture);
         internal static System.Drawing.Bitmap ChatGPT_Image_21_02_13_3_thg_7__20261 {
             get {
                 object obj = ResourceManager.GetObject("ChatGPT Image 21_02_13 3 thg 7, 20261", resourceCulture);
@@ -83,6 +89,39 @@ namespace Bai_Lam_Nhom_LTHDT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _3ae66226_b6cb_47fb_8d2f_7c404b9a40c2 {
+            get {
+                object obj = ResourceManager.GetObject("3ae66226-b6cb-47fb-8d2f-7c404b9a40c2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _4fe92996_20dd_4e9c_8518_3d80af06c5fa {
+            get {
+                object obj = ResourceManager.GetObject("4fe92996-20dd-4e9c-8518-3d80af06c5fa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _6ba93812_f032_44dd_a854_cb65ecdeabc7 {
+            get {
+                object obj = ResourceManager.GetObject("6ba93812-f032-44dd-a854-cb65ecdeabc7", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap aedb1e12_791b_48a5_9036_62193f38c946 {
+            get {
+                object obj = ResourceManager.GetObject("aedb1e12-791b-48a5-9036-62193f38c946", resourceCulture);
         internal static System.Drawing.Bitmap ChatGPT_Image_21_49_05_3_thg_7__2026 {
             get {
                 object obj = ResourceManager.GetObject("ChatGPT Image 21_49_05 3 thg 7, 2026", resourceCulture);
@@ -96,6 +135,26 @@ namespace Bai_Lam_Nhom_LTHDT.Properties {
         internal static System.Drawing.Bitmap chiakhoa {
             get {
                 object obj = ResourceManager.GetObject("chiakhoa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap f17c3c57_9789_47f0_8b64_a3c07f318c87 {
+            get {
+                object obj = ResourceManager.GetObject("f17c3c57-9789-47f0-8b64-a3c07f318c87", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo {
+            get {
+                object obj = ResourceManager.GetObject("logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -176,6 +235,16 @@ namespace Bai_Lam_Nhom_LTHDT.Properties {
         internal static System.Drawing.Bitmap tải_xuống1 {
             get {
                 object obj = ResourceManager.GetObject("tải xuống1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user {
+            get {
+                object obj = ResourceManager.GetObject("user", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
