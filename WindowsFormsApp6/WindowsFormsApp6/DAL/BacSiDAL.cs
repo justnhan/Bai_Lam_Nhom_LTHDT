@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace _Bai_Lam_Nhom_LTHDT.DAL
+namespace Bai_Lam_Nhom_LTHDT.DAL
 {
     public class BacSiDAL : IBacSiDAL
     {

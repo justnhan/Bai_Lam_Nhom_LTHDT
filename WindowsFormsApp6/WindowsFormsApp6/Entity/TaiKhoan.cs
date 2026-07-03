@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _Bai_Lam_Nhom_LTHDT.Entity
+namespace Bai_Lam_Nhom_LTHDT.Entity
 {
     public class TaiKhoan
     {

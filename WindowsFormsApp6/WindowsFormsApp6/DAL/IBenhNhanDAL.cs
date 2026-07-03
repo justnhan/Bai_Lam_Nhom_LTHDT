@@ -2,7 +2,7 @@
 using Bai_Lam_Nhom_LTHDT.Entity;
 using System.Collections.Generic;
 
-namespace _Bai_Lam_Nhom_LTHDT.DAL
+namespace Bai_Lam_Nhom_LTHDT.DAL
 {
     public interface IBenhNhanDAL
     {
