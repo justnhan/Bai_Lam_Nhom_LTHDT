@@ -27,14 +27,24 @@ namespace Bai_Lam_Nhom_LTHDT
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
             if (txtTaiKhoan.Text == "admin"
-        && txtMatKhau.Text == "123")
+    && txtMatKhau.Text == "123")
             {
                 this.Hide();
-                A_ThongKe f = new A_ThongKe();
+
+                AdminHomeForm f = new AdminHomeForm();
                 f.ShowDialog();
+
                 this.Close();
+            }
+            else if (txtTaiKhoan.Text == "truongkhoa"
+         && txtMatKhau.Text == "111")
+            {
+                this.Hide();
 
+                AdminHomeForm f = new AdminHomeForm();
+                f.ShowDialog();
 
+                this.Close();
             }
             else if (txtTaiKhoan.Text == "bacsi" && txtMatKhau.Text == "456")
             {

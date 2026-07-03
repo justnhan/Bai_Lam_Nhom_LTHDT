@@ -67,5 +67,35 @@ namespace Bai_Lam_Nhom_LTHDT
         {
 
         }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtLyDoKham_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnKinhLup_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
