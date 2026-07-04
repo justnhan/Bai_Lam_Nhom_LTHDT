@@ -242,5 +242,21 @@ namespace Bai_Lam_Nhom_LTHDT.DAL
         {
             return error;
         }
+
+        public TaiKhoan Login(string tenDangNhap, string matKhau)
+        {
+            TaiKhoan tk = GetByTenDangNhap(tenDangNhap);
+
+            if (tk == null)
+                return null;
+
+            if (tk.MatKhau != matKhau)
+                return null;
+
+            if (tk.TrangThai != "Hoat dong")
+                return null;
+
+            return tk;
+        }
     }
 }

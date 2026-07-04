@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
+using System.Linq;
 
 namespace Bai_Lam_Nhom_LTHDT.DAL
 {
@@ -42,7 +43,6 @@ namespace Bai_Lam_Nhom_LTHDT.DAL
                 con.Close();
             }
         }
-
 
 
         public List<LichHen> GetAllLichHen()
@@ -88,9 +88,105 @@ namespace Bai_Lam_Nhom_LTHDT.DAL
             return list;
         }
 
+        public List<LichHen> SearchByMaChuyenKhoa(string maChuyenKhoa)
+        {
+            error = "";
+            List<LichHen> list = new List<LichHen>();
 
+            try
+            {
+                con.Open();
 
+                string sql = @"
+        SELECT LH.*
+        FROM LICHHEN LH
+        JOIN KHUNGGIO KG ON LH.MAGIO = KG.MAGIO
+        JOIN LICHTRUC LT ON KG.MALICH = LT.MALICH
+        JOIN BACSI BS ON LT.MABS = BS.MABS
+        WHERE BS.MACHUYENKHOA = @MaChuyenKhoa
+        ORDER BY LH.MAHEN";
 
+                using (SQLiteCommand cmd = new SQLiteCommand(sql, con))
+                {
+                    cmd.Parameters.AddWithValue("@MaChuyenKhoa", maChuyenKhoa);
+
+                    using (SQLiteDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            list.Add(new LichHen(
+                                reader["MAHEN"].ToString(),
+                                reader["MABN"].ToString(),
+                                reader["MAGIO"].ToString(),
+                                Convert.ToDateTime(reader["NGAYDAT"]),
+                                reader["TRANGTHAI"].ToString(),
+                                reader["LYDOKHAM"].ToString(),
+                                reader["GHICHU"].ToString()
+                            ));
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return list;
+        }
+        public List<LichHen> SearchByMaBacSi(string maBacSi)
+        {
+            error = "";
+            List<LichHen> list = new List<LichHen>();
+
+            try
+            {
+                con.Open();
+
+                string sql = @"
+        SELECT LH.*
+        FROM LICHHEN LH
+        JOIN KHUNGGIO KG ON LH.MAGIO = KG.MAGIO
+        JOIN LICHTRUC LT ON KG.MALICH = LT.MALICH
+        WHERE LT.MABS = @MaBacSi
+        ORDER BY LH.MAHEN";
+
+                using (SQLiteCommand cmd = new SQLiteCommand(sql, con))
+                {
+                    cmd.Parameters.AddWithValue("@MaBacSi", maBacSi);
+
+                    using (SQLiteDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            list.Add(new LichHen(
+                                reader["MAHEN"].ToString(),
+                                reader["MABN"].ToString(),
+                                reader["MAGIO"].ToString(),
+                                Convert.ToDateTime(reader["NGAYDAT"]),
+                                reader["TRANGTHAI"].ToString(),
+                                reader["LYDOKHAM"].ToString(),
+                                reader["GHICHU"].ToString()
+                            ));
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return list;
+        }
         public LichHen GetByMaHen(string maHen)
         {
             error = "";
@@ -136,9 +232,43 @@ namespace Bai_Lam_Nhom_LTHDT.DAL
             return lh;
         }
 
+        public string GetHoTenBSByMaHen(string maHen)
+        {
+            error = "";
 
+            try
+            {
+                con.Open();
 
+                string sql = @"
+            SELECT BS.HOTEN
+            FROM LICHHEN LH
+            JOIN KHUNGGIO KG ON LH.MAGIO = KG.MAGIO
+            JOIN LICHTRUC LT ON KG.MALICH = LT.MALICH
+            JOIN BACSI BS ON LT.MABS = BS.MABS
+            WHERE LH.MAHEN = @MaHen";
 
+                using (SQLiteCommand cmd = new SQLiteCommand(sql, con))
+                {
+                    cmd.Parameters.AddWithValue("@MaHen", maHen);
+
+                    object result = cmd.ExecuteScalar();
+
+                    return result != null ? result.ToString() : "";
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+                return "";
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        
 
 
         public bool Add(LichHen lh)
@@ -254,8 +384,154 @@ namespace Bai_Lam_Nhom_LTHDT.DAL
             }
         }
 
+        public List<ThongTinLichHen> GetDanhSachThongKe()
+        {
+            List<ThongTinLichHen> list = new List<ThongTinLichHen>();
 
+            // Lấy dữ liệu từ các bảng
+            List<LichHen> dsHen = GetAllLichHen();
 
+            BenhNhanDAL benhNhanDAL = new BenhNhanDAL();
+            KhungGioDAL khungGioDAL = new KhungGioDAL();
+            LichTrucDAL lichTrucDAL = new LichTrucDAL();
+            BacSiDAL bacSiDAL = new BacSiDAL();
+
+            List<BenhNhan> dsBN = benhNhanDAL.GetAllBenhNhan();
+            List<KhungGio> dsGio = khungGioDAL.GetAllKhungGio();
+            List<LichTruc> dsLich = lichTrucDAL.GetAllLichTruc();
+            List<BacSi> dsBS = bacSiDAL.GetAllBacSi();
+
+            foreach (LichHen lh in dsHen)
+            {
+                // Bệnh nhân
+                BenhNhan bn = dsBN.FirstOrDefault(x => x.MaBN == lh.MaBN);
+
+                // Khung giờ
+                KhungGio kg = dsGio.FirstOrDefault(x => x.MaGio == lh.MaGio);
+
+                // Lịch trực
+                LichTruc lt = null;
+                if (kg != null)
+                {
+                    lt = dsLich.FirstOrDefault(x => x.MaLich == kg.MaLich);
+                }
+
+                // Bác sĩ
+                BacSi bs = null;
+                if (lt != null)
+                {
+                    bs = dsBS.FirstOrDefault(x => x.MaBS == lt.MaBS);
+                }
+
+                list.Add(new ThongTinLichHen()
+                {
+                    MaHen = lh.MaHen,
+                    MaBN = lh.MaBN,
+                    TenBenhNhan = bn != null ? bn.HoTen : "",
+                    GioHen = kg != null ? kg.GioBatDau + " - " + kg.GioKetThuc : "",
+                    TenBacSi = bs != null ? bs.HoTen : "",
+                    TrangThai = lh.TrangThai
+                });
+            }
+
+            return list;
+        }
+        public Dictionary<string, int> GetThongKeTheoThu()
+        {
+            Dictionary<string, int> data = new Dictionary<string, int>();
+
+            List<LichHen> ds = GetAllLichHen();
+
+            foreach (LichHen lh in ds)
+            {
+                string thu = "";
+
+                switch (lh.NgayDat.DayOfWeek)
+                {
+                    case DayOfWeek.Monday: thu = "T2"; break;
+                    case DayOfWeek.Tuesday: thu = "T3"; break;
+                    case DayOfWeek.Wednesday: thu = "T4"; break;
+                    case DayOfWeek.Thursday: thu = "T5"; break;
+                    case DayOfWeek.Friday: thu = "T6"; break;
+                    case DayOfWeek.Saturday: thu = "T7"; break;
+                    case DayOfWeek.Sunday: thu = "CN"; break;
+                }
+
+                if (!data.ContainsKey(thu))
+                    data.Add(thu, 0);
+
+                data[thu]++;
+            }
+
+            return data;
+        }
+        public List<CanhBao> GetDanhSachCanhBao()
+        {
+            List<CanhBao> list = new List<CanhBao>();
+
+            List<ThongTinLichHen> ds = GetDanhSachThongKe();
+
+            int stt = 1;
+
+            foreach (ThongTinLichHen item in ds)
+            {
+                if (item.TrangThai == "Cho kham")
+                {
+                    list.Add(new CanhBao()
+                    {
+                        STT = stt++,
+
+                        LoaiCanhBao = "Lịch hẹn",
+
+                        NoiDung = $"BN {item.TenBenhNhan} đang chờ khám với BS {item.TenBacSi}",
+
+                        MucDo = "Cao",
+
+                        ThoiGian = item.GioHen
+                    });
+                }
+            }
+
+            return list;
+        }
+        public int GetTongQuaGio()
+        {
+            return GetAllLichHen()
+                .Count(x => x.TrangThai == "Qua gio");
+        }
+        public int GetTongCanhBaoKhan()
+        {
+            return GetAllLichHen()
+                    .Count(x => x.TrangThai == "Cho kham");
+        }
+        public int TongCanhBao()
+        {
+            int dem = 0;
+
+            foreach (LichHen lh in GetAllLichHen())
+            {
+                if (lh.TrangThai == "Cho kham")
+                    dem++;
+            }
+
+            return dem;
+        }
+        public Dictionary<string, int> GetThongKeTrangThai()
+        {
+            Dictionary<string, int> data = new Dictionary<string, int>();
+
+            List<LichHen> ds = GetAllLichHen();
+
+            foreach (LichHen lh in ds)
+            {
+                if (!data.ContainsKey(lh.TrangThai))
+                    data[lh.TrangThai] = 0;
+
+                data[lh.TrangThai]++;
+            }
+
+            return data;
+        }
 
 
         public string GetError()

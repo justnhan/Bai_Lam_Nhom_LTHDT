@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Bai_Lam_Nhom_LTHDT.DAL
 {
-    public interface IBenhNhanDAL
+    public interface    IBenhNhanDAL
     {
         List<BenhNhan> GetAllBenhNhan();
         BenhNhan GetBySDT(string sdt);

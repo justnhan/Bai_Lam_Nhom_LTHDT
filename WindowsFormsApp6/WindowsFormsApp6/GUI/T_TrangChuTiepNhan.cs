@@ -14,11 +14,14 @@ namespace Bai_Lam_Nhom_LTHDT
 {
     public partial class T_TrangChuTiepNhan : Form
     {
-        private LichHenDAL lichHenDAL = new LichHenDAL();
+        LichHenDAL lichHenDAL = new LichHenDAL();
+        BenhNhanDAL benhNhanDAL = new BenhNhanDAL();
+        KhungGioDAL khungGioDAL = new KhungGioDAL();
+
+
         public T_TrangChuTiepNhan()
         {
             InitializeComponent();
-
             MauDGV(dgvLichHen);
             RefereshData();
         }
@@ -42,6 +45,10 @@ namespace Bai_Lam_Nhom_LTHDT
 
             dgvLichHen.DataSource = dt;
         }
+
+        
+
+
         private void MauDGV(DataGridView dgv)
         {
             dgv.EnableHeadersVisualStyles = false;
@@ -91,6 +98,37 @@ namespace Bai_Lam_Nhom_LTHDT
             T_DanhSachBenhNhan f2 = new T_DanhSachBenhNhan();
             f2.ShowDialog();
 
+        }
+
+        private void dgvLichHen_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            string maHen = dgvLichHen.Rows[e.RowIndex].Cells["Mã hẹn"].Value.ToString();
+
+            txtMaHen.Text = maHen;
+
+            // Lấy đối tượng Lịch hẹn
+            LichHen lh = lichHenDAL.GetByMaHen(maHen);
+
+            if (lh == null) return;
+
+            // ===== Thông tin lịch hẹn =====
+            txtGhiChu.Text = lh.GhiChu;
+            dtpNgayHen.Value = lh.NgayDat;
+            cboTrangThai.SelectedItem = lh.TrangThai;
+
+            // Nếu giờ hẹn lưu dưới dạng MaGio thì đổi sang giờ
+            txtGioHen.Text = khungGioDAL.GetByMaGio(lh.MaGio).GioBatDau;
+
+            // ===== Thông tin bệnh nhân =====
+            txtHoVaTen.Text = benhNhanDAL.GetHoTenByMaHen(maHen);
+            txtSDT.Text = benhNhanDAL.GetSDTByMaHen(maHen);
+            dtpNgaySinh.Value = Convert.ToDateTime(benhNhanDAL.GetNgaySinhByMaHen(maHen));
+            txtDiaChi.Text = benhNhanDAL.GetDiaChiByMaHen(maHen);
+
+            // ===== Thông tin bác sĩ =====
+            txtBacSi.Text = lichHenDAL.GetHoTenBSByMaHen(maHen);
         }
     }
 }
