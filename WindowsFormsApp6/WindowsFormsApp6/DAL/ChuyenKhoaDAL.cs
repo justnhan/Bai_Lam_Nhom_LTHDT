@@ -115,7 +115,54 @@ namespace Bai_Lam_Nhom_LTHDT.DAL
             }
             return ck;
         }
-
+        public int GetCountBacSiByMaCK(string maCK)
+        {
+            error = "";
+            int count = 0;
+            try
+            {
+                con.Open();
+                string sql = "SELECT COUNT(*) FROM BacSi WHERE MaChuyenKhoa = @maCK";
+                using (SQLiteCommand cmd = new SQLiteCommand(sql, con))
+                {
+                    cmd.Parameters.AddWithValue("@maCK", maCK);
+                    count = Convert.ToInt32(cmd.ExecuteScalar());
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+            }
+            finally
+            {
+                con.Close();
+            }
+            return count;
+        }
+        public int GetCountPhongKhamByMaCK(string maCK)
+        {
+            error = "";
+            int count = 0;
+            try
+            {
+                con.Open();
+                string sql = "SELECT COUNT(*) FROM PhongKham WHERE MaChuyenKhoa = @maCK";
+                using (SQLiteCommand cmd = new SQLiteCommand(sql, con))
+                {
+                    cmd.Parameters.AddWithValue("@maCK", maCK);
+                    count = Convert.ToInt32(cmd.ExecuteScalar());
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+            }
+            finally
+            {
+                con.Close();
+            }
+            return count;
+        }
         public bool Add(ChuyenKhoa chuyenKhoa)
         {
             error = "";

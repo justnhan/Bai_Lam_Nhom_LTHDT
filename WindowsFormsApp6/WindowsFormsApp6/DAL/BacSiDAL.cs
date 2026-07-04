@@ -21,7 +21,48 @@ namespace Bai_Lam_Nhom_LTHDT.DAL
             con = Database.GetConnection();
         }
 
+        public string MaBSGenerator()
+        {
+            error = "";
+            try
+            {
+                con.Open();
 
+                string sql = @"
+                        SELECT MaBS FROM BacSi
+                        ORDER BY MaBS DESC
+                        LIMIT 1";
+
+                using (SQLiteCommand cmd = new SQLiteCommand(sql, con))
+                {
+                    object result = cmd.ExecuteScalar();
+
+                    // Nếu chưa có bác sĩ nào
+                    if (result == null || result == DBNull.Value)
+                    {
+                        return "BS001";
+                    }
+
+                    string maCuoi = result.ToString();
+
+                    int so = int.Parse(maCuoi.Substring(2));
+
+                    so++;
+
+                    return $"BS{so:D3}";
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+
+            }
+            finally
+            {
+                con.Close();
+            }
+            return error;
+        }
         // Các hàm validate kiểm tra dữ liệu tránh lỗi database
         public bool ExistsMaBS(string maBS)
         {
@@ -141,7 +182,7 @@ namespace Bai_Lam_Nhom_LTHDT.DAL
         }
         
         
-        //CÁC HÀM CRUD CƠ BẢN.
+        //CÁC HÀM CƠ BẢN.
         
         public List<BacSi> GetAllBacSi()
         {
@@ -231,7 +272,138 @@ namespace Bai_Lam_Nhom_LTHDT.DAL
             return bs;
         }
 
-        
+        public List<BacSi> SearchByHoTen(string hoTen)
+        {
+            List<BacSi> list = new List<BacSi>();
+            error = "";
+
+            try
+            {
+                con.Open();
+
+                string sql = "SELECT * FROM BacSi WHERE HoTen LIKE @HoTen ORDER BY MaBS";
+
+                using (SQLiteCommand cmd = new SQLiteCommand(sql, con))
+                {
+                    cmd.Parameters.AddWithValue("@HoTen", "%" + hoTen + "%");
+
+                    using (SQLiteDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            BacSi bs = new BacSi(
+                                reader["MaBS"].ToString(),
+                                reader["HoTen"].ToString(),
+                                reader["GioiTinh"].ToString(),
+                                reader["Sdt"].ToString(),
+                                reader["Email"].ToString(),
+                                reader["MaChuyenKhoa"].ToString(),
+                                Convert.ToDateTime(reader["NgaySinh"])
+                            );
+
+                            list.Add(bs);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return list;
+        }
+
+        public List<BacSi> SearchByMaChuyenKhoa(string maChuyenKhoa)
+        {
+            List<BacSi> list = new List<BacSi>();
+            error = "";
+            try
+            {
+                con.Open();
+                string sql = "SELECT * FROM BacSi WHERE MaChuyenKhoa = @MaChuyenKhoa ORDER BY MaBS";
+                using (SQLiteCommand cmd = new SQLiteCommand(sql, con))
+                {
+                    cmd.Parameters.AddWithValue("@MaChuyenKhoa", maChuyenKhoa);
+                    using (SQLiteDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            BacSi bs = new BacSi(
+                                reader["MaBS"].ToString(),
+                                reader["HoTen"].ToString(),
+                                reader["GioiTinh"].ToString(),
+                                reader["Sdt"].ToString(),
+                                reader["Email"].ToString(),
+                                reader["MaChuyenKhoa"].ToString(),
+                                Convert.ToDateTime(reader["NgaySinh"])
+                            );
+                            list.Add(bs);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+            }
+            finally
+            {
+                con.Close();
+            }
+            return list;
+        }
+        public BacSi GetBySdt(string sdt)
+        {
+            BacSi bs = null;
+            error = "";
+
+            try
+            {
+                con.Open();
+
+                string sql = "SELECT * FROM BacSi WHERE Sdt = @Sdt";
+
+                using (SQLiteCommand cmd = new SQLiteCommand(sql, con))
+                {
+                    cmd.Parameters.AddWithValue("@Sdt", sdt);
+
+                    using (SQLiteDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            bs = new BacSi(
+                                reader["MaBS"].ToString(),
+                                reader["HoTen"].ToString(),
+                                reader["GioiTinh"].ToString(),
+                                reader["Sdt"].ToString(),
+                                reader["Email"].ToString(),
+                                reader["MaChuyenKhoa"].ToString(),
+                                Convert.ToDateTime(reader["NgaySinh"])
+                            );
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return bs;
+        }
+
+
+
+        //CÁC HÀM CRUD
         public bool Add(BacSi bacSi)
         {
             error = "";

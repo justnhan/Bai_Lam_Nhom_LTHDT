@@ -35,5 +35,27 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
         {
             this.ActiveControl = btnMainDangNhap;
         }
+
+        private void btnMainDangNhap_Click(object sender, EventArgs e)
+        {
+            string chon = cboNhanVat.SelectedItem.ToString();
+            if (chon == "Tiếp tân")
+            {
+                // Handle the case when "Tiếp tân" is selected
+            }
+            if (chon == "Bác sĩ trưởng")
+            {
+                // Handle the case when "Bác sĩ" is selected
+            }
+            if (chon == "Điều phối viên")
+            {
+                // Handle the case when "Điều phối" is selected
+            }
+            if (chon == "Quản lý")
+            {
+                // Handle the case when "Quản trị" is selected
+            }
+        }
     }
+    
 }
