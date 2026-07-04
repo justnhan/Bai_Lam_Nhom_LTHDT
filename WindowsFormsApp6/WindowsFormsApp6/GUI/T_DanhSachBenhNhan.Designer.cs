@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(T_DanhSachBenhNhan));
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnLoc = new System.Windows.Forms.Button();
             this.cboLoai = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnKinhLup = new System.Windows.Forms.Button();
@@ -39,15 +38,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvBenhNhan = new System.Windows.Forms.DataGridView();
-            this.colSTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaBN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colHoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colGioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNgayDangKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colGhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dtpNgayDangKy = new System.Windows.Forms.DateTimePicker();
             this.txtGhiChu = new System.Windows.Forms.TextBox();
@@ -73,7 +63,6 @@
             this.btnThemMoi = new System.Windows.Forms.Button();
             this.btnXoaBenhNhan = new System.Windows.Forms.Button();
             this.btnSuaThongTin = new System.Windows.Forms.Button();
-            this.btnDong = new System.Windows.Forms.Button();
             this.btnInDanhSach = new System.Windows.Forms.Button();
             this.btnXuatExcel = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
@@ -97,7 +86,6 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(242)))), ((int)(((byte)(253)))));
-            this.groupBox1.Controls.Add(this.btnLoc);
             this.groupBox1.Controls.Add(this.cboLoai);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.btnKinhLup);
@@ -112,25 +100,9 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "TÌM KIẾM - LỌC";
             // 
-            // btnLoc
-            // 
-            this.btnLoc.BackColor = System.Drawing.Color.Turquoise;
-            this.btnLoc.Location = new System.Drawing.Point(1332, 36);
-            this.btnLoc.Margin = new System.Windows.Forms.Padding(4);
-            this.btnLoc.Name = "btnLoc";
-            this.btnLoc.Size = new System.Drawing.Size(95, 36);
-            this.btnLoc.TabIndex = 6;
-            this.btnLoc.Text = "🔽Lọc";
-            this.btnLoc.UseVisualStyleBackColor = false;
-            this.btnLoc.Click += new System.EventHandler(this.button2_Click);
-            // 
             // cboLoai
             // 
             this.cboLoai.FormattingEnabled = true;
-            this.cboLoai.Items.AddRange(new object[] {
-            "Tất cả",
-            "Nam",
-            "Nữ"});
             this.cboLoai.Location = new System.Drawing.Point(443, 43);
             this.cboLoai.Margin = new System.Windows.Forms.Padding(4);
             this.cboLoai.Name = "cboLoai";
@@ -150,14 +122,15 @@
             // 
             // btnKinhLup
             // 
-            this.btnKinhLup.Location = new System.Drawing.Point(229, 43);
+            this.btnKinhLup.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKinhLup.Location = new System.Drawing.Point(229, 35);
             this.btnKinhLup.Margin = new System.Windows.Forms.Padding(4);
             this.btnKinhLup.Name = "btnKinhLup";
-            this.btnKinhLup.Size = new System.Drawing.Size(41, 36);
+            this.btnKinhLup.Size = new System.Drawing.Size(67, 47);
             this.btnKinhLup.TabIndex = 2;
             this.btnKinhLup.Text = "🔍";
             this.btnKinhLup.UseVisualStyleBackColor = true;
-            this.btnKinhLup.Click += new System.EventHandler(this.button1_Click);
+            this.btnKinhLup.Click += new System.EventHandler(this.btnKinhLup_Click);
             // 
             // txtTuKhoa
             // 
@@ -194,16 +167,6 @@
             // 
             this.dgvBenhNhan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBenhNhan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBenhNhan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colSTT,
-            this.colMaBN,
-            this.colHoTen,
-            this.colGioiTinh,
-            this.colNgaySinh,
-            this.colSDT,
-            this.colDiaChi,
-            this.colNgayDangKy,
-            this.colGhiChu});
             this.dgvBenhNhan.Location = new System.Drawing.Point(14, 35);
             this.dgvBenhNhan.Margin = new System.Windows.Forms.Padding(4);
             this.dgvBenhNhan.Name = "dgvBenhNhan";
@@ -212,60 +175,7 @@
             this.dgvBenhNhan.RowTemplate.Height = 24;
             this.dgvBenhNhan.Size = new System.Drawing.Size(1467, 195);
             this.dgvBenhNhan.TabIndex = 0;
-            // 
-            // colSTT
-            // 
-            this.colSTT.HeaderText = "STT";
-            this.colSTT.MinimumWidth = 6;
-            this.colSTT.Name = "colSTT";
-            // 
-            // colMaBN
-            // 
-            this.colMaBN.HeaderText = "Mã BN";
-            this.colMaBN.MinimumWidth = 6;
-            this.colMaBN.Name = "colMaBN";
-            // 
-            // colHoTen
-            // 
-            this.colHoTen.HeaderText = "Họ và tên";
-            this.colHoTen.MinimumWidth = 6;
-            this.colHoTen.Name = "colHoTen";
-            // 
-            // colGioiTinh
-            // 
-            this.colGioiTinh.HeaderText = "Giới tính";
-            this.colGioiTinh.MinimumWidth = 6;
-            this.colGioiTinh.Name = "colGioiTinh";
-            // 
-            // colNgaySinh
-            // 
-            this.colNgaySinh.HeaderText = "Ngày sinh";
-            this.colNgaySinh.MinimumWidth = 6;
-            this.colNgaySinh.Name = "colNgaySinh";
-            // 
-            // colSDT
-            // 
-            this.colSDT.HeaderText = "SĐT";
-            this.colSDT.MinimumWidth = 6;
-            this.colSDT.Name = "colSDT";
-            // 
-            // colDiaChi
-            // 
-            this.colDiaChi.HeaderText = "Địa chỉ";
-            this.colDiaChi.MinimumWidth = 6;
-            this.colDiaChi.Name = "colDiaChi";
-            // 
-            // colNgayDangKy
-            // 
-            this.colNgayDangKy.HeaderText = "Ngày đăng ký";
-            this.colNgayDangKy.MinimumWidth = 6;
-            this.colNgayDangKy.Name = "colNgayDangKy";
-            // 
-            // colGhiChu
-            // 
-            this.colGhiChu.HeaderText = "Ghi chú";
-            this.colGhiChu.MinimumWidth = 6;
-            this.colGhiChu.Name = "colGhiChu";
+            this.dgvBenhNhan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBenhNhan_CellClick);
             // 
             // groupBox3
             // 
@@ -509,6 +419,7 @@
             this.btnThemMoi.TabIndex = 4;
             this.btnThemMoi.Text = "➕👤Thêm mới";
             this.btnThemMoi.UseVisualStyleBackColor = false;
+            this.btnThemMoi.Click += new System.EventHandler(this.btnThemMoi_Click);
             // 
             // btnXoaBenhNhan
             // 
@@ -534,39 +445,29 @@
             this.btnSuaThongTin.UseVisualStyleBackColor = false;
             this.btnSuaThongTin.Click += new System.EventHandler(this.btnSuaThongTin_Click);
             // 
-            // btnDong
-            // 
-            this.btnDong.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.btnDong.Location = new System.Drawing.Point(1273, 666);
-            this.btnDong.Margin = new System.Windows.Forms.Padding(4);
-            this.btnDong.Name = "btnDong";
-            this.btnDong.Size = new System.Drawing.Size(178, 63);
-            this.btnDong.TabIndex = 7;
-            this.btnDong.Text = "🚪Đóng";
-            this.btnDong.UseVisualStyleBackColor = false;
-            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
-            // 
             // btnInDanhSach
             // 
             this.btnInDanhSach.BackColor = System.Drawing.Color.NavajoWhite;
-            this.btnInDanhSach.Location = new System.Drawing.Point(1070, 666);
+            this.btnInDanhSach.Location = new System.Drawing.Point(1192, 665);
             this.btnInDanhSach.Margin = new System.Windows.Forms.Padding(4);
             this.btnInDanhSach.Name = "btnInDanhSach";
             this.btnInDanhSach.Size = new System.Drawing.Size(178, 63);
             this.btnInDanhSach.TabIndex = 8;
             this.btnInDanhSach.Text = "🖨️In danh sách";
             this.btnInDanhSach.UseVisualStyleBackColor = false;
+            this.btnInDanhSach.Click += new System.EventHandler(this.btnInDanhSach_Click);
             // 
             // btnXuatExcel
             // 
             this.btnXuatExcel.BackColor = System.Drawing.Color.MistyRose;
-            this.btnXuatExcel.Location = new System.Drawing.Point(865, 665);
+            this.btnXuatExcel.Location = new System.Drawing.Point(966, 665);
             this.btnXuatExcel.Margin = new System.Windows.Forms.Padding(4);
             this.btnXuatExcel.Name = "btnXuatExcel";
             this.btnXuatExcel.Size = new System.Drawing.Size(178, 63);
             this.btnXuatExcel.TabIndex = 9;
             this.btnXuatExcel.Text = "📄📊Xuất Excel";
             this.btnXuatExcel.UseVisualStyleBackColor = false;
+            this.btnXuatExcel.Click += new System.EventHandler(this.btnXuatExcel_Click);
             // 
             // label15
             // 
@@ -587,7 +488,6 @@
             this.Controls.Add(this.label15);
             this.Controls.Add(this.btnXuatExcel);
             this.Controls.Add(this.btnInDanhSach);
-            this.Controls.Add(this.btnDong);
             this.Controls.Add(this.btnSuaThongTin);
             this.Controls.Add(this.btnXoaBenhNhan);
             this.Controls.Add(this.btnThemMoi);
@@ -622,18 +522,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cboLoai;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnLoc;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dgvBenhNhan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSTT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMaBN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colHoTen;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colGioiTinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNgaySinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSDT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDiaChi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNgayDangKy;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colGhiChu;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
@@ -659,7 +549,6 @@
         private System.Windows.Forms.Button btnThemMoi;
         private System.Windows.Forms.Button btnXoaBenhNhan;
         private System.Windows.Forms.Button btnSuaThongTin;
-        private System.Windows.Forms.Button btnDong;
         private System.Windows.Forms.Button btnInDanhSach;
         private System.Windows.Forms.Button btnXuatExcel;
         private System.Windows.Forms.Label label15;

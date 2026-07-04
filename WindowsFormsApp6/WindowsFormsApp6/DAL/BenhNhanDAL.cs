@@ -1,4 +1,4 @@
-﻿using Bai_Lam_Nhom_LTHDT;
+using Bai_Lam_Nhom_LTHDT;
 using Bai_Lam_Nhom_LTHDT.Entity;
 using System;
 using System.Collections.Generic;
@@ -101,6 +101,7 @@ namespace Bai_Lam_Nhom_LTHDT.DAL
             }
         }
 
+        // Lấy danh sách toàn bộ bệnh nhân
         public List<BenhNhan> GetAllBenhNhan()
         {
             error = "";
@@ -145,7 +146,7 @@ namespace Bai_Lam_Nhom_LTHDT.DAL
             return list;
         }
 
- 
+        // Tìm kiếm bệnh nhân theo mã bệnh nhân
         public BenhNhan GetByMaBN(string maBN)
         {
             error = "";
@@ -190,10 +191,107 @@ namespace Bai_Lam_Nhom_LTHDT.DAL
             return bn;
         }
 
+        // Tìm kiếm bệnh nhân theo số điện thoại (Nhánh tuyen)
+        public BenhNhan GetBySDT(string sdt)
+        {
+            error = "";
+
+            BenhNhan bn = null;
+
+            try
+            {
+                con.Open();
+
+                string sql = "SELECT * FROM BenhNhan WHERE SDT = @SDT";
+
+                using (SQLiteCommand cmd = new SQLiteCommand(sql, con))
+                {
+                    cmd.Parameters.AddWithValue("@SDT", sdt);
+
+                    using (SQLiteDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            bn = new BenhNhan(
+                                reader["MaBN"].ToString(),
+                                reader["HoTen"].ToString(),
+                                reader["GioiTinh"].ToString(),
+                                Convert.ToDateTime(reader["NgaySinh"]),
+                                reader["SDT"].ToString(),
+                                reader["DiaChi"].ToString(),
+                                reader["Email"].ToString()
+                            );
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return bn;
+        }
+
+        // Tìm kiếm bệnh nhân bằng từ khóa Mã hoặc SĐT (Nhánh tuyen)
+        public BenhNhan Search(string keyword)
+        {
+            error = "";
+
+            BenhNhan bn = null;
+
+            try
+            {
+                con.Open();
+
+                string sql = @"SELECT *
+                               FROM BenhNhan
+                               WHERE MaBN=@keyword
+                                  OR SDT=@keyword";
+
+                using (SQLiteCommand cmd = new SQLiteCommand(sql, con))
+                {
+                    cmd.Parameters.AddWithValue("@keyword", keyword);
+
+                    using (SQLiteDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            bn = new BenhNhan(
+                                reader["MaBN"].ToString(),
+                                reader["HoTen"].ToString(),
+                                reader["GioiTinh"].ToString(),
+                                Convert.ToDateTime(reader["NgaySinh"]),
+                                reader["SDT"].ToString(),
+                                reader["DiaChi"].ToString(),
+                                reader["Email"].ToString()
+                            );
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return bn;
+        }
+
+        // Lấy họ tên bệnh nhân từ mã lịch hẹn (Nhánh main)
         public string GetHoTenByMaHen(string maHen)
         {
             error = "";
             string hoTen = null;
+
             try
             {
                 con.Open();
@@ -201,9 +299,11 @@ namespace Bai_Lam_Nhom_LTHDT.DAL
                                FROM BenhNhan BN
                                INNER JOIN LichHen LH ON BN.MaBN = LH.MaBN
                                WHERE LH.MaHen=@MaHen";
+
                 using (SQLiteCommand cmd = new SQLiteCommand(sql, con))
                 {
                     cmd.Parameters.AddWithValue("@MaHen", maHen);
+
                     using (SQLiteDataReader reader = cmd.ExecuteReader())
                     {
                         if (reader.Read())
@@ -221,13 +321,16 @@ namespace Bai_Lam_Nhom_LTHDT.DAL
             {
                 con.Close();
             }
+
             return hoTen;
         }
 
+        // Lấy số điện thoại bệnh nhân từ mã lịch hẹn (Nhánh main)
         public string GetSDTByMaHen(string maHen)
         {
             error = "";
             string sdt = null;
+
             try
             {
                 con.Open();
@@ -235,209 +338,3 @@ namespace Bai_Lam_Nhom_LTHDT.DAL
                                FROM BenhNhan BN
                                INNER JOIN LichHen LH ON BN.MaBN = LH.MaBN
                                WHERE LH.MaHen=@MaHen";
-                using (SQLiteCommand cmd = new SQLiteCommand(sql, con))
-                {
-                    cmd.Parameters.AddWithValue("@MaHen", maHen);
-                    using (SQLiteDataReader reader = cmd.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            sdt = reader["SDT"].ToString();
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                error = ex.Message;
-            }
-            finally
-            {
-                con.Close();
-            }
-            return sdt;
-        }
-
-        public string GetNgaySinhByMaHen(string maHen)
-        {
-            error = "";
-            string ngaySinh = null;
-            try
-            {
-                con.Open();
-                string sql = @"SELECT BN.NgaySinh
-                               FROM BenhNhan BN
-                               INNER JOIN LichHen LH ON BN.MaBN = LH.MaBN
-                               WHERE LH.MaHen=@MaHen";
-                using (SQLiteCommand cmd = new SQLiteCommand(sql, con))
-                {
-                    cmd.Parameters.AddWithValue("@MaHen", maHen);
-                    using (SQLiteDataReader reader = cmd.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            ngaySinh = reader["NgaySinh"].ToString();
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                error = ex.Message;
-            }
-            finally
-            {
-                con.Close();
-            }
-            return ngaySinh;
-        }
-        
-        public string GetDiaChiByMaHen(string maHen)
-        {
-            error = "";
-            string diaChi = null;
-            try
-            {
-                con.Open();
-                string sql = @"SELECT BN.DiaChi
-                               FROM BenhNhan BN
-                               INNER JOIN LichHen LH ON BN.MaBN = LH.MaBN
-                               WHERE LH.MaHen=@MaHen";
-                using (SQLiteCommand cmd = new SQLiteCommand(sql, con))
-                {
-                    cmd.Parameters.AddWithValue("@MaHen", maHen);
-                    using (SQLiteDataReader reader = cmd.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            diaChi = reader["DiaChi"].ToString();
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                error = ex.Message;
-            }
-            finally
-            {
-                con.Close();
-            }
-            return diaChi;
-        }
-        public bool Add(BenhNhan bn)
-        {
-            error = "";
-
-            try
-            {
-                con.Open();
-
-                string sql = @"INSERT INTO BenhNhan
-                       (MaBN,HoTen,GioiTinh,NgaySinh,SDT,DiaChi,Email)
-                       VALUES
-                       (@MaBN,@HoTen,@GioiTinh,@NgaySinh,@SDT,@DiaChi,@Email)";
-
-                using (SQLiteCommand cmd = new SQLiteCommand(sql, con))
-                {
-                    cmd.Parameters.AddWithValue("@MaBN", bn.MaBN);
-                    cmd.Parameters.AddWithValue("@HoTen", bn.HoTen);
-                    cmd.Parameters.AddWithValue("@GioiTinh", bn.GioiTinh);
-                    cmd.Parameters.AddWithValue("@NgaySinh", bn.NgaySinh);
-                    cmd.Parameters.AddWithValue("@SDT", bn.Sdt);
-                    cmd.Parameters.AddWithValue("@DiaChi", bn.DiaChi);
-                    cmd.Parameters.AddWithValue("@Email", bn.Email);
-
-                    return cmd.ExecuteNonQuery() > 0;
-                }
-            }
-            catch (Exception ex)
-            {
-                error = ex.Message;
-                return false;
-            }
-            finally
-            {
-                con.Close();
-            }
-        }
-
-
-        public bool Update(BenhNhan bn)
-        {
-            error = "";
-
-            try
-            {
-                con.Open();
-
-                string sql = @"UPDATE BenhNhan
-                       SET HoTen=@HoTen,
-                           GioiTinh=@GioiTinh,
-                           NgaySinh=@NgaySinh,
-                           SDT=@SDT,
-                           DiaChi=@DiaChi,
-                           Email=@Email
-                       WHERE MaBN=@MaBN";
-
-                using (SQLiteCommand cmd = new SQLiteCommand(sql, con))
-                {
-                    cmd.Parameters.AddWithValue("@MaBN", bn.MaBN);
-                    cmd.Parameters.AddWithValue("@HoTen", bn.HoTen);
-                    cmd.Parameters.AddWithValue("@GioiTinh", bn.GioiTinh);
-                    cmd.Parameters.AddWithValue("@NgaySinh", bn.NgaySinh);
-                    cmd.Parameters.AddWithValue("@SDT", bn.Sdt);
-                    cmd.Parameters.AddWithValue("@DiaChi", bn.DiaChi);
-                    cmd.Parameters.AddWithValue("@Email", bn.Email);
-
-                    return cmd.ExecuteNonQuery() > 0;
-                }
-            }
-            catch (Exception ex)
-            {
-                error = ex.Message;
-                return false;
-            }
-            finally
-            {
-                con.Close();
-            }
-        }
-
-
-        public bool DeleteByMaBN(string maBN)
-        {
-            error = "";
-
-            try
-            {
-                con.Open();
-
-                string sql = "DELETE FROM BenhNhan WHERE MaBN=@MaBN";
-
-                using (SQLiteCommand cmd = new SQLiteCommand(sql, con))
-                {
-                    cmd.Parameters.AddWithValue("@MaBN", maBN);
-
-                    return cmd.ExecuteNonQuery() > 0;
-                }
-            }
-            catch (Exception ex)
-            {
-                error = ex.Message;
-                return false;
-            }
-            finally
-            {
-                con.Close();
-            }
-        }
-
-
-
-        public string GetError()
-        {
-            return error;
-        }
-    }
-}
