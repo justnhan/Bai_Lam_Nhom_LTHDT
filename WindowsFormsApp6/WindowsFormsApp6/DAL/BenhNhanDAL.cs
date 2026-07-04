@@ -145,6 +145,7 @@ namespace Bai_Lam_Nhom_LTHDT.DAL
             return list;
         }
 
+ 
         public BenhNhan GetByMaBN(string maBN)
         {
             error = "";
@@ -189,7 +190,141 @@ namespace Bai_Lam_Nhom_LTHDT.DAL
             return bn;
         }
 
+        public string GetHoTenByMaHen(string maHen)
+        {
+            error = "";
+            string hoTen = null;
+            try
+            {
+                con.Open();
+                string sql = @"SELECT BN.HoTen
+                               FROM BenhNhan BN
+                               INNER JOIN LichHen LH ON BN.MaBN = LH.MaBN
+                               WHERE LH.MaHen=@MaHen";
+                using (SQLiteCommand cmd = new SQLiteCommand(sql, con))
+                {
+                    cmd.Parameters.AddWithValue("@MaHen", maHen);
+                    using (SQLiteDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            hoTen = reader["HoTen"].ToString();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+            }
+            finally
+            {
+                con.Close();
+            }
+            return hoTen;
+        }
 
+        public string GetSDTByMaHen(string maHen)
+        {
+            error = "";
+            string sdt = null;
+            try
+            {
+                con.Open();
+                string sql = @"SELECT BN.SDT
+                               FROM BenhNhan BN
+                               INNER JOIN LichHen LH ON BN.MaBN = LH.MaBN
+                               WHERE LH.MaHen=@MaHen";
+                using (SQLiteCommand cmd = new SQLiteCommand(sql, con))
+                {
+                    cmd.Parameters.AddWithValue("@MaHen", maHen);
+                    using (SQLiteDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            sdt = reader["SDT"].ToString();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+            }
+            finally
+            {
+                con.Close();
+            }
+            return sdt;
+        }
+
+        public string GetNgaySinhByMaHen(string maHen)
+        {
+            error = "";
+            string ngaySinh = null;
+            try
+            {
+                con.Open();
+                string sql = @"SELECT BN.NgaySinh
+                               FROM BenhNhan BN
+                               INNER JOIN LichHen LH ON BN.MaBN = LH.MaBN
+                               WHERE LH.MaHen=@MaHen";
+                using (SQLiteCommand cmd = new SQLiteCommand(sql, con))
+                {
+                    cmd.Parameters.AddWithValue("@MaHen", maHen);
+                    using (SQLiteDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            ngaySinh = reader["NgaySinh"].ToString();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+            }
+            finally
+            {
+                con.Close();
+            }
+            return ngaySinh;
+        }
+        
+        public string GetDiaChiByMaHen(string maHen)
+        {
+            error = "";
+            string diaChi = null;
+            try
+            {
+                con.Open();
+                string sql = @"SELECT BN.DiaChi
+                               FROM BenhNhan BN
+                               INNER JOIN LichHen LH ON BN.MaBN = LH.MaBN
+                               WHERE LH.MaHen=@MaHen";
+                using (SQLiteCommand cmd = new SQLiteCommand(sql, con))
+                {
+                    cmd.Parameters.AddWithValue("@MaHen", maHen);
+                    using (SQLiteDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            diaChi = reader["DiaChi"].ToString();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+            }
+            finally
+            {
+                con.Close();
+            }
+            return diaChi;
+        }
         public bool Add(BenhNhan bn)
         {
             error = "";

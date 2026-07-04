@@ -44,7 +44,6 @@ namespace Bai_Lam_Nhom_LTHDT.DAL
         }
 
 
-
         public List<LichHen> GetAllLichHen()
         {
             error = "";
@@ -232,9 +231,43 @@ namespace Bai_Lam_Nhom_LTHDT.DAL
             return lh;
         }
 
+        public string GetHoTenBSByMaHen(string maHen)
+        {
+            error = "";
 
+            try
+            {
+                con.Open();
 
+                string sql = @"
+            SELECT BS.HOTEN
+            FROM LICHHEN LH
+            JOIN KHUNGGIO KG ON LH.MAGIO = KG.MAGIO
+            JOIN LICHTRUC LT ON KG.MALICH = LT.MALICH
+            JOIN BACSI BS ON LT.MABS = BS.MABS
+            WHERE LH.MAHEN = @MaHen";
 
+                using (SQLiteCommand cmd = new SQLiteCommand(sql, con))
+                {
+                    cmd.Parameters.AddWithValue("@MaHen", maHen);
+
+                    object result = cmd.ExecuteScalar();
+
+                    return result != null ? result.ToString() : "";
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+                return "";
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        
 
 
         public bool Add(LichHen lh)
