@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Bai_Lam_Nhom_LTHDT.DAL;
+using Bai_Lam_Nhom_LTHDT.Entity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,7 @@ namespace Bai_Lam_Nhom_LTHDT
 {
     public partial class Main_DangKy : Form
     {
+        private TaiKhoanDAL taiKhoanDAL = new TaiKhoanDAL();
         public Main_DangKy()
         {
             InitializeComponent();
@@ -34,6 +37,23 @@ namespace Bai_Lam_Nhom_LTHDT
             {
                 MessageBox.Show("Mật khẩu không khớp");
                 return;
+            }
+
+            TaiKhoan tk = new TaiKhoan(
+                txtTaiKhoan.Text.Trim(),
+                txtMatKhau.Text,
+                cboQuyen.SelectedValue.ToString(),
+                "Hoạt động"
+            );
+
+            if (taiKhoanDAL.Add(tk))
+            {
+                MessageBox.Show("Đăng ký thành công!");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show(taiKhoanDAL.GetError());
             }
 
             MessageBox.Show("Đăng ký thành công");

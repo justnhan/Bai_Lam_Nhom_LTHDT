@@ -88,9 +88,105 @@ namespace Bai_Lam_Nhom_LTHDT.DAL
             return list;
         }
 
+        public List<LichHen> SearchByMaChuyenKhoa(string maChuyenKhoa)
+        {
+            error = "";
+            List<LichHen> list = new List<LichHen>();
 
+            try
+            {
+                con.Open();
 
+                string sql = @"
+        SELECT LH.*
+        FROM LICHHEN LH
+        JOIN KHUNGGIO KG ON LH.MAGIO = KG.MAGIO
+        JOIN LICHTRUC LT ON KG.MALICH = LT.MALICH
+        JOIN BACSI BS ON LT.MABS = BS.MABS
+        WHERE BS.MACHUYENKHOA = @MaChuyenKhoa
+        ORDER BY LH.MAHEN";
 
+                using (SQLiteCommand cmd = new SQLiteCommand(sql, con))
+                {
+                    cmd.Parameters.AddWithValue("@MaChuyenKhoa", maChuyenKhoa);
+
+                    using (SQLiteDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            list.Add(new LichHen(
+                                reader["MAHEN"].ToString(),
+                                reader["MABN"].ToString(),
+                                reader["MAGIO"].ToString(),
+                                Convert.ToDateTime(reader["NGAYDAT"]),
+                                reader["TRANGTHAI"].ToString(),
+                                reader["LYDOKHAM"].ToString(),
+                                reader["GHICHU"].ToString()
+                            ));
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return list;
+        }
+        public List<LichHen> SearchByMaBacSi(string maBacSi)
+        {
+            error = "";
+            List<LichHen> list = new List<LichHen>();
+
+            try
+            {
+                con.Open();
+
+                string sql = @"
+        SELECT LH.*
+        FROM LICHHEN LH
+        JOIN KHUNGGIO KG ON LH.MAGIO = KG.MAGIO
+        JOIN LICHTRUC LT ON KG.MALICH = LT.MALICH
+        WHERE LT.MABS = @MaBacSi
+        ORDER BY LH.MAHEN";
+
+                using (SQLiteCommand cmd = new SQLiteCommand(sql, con))
+                {
+                    cmd.Parameters.AddWithValue("@MaBacSi", maBacSi);
+
+                    using (SQLiteDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            list.Add(new LichHen(
+                                reader["MAHEN"].ToString(),
+                                reader["MABN"].ToString(),
+                                reader["MAGIO"].ToString(),
+                                Convert.ToDateTime(reader["NGAYDAT"]),
+                                reader["TRANGTHAI"].ToString(),
+                                reader["LYDOKHAM"].ToString(),
+                                reader["GHICHU"].ToString()
+                            ));
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return list;
+        }
         public LichHen GetByMaHen(string maHen)
         {
             error = "";

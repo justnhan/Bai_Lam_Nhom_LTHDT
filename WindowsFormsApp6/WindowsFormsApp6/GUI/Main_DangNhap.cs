@@ -1,4 +1,6 @@
 ﻿using Bai_Lam_Nhom_LTHDT;
+using Bai_Lam_Nhom_LTHDT.DAL;
+using Bai_Lam_Nhom_LTHDT.Entity;
 using Bai_Lam_Nhom_LTHDT.GUI;
 using System;
 using System.Collections.Generic;
@@ -14,6 +16,7 @@ namespace Bai_Lam_Nhom_LTHDT
 {
     public partial class Main_DangNhap : Form
     {
+        private TaiKhoanDAL taiKhoanDAL = new TaiKhoanDAL();
         public Main_DangNhap()
         {
             InitializeComponent();
@@ -26,46 +29,57 @@ namespace Bai_Lam_Nhom_LTHDT
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            if (txtTaiKhoan.Text == "admin"
-        && txtMatKhau.Text == "123")
+            if (txtTaiKhoan.Text.Trim() == "")
             {
-                this.Hide();
-                A_ThongKe f = new A_ThongKe();
-                f.ShowDialog();
-                this.Close();
-
-
-            }
-            else if (txtTaiKhoan.Text == "bacsi" && txtMatKhau.Text == "456")
-            {
-                this.Hide();
-                N_TrangChuBacSi f = new N_TrangChuBacSi();
-                f.ShowDialog();
-                this.Close();
-
-
+                MessageBox.Show("Vui lòng nhập tài khoản!");
+                txtTaiKhoan.Focus();
+                return;
             }
 
-            else if(txtTaiKhoan.Text == "lich" && txtMatKhau.Text == "789")
+            if (txtMatKhau.Text == "")
             {
-                this.Hide();
-                V_TrangChuDieuPhoi f = new V_TrangChuDieuPhoi();
-                f.ShowDialog();
-                this.Close();
+                MessageBox.Show("Vui lòng nhập mật khẩu!");
+                txtMatKhau.Focus();
+                return;
             }
 
-            else if (txtTaiKhoan.Text == "letan" && txtMatKhau.Text == "000")
+            TaiKhoan tk = taiKhoanDAL.Login(
+                txtTaiKhoan.Text.Trim(),
+                txtMatKhau.Text.Trim()
+            );
+
+            if (tk == null)
             {
-                this.Hide();
-                T_TrangChuTiepNhan f = new T_TrangChuTiepNhan();
-                f.ShowDialog();
-                this.Close();
+                MessageBox.Show("Sai tài khoản hoặc mật khẩu!");
+                return;
             }
-            else
+
+            this.Hide();
+
+            switch (tk.MaQuyen)
             {
-                MessageBox.Show(
-                    "Sai tài khoản hoặc mật khẩu");
+                case "Q001":
+                    new A_ThongKe().ShowDialog();
+                    break;
+
+                case "Q002":
+                    new N_TrangChuBacSi().ShowDialog();
+                    break;
+
+                case "Q003":
+                    new V_TrangChuDieuPhoi().ShowDialog();
+                    break;
+
+                case "Q004":
+                    new T_TrangChuTiepNhan().ShowDialog();
+                    break;
+
+                default:
+                    MessageBox.Show("Tài khoản chưa được phân quyền!");
+                    break;
             }
+
+            this.Close();
         }
 
         private void btnThoat_Click(object sender, EventArgs e)

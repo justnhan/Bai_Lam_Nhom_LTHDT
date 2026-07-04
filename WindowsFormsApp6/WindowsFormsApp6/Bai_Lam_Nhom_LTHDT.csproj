@@ -115,6 +115,12 @@
       <DependentUpon>N_ChiTietLichHen.cs</DependentUpon>
     </Compile>
     <Compile Include="Entity\LichTruc.cs" />
+    <Compile Include="GUI\Quyen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Quyen.Designer.cs">
+      <DependentUpon>Quyen.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\T_DanhSachBenhNhan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,6 +217,7 @@
     <Compile Include="GUI\N_TrangChuBacSi.Designer.cs">
       <DependentUpon>N_TrangChuBacSi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Security.cs" />
     <Compile Include="UiHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -224,6 +231,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\N_ChiTietLichHen.resx">
       <DependentUpon>N_ChiTietLichHen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Quyen.resx">
+      <DependentUpon>Quyen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\T_DanhSachBenhNhan.resx">
       <DependentUpon>T_DanhSachBenhNhan.cs</DependentUpon>
