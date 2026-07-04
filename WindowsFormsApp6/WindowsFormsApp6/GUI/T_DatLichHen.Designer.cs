@@ -74,6 +74,7 @@
             this.dgvChuyenKhoa = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dgvLichTruc = new System.Windows.Forms.DataGridView();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dgvKhungGio = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -83,6 +84,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvChuyenKhoa)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLichTruc)).BeginInit();
+            this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhungGio)).BeginInit();
             this.SuspendLayout();
             // 
@@ -390,7 +392,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(903, 247);
+            this.groupBox2.Size = new System.Drawing.Size(848, 247);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "THÔNG TIN LỊCH HẸN";
@@ -406,7 +408,7 @@
             // nudGioHen
             // 
             this.nudGioHen.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudGioHen.Location = new System.Drawing.Point(649, 120);
+            this.nudGioHen.Location = new System.Drawing.Point(602, 115);
             this.nudGioHen.Name = "nudGioHen";
             this.nudGioHen.Size = new System.Drawing.Size(243, 34);
             this.nudGioHen.TabIndex = 14;
@@ -422,7 +424,7 @@
             // txtLyDoKham
             // 
             this.txtLyDoKham.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLyDoKham.Location = new System.Drawing.Point(649, 169);
+            this.txtLyDoKham.Location = new System.Drawing.Point(602, 164);
             this.txtLyDoKham.Margin = new System.Windows.Forms.Padding(4);
             this.txtLyDoKham.Multiline = true;
             this.txtLyDoKham.Name = "txtLyDoKham";
@@ -432,7 +434,7 @@
             // dtpNgayHen
             // 
             this.dtpNgayHen.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpNgayHen.Location = new System.Drawing.Point(649, 65);
+            this.dtpNgayHen.Location = new System.Drawing.Point(602, 60);
             this.dtpNgayHen.Margin = new System.Windows.Forms.Padding(4);
             this.dtpNgayHen.Name = "dtpNgayHen";
             this.dtpNgayHen.Size = new System.Drawing.Size(243, 34);
@@ -456,7 +458,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(502, 179);
+            this.label14.Location = new System.Drawing.Point(455, 174);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(116, 28);
@@ -467,7 +469,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(502, 126);
+            this.label13.Location = new System.Drawing.Point(455, 121);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(84, 28);
@@ -478,7 +480,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(502, 66);
+            this.label12.Location = new System.Drawing.Point(455, 61);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(100, 28);
@@ -606,23 +608,34 @@
             this.dgvLichTruc.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(242)))), ((int)(((byte)(253)))));
             this.dgvLichTruc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLichTruc.Location = new System.Drawing.Point(7, 34);
-            this.dgvLichTruc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLichTruc_CellClick);
             this.dgvLichTruc.Name = "dgvLichTruc";
             this.dgvLichTruc.RowHeadersWidth = 51;
             this.dgvLichTruc.RowTemplate.Height = 24;
             this.dgvLichTruc.Size = new System.Drawing.Size(316, 201);
             this.dgvLichTruc.TabIndex = 0;
+            this.dgvLichTruc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLichTruc_CellClick);
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(242)))), ((int)(((byte)(253)))));
+            this.groupBox5.Controls.Add(this.dgvKhungGio);
+            this.groupBox5.Location = new System.Drawing.Point(870, 394);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(306, 249);
+            this.groupBox5.TabIndex = 8;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Khung giờ";
             // 
             // dgvKhungGio
             // 
+            this.dgvKhungGio.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(242)))), ((int)(((byte)(253)))));
             this.dgvKhungGio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvKhungGio.Location = new System.Drawing.Point(923, 396);
+            this.dgvKhungGio.Location = new System.Drawing.Point(14, 33);
             this.dgvKhungGio.Name = "dgvKhungGio";
             this.dgvKhungGio.RowHeadersWidth = 51;
             this.dgvKhungGio.RowTemplate.Height = 24;
-            this.dgvKhungGio.Size = new System.Drawing.Size(251, 191);
-            this.dgvKhungGio.TabIndex = 9;
-            this.dgvKhungGio.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhungGio_CellClick);
+            this.dgvKhungGio.Size = new System.Drawing.Size(279, 201);
+            this.dgvKhungGio.TabIndex = 1;
             // 
             // T_DatLichHen
             // 
@@ -630,7 +643,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1523, 763);
-            this.Controls.Add(this.dgvKhungGio);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnLamMoi);
@@ -657,6 +670,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvChuyenKhoa)).EndInit();
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLichTruc)).EndInit();
+            this.groupBox5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhungGio)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -710,6 +724,7 @@
         private System.Windows.Forms.DataGridView dgvLichTruc;
         private System.Windows.Forms.TextBox txtMaBenhNhan;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.DataGridView dgvKhungGio;
     }
 }
