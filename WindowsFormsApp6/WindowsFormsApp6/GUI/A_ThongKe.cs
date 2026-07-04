@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Bai_Lam_Nhom_LTHDT.DAL;
+using Bai_Lam_Nhom_LTHDT.Entity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +10,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using PdfFont = iTextSharp.text.Font;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO;
 
 namespace Bai_Lam_Nhom_LTHDT
 {
@@ -33,8 +39,328 @@ namespace Bai_Lam_Nhom_LTHDT
             chartThongKeBS.ChartAreas[0].AxisY.MajorGrid.LineColor = Color.LightGray;
 
             chartThongKeBS.ChartAreas[0].AxisY.Interval = 10;
+            LoadThang();
+            LoadNam();
+
+            cboNamBC.SelectedItem = DateTime.Now.Year;
+        }
+        private void LoadNam()
+        {
+            cboNamBC.Items.Clear();
+
+            for (int i = 2023; i <= DateTime.Now.Year + 2; i++)
+            {
+                cboNamBC.Items.Add(i);
+            }
         }
 
+        private BaoCaoDAL baoCaoDAL = new BaoCaoDAL();
+        private void LoadChartBaoCao(int thang, int nam)
+        {
+            chartBaoCao.Series.Clear();
+
+            Series s = new Series("Doanh thu");
+            s.ChartType = SeriesChartType.Column;
+
+            var data = baoCaoDAL.DoanhThuTheoNgay(thang, nam);
+
+            foreach (var item in data)
+            {
+                s.Points.AddXY(item.Key, item.Value);
+            }
+
+            chartBaoCao.Series.Add(s);
+        }
+        private void LoadCard()
+        {
+            lblSoLichHen_BC.Text = baoCaoDAL.TongLichHen().ToString();
+
+            lblTongSoBenhNhan_BC.Text = baoCaoDAL.TongBenhNhan().ToString();
+
+            lblDoanhThu.Text =
+                baoCaoDAL.TongDoanhThu().ToString("N0");
+        }
+        private void LoadBaoCao(int thang, int nam)
+        {
+            dgvBaoCao.Rows.Clear();
+
+            
+
+            var ds = baoCaoDAL.GetBaoCaoTheoThangNam(thang, nam);
+
+            
+
+            foreach (BaoCao item in ds)
+            {
+                dgvBaoCao.Rows.Add(
+                item.STT,
+                item.MaHoaDon,
+                item.BenhNhan,
+                
+                item.BacSi,
+          
+                item.DichVu,
+                item.ThanhTien.ToString("N0"),
+                item.NgayKham.ToString("dd/MM/yyyy")
+            );
+            }
+
+
+            LoadCard();
+            LoadChartBaoCao(thang, nam);
+        }
+        private ThongKeKhoaDAL thongKeKhoaDAL = new ThongKeKhoaDAL();
+        private void LoadCardThongKeKhoa()
+        {
+            lblNoiTongQuat.Text =
+                thongKeKhoaDAL.TongNoiTongQuat().ToString();
+
+            lblSoNhiKhoa.Text =
+                thongKeKhoaDAL.TongNhiKhoa().ToString();
+
+            lblTimMach.Text =
+                thongKeKhoaDAL.TongTimMach().ToString();
+
+            lblTongKhoa.Text =
+                thongKeKhoaDAL.TongKhoa().ToString();
+        }
+        private void LoadChartThongKeKhoa()
+        {
+            chartThongKeKhoa.Series.Clear();
+
+            var s = chartThongKeKhoa.Series.Add("Số bệnh nhân");
+
+            s.ChartType =
+                System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
+
+            s.IsValueShownAsLabel = true;
+
+            foreach (ThongKeKhoa item in thongKeKhoaDAL.GetThongKeKhoa())
+            {
+                s.Points.AddXY(item.TenKhoa, item.SoBenhNhan);
+            }
+
+            chartThongKeKhoa.ChartAreas[0].AxisX.Interval = 1;
+            chartThongKeKhoa.Legends.Clear();
+        }
+        private void LoadThongKeKhoa()
+        {
+            dgvThongKeKhoa.Rows.Clear();
+
+            int stt = 1;
+
+            foreach (ThongKeKhoa item in thongKeKhoaDAL.GetThongKeKhoa())
+            {
+                dgvThongKeKhoa.Rows.Add(
+                    stt++,
+                    item.MaKhoa,
+                    item.TenKhoa,
+                    item.SoBacSi,
+                    item.SoBenhNhan,
+                    item.DoanhThu
+                );
+            }
+        }
+        private ThongKeBacSiDAL thongKeBacSiDAL = new ThongKeBacSiDAL();
+        private void LoadThang()
+        {
+            cboThangBC.Items.Clear();
+
+            for (int i = 1; i <= 12; i++)
+            {
+                cboThangBC.Items.Add(i);
+            }
+
+            cboThangBC.SelectedIndex = DateTime.Now.Month - 1;
+        }
+        private void LoadChartThongKeBacSi()
+        {
+            chartThongKeBS.Series.Clear();
+
+            var series = chartThongKeBS.Series.Add("Số lịch hẹn");
+
+            series.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
+
+            series.IsValueShownAsLabel = true;
+            chartThongKeBS.ChartAreas[0].AxisX.Interval = 1;
+
+            chartThongKeBS.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
+
+            chartThongKeBS.ChartAreas[0].AxisY.MajorGrid.LineColor = Color.LightGray;
+
+            chartThongKeBS.Legends.Clear();
+
+            foreach (ThongKeBacSi item in thongKeBacSiDAL.GetThongKeBacSi())
+            {
+                series.Points.AddXY(item.TenBacSi, item.SoLichHen);
+            }
+        }
+        private void LoadThongKeBacSi()
+        {
+            dgvThongKeBS.Rows.Clear();
+
+            int stt = 1;
+
+            foreach (ThongKeBacSi item in thongKeBacSiDAL.GetThongKeBacSi())
+            {
+                dgvThongKeBS.Rows.Add(
+                    stt++,
+                    item.MaBS,
+                    item.TenBacSi,
+                    item.ChuyenKhoa,
+                    item.SoLichHen,
+                    item.DaKham,
+                    item.Huy
+                );
+            }
+        }
+        private void LoadChartCanhBao()
+        {
+            chartCanhBao.Series.Clear();
+
+            Series s = chartCanhBao.Series.Add("CanhBao");
+
+            s.ChartType = SeriesChartType.Pie;
+
+            s.IsValueShownAsLabel = true;
+
+            s.Points.AddXY("Đang chờ",
+                lichHenDAL.GetTongCanhBaoKhan());
+
+            s.Points.AddXY("Quá giờ",
+                lichHenDAL.GetTongQuaGio());
+
+            s.Points.AddXY("Đã hủy",
+                lichHenDAL.GetAllLichHen()
+                          .Count(x => x.TrangThai == "Da huy"));
+        }
+        private void LoadQuaGio()
+        {
+            lblQuaGio.Text =
+                lichHenDAL.GetTongQuaGio().ToString();
+        }
+        private void LoadCanhBaoKhan()
+        {
+            lblTongCanhBaoKhan.Text =
+                lichHenDAL.GetTongCanhBaoKhan().ToString();
+        }
+        private void LoadChuaThanhToan()
+        {
+            lblSoChuaThanhToan.Text = "0";
+        }
+        private void LoadCanhBao()
+        {
+            dgvCanhBao.Rows.Clear();
+
+            foreach (CanhBao cb in lichHenDAL.GetDanhSachCanhBao())
+            {
+                dgvCanhBao.Rows.Add(
+                    cb.STT,
+                    cb.LoaiCanhBao,
+                    cb.NoiDung,
+                    cb.MucDo,
+                    cb.ThoiGian
+                );
+            }
+        }
+        private void LoadChart()
+        {
+            chartLichHen.Series.Clear();
+
+            var series = chartLichHen.Series.Add("Lịch hẹn");
+
+            series.ChartType =
+                System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
+
+            var data = lichHenDAL.GetThongKeTheoThu();
+
+            foreach (var item in data)
+            {
+                series.Points.AddXY(item.Key, item.Value);
+            }
+        }
+        private BenhNhanDAL benhNhanDAL = new BenhNhanDAL();
+        private KhungGioDAL khungGioDAL = new KhungGioDAL();
+        private void LoadDanhSachThongKe()
+        {
+            dgvLichHen.Rows.Clear();
+
+            int stt = 1;
+
+            foreach (ThongTinLichHen item in lichHenDAL.GetDanhSachThongKe())
+            {
+                dgvLichHen.Rows.Add(
+                    stt++,
+                    item.MaBN,
+                    item.TenBenhNhan,
+                    item.GioHen,
+                    item.TenBacSi,
+                    item.TrangThai
+                );
+            }
+        }
+
+        private void LoadDangCho()
+        {
+            List<LichHen> list = lichHenDAL.GetAllLichHen();
+
+            int dem = 0;
+
+            foreach (LichHen lh in list)
+            {
+                if (lh.TrangThai == "Cho kham")
+                {
+                    dem++;
+                }
+            }
+
+            lblSoLuongCho.Text = dem.ToString();
+        }
+        private void LoadDaHuy()
+        {
+            List<LichHen> list = lichHenDAL.GetAllLichHen();
+
+            int dem = 0;
+
+            foreach (LichHen lh in list)
+            {
+                if (lh.TrangThai == "Da huy")
+                {
+                    dem++;
+                }
+            }
+
+            lblSoLuongHuy.Text = dem.ToString();
+        }
+        private void LoadDaKham()
+        {
+            List<LichHen> list = lichHenDAL.GetAllLichHen();
+
+            int dem = 0;
+
+            foreach (LichHen lh in list)
+            {
+                if (lh.TrangThai == "Da xac nhan")   // hoặc "Đã khám" nếu CSDL của bạn dùng giá trị này
+                {
+                    dem++;
+                }
+            }
+
+            lblSoLuongDaKham.Text = dem.ToString();
+        }
+        private LichHenDAL lichHenDAL = new LichHenDAL();
+        private void LoadTongHen()
+        {
+            List<LichHen> list = lichHenDAL.GetAllLichHen();
+
+            lblSoLuongHen.Text = list.Count.ToString();
+        }
+
+        //private void LoadDanhSachQuaGio()
+        //{
+        //    dgvLichHen.DataSource =
+        //        lichHenDAL.GetDanhSachQuaGio();
+        //}
         private void lblDashboardPhongKham_Click(object sender, EventArgs e)
         {
 
@@ -81,12 +407,12 @@ namespace Bai_Lam_Nhom_LTHDT
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedTab = tabDashboard;
-     
+
             ResetMenuColor();
 
             btnDashboard.BackColor = Color.RoyalBlue;
         }
-        
+
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -132,263 +458,7 @@ namespace Bai_Lam_Nhom_LTHDT
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-            { 
-        }
 
-        private void Form1_Load_1(object sender, EventArgs e)
-        {
-            dgvLichHen.Rows.Add("1", "BN001", "Nguyễn Văn An", "08:00", "BS Nam", "Quá giờ");
-            dgvLichHen.Rows.Add("2", "BN002", "Trần Thị Bình", "08:30", "BS Lan", "Quá giờ");
-            dgvLichHen.Rows.Add("3", "BN003", "Lê Minh Hoàng", "09:00", "BS Hùng", "Quá giờ");
-            dgvLichHen.Rows.Add("4", "BN004", "Phạm Thu Hà", "09:15", "BS Nam", "Quá giờ");
-            dgvLichHen.Rows.Add("5", "BN005", "Võ Quốc Khánh", "09:30", "BS Mai", "Quá giờ");
-            dgvLichHen.Rows.Add("6", "BN006", "Đặng Thị Ly", "10:00", "BS Lan", "Quá giờ");
-            dgvLichHen.Rows.Add("7", "BN007", "Bùi Thanh Tùng", "10:15", "BS Hùng", "Quá giờ");
-            dgvLichHen.Rows.Add("8", "BN008", "Nguyễn Thả", "10:30", "BS Nam", "Quá giờ");
-
-            foreach (DataGridViewRow row in dgvLichHen.Rows)
-            {
-                if (row.Cells["clnTrangThai"].Value?.ToString() == "Quá giờ")
-                {
-                    row.Cells["clnTrangThai"].Style.BackColor = Color.Red;
-                    row.Cells["clnTrangThai"].Style.ForeColor = Color.White;
-                    row.Cells["clnTrangThai"].Style.Font =
-                        new Font("Segoe UI", 12, FontStyle.Bold);
-                }
-            }
-
-            dgvLichHen.EnableHeadersVisualStyles = false;
-            dgvLichHen.ColumnHeadersDefaultCellStyle.BackColor =Color.FromArgb(0, 0, 153);
-            dgvLichHen.ColumnHeadersDefaultCellStyle.ForeColor =Color.White;
-            dgvLichHen.ColumnHeadersDefaultCellStyle.Font =new Font("Segoe UI", 12, FontStyle.Bold);
-            dgvLichHen.ColumnHeadersHeight = 45;
-            dgvLichHen.ColumnHeadersHeightSizeMode =DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dgvLichHen.RowTemplate.Height = 35;
-            dgvLichHen.DefaultCellStyle.Font =new Font("Segoe UI", 10);
-            dgvLichHen.AlternatingRowsDefaultCellStyle.BackColor =Color.FromArgb(240, 245, 250);
-            dgvLichHen.BorderStyle = BorderStyle.None;
-            dgvLichHen.CellBorderStyle =DataGridViewCellBorderStyle.SingleHorizontal;
-            dgvLichHen.AutoSizeColumnsMode =DataGridViewAutoSizeColumnsMode.Fill;
-            dgvLichHen.SelectionMode =DataGridViewSelectionMode.FullRowSelect;
-            dgvLichHen.MultiSelect = false;
-            dgvLichHen.RowHeadersVisible = false;
-            dgvLichHen.Columns["clnSTT"].DefaultCellStyle.Alignment =DataGridViewContentAlignment.MiddleCenter;
-            dgvLichHen.Columns["clnGioHen"].DefaultCellStyle.Alignment =DataGridViewContentAlignment.MiddleCenter;
-            chartLichHen.Series.Clear();
-
-            chartLichHen.Series.Add("Lịch hẹn");
-
-            chartLichHen.Series["Lịch hẹn"].Points.AddXY("T2", 15);
-            chartLichHen.Series["Lịch hẹn"].Points.AddXY("T3", 20);
-            chartLichHen.Series["Lịch hẹn"].Points.AddXY("T4", 30);
-            chartLichHen.Series["Lịch hẹn"].Points.AddXY("T5", 25);
-            chartLichHen.Series["Lịch hẹn"].Points.AddXY("T6", 35);
-            chartLichHen.Series["Lịch hẹn"].Points.AddXY("T7", 18);
-
-            chartLichHen.Series["Lịch hẹn"].ChartType =
-                System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
-            chartThongKeBS.Series.Clear();
-
-            chartThongKeBS.Series.Add("Số lịch hẹn");
-
-            chartThongKeBS.Series[0].Points.AddXY("BS Nam", 45);
-            chartThongKeBS.Series[0].Points.AddXY("BS Hùng", 30);
-            chartThongKeBS.Series[0].Points.AddXY("BS Minh", 25);
-            chartThongKeBS.Series[0].Points.AddXY("BS Lan", 40);
-            chartThongKeBS.ChartAreas[0].AxisY.Minimum = 0;
-            chartThongKeBS.ChartAreas[0].AxisY.Maximum = 50;
-            chartThongKeBS.Series[0]["PointWidth"] = "0.4";
-            chartThongKeBS.ChartAreas[0].AxisX.Interval = 1;
-            chartThongKeBS.Series[0].IsValueShownAsLabel = true;
-            chartThongKeBS.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
-
-            chartThongKeBS.ChartAreas[0].AxisY.MajorGrid.LineColor = Color.LightGray;
-
-            chartThongKeBS.ChartAreas[0].BackColor = Color.White;
-
-            chartThongKeBS.BackColor = Color.White;
-
-            chartThongKeBS.Legends[0].Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
-
-            chartThongKeBS.Series[0].Font =
-                new Font("Segoe UI", 12, FontStyle.Bold);
-
-            chartThongKeBS.ChartAreas[0].AxisX.LabelStyle.Font =
-                new Font("Segoe UI", 12);
-
-            chartThongKeBS.ChartAreas[0].AxisY.LabelStyle.Font =
-                new Font("Segoe UI", 12);
-
-            dgvThongKeBS.Rows.Add(1, "BS01", "Nguyễn Văn Nam", "Nội khoa", 45, 40, 5);
-            dgvThongKeBS.Rows.Add(2, "BS02", "Trần Minh Hùng", "Ngoại khoa", 30, 28, 2);
-            dgvThongKeBS.Rows.Add(3, "BS03", "Lê Thị Lan", "Nhi khoa", 25, 22, 3);
-
-            dgvThongKeBS.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
-            dgvThongKeBS.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            dgvThongKeBS.EnableHeadersVisualStyles = false;
-
-            chartBaoCao.Series.Clear();
-
-            chartBaoCao.Series.Add("Doanh thu");
-
-            chartBaoCao.Series[0].Points.AddXY("T1", 120);
-            chartBaoCao.Series[0].Points.AddXY("T2", 150);
-            chartBaoCao.Series[0].Points.AddXY("T3", 180);
-            chartBaoCao.Series[0].Points.AddXY("T4", 210);
-
-            chartBaoCao.Series[0].ChartType = SeriesChartType.Spline;
-            chartBaoCao.Series[0].BorderWidth = 4;
-            chartBaoCao.Series[0].IsValueShownAsLabel = true;
-            chartBaoCao.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
-            chartBaoCao.Height = 350;
-            chartBaoCao.ChartAreas[0].AxisY.MajorGrid.LineColor = Color.LightGray;
-
-            chartBaoCao.BackColor = Color.White;
-
-            chartBaoCao.ChartAreas[0].BackColor = Color.White;
-
-            chartBaoCao.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
-
-            chartBaoCao.ChartAreas[0].AxisY.MajorGrid.LineColor =
-                Color.Gainsboro;
-
-            chartBaoCao.Series[0].BorderWidth = 5;
-
-            chartBaoCao.Series[0].MarkerStyle =
-                MarkerStyle.Circle;
-
-            chartBaoCao.Series[0].MarkerSize = 10;
-            chartBaoCao.Titles.Clear();
-
-            chartBaoCao.Titles.Add("BIỂU ĐỒ DOANH THU");
-
-            chartBaoCao.Titles[0].Font =
-                new Font("Segoe UI", 16, FontStyle.Bold);
-
-            chartBaoCao.Titles[0].ForeColor = Color.Navy;
-            chartBaoCao.Series[0].MarkerColor = Color.RoyalBlue;
-            chartBaoCao.Series[0].Font = new Font("Segoe UI", 12, FontStyle.Bold);
-
-            dgvBaoCao.EnableHeadersVisualStyles = false;
-            dgvBaoCao.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
-            dgvBaoCao.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            dgvBaoCao.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvBaoCao.BackgroundColor = Color.White;
-            dgvBaoCao.BorderStyle = BorderStyle.None;
-            dgvBaoCao.EnableHeadersVisualStyles = false;
-            dgvBaoCao.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
-            dgvBaoCao.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            dgvBaoCao.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 12, FontStyle.Bold);
-            dgvBaoCao.DefaultCellStyle.Font = new Font("Segoe UI", 12);
-            dgvBaoCao.RowTemplate.Height = 32;
-            dgvBaoCao.AlternatingRowsDefaultCellStyle.BackColor = Color.AliceBlue;
-            dgvBaoCao.Rows.Add(1, "HD01", "Nguyễn Văn A", "BS Nam", "Khám tổng quát", "500000", "28/05/2026");
-            dgvBaoCao.Rows.Add(2, "HD02", "Trần Thị B", "BS Lan", "Nha khoa", "1200000", "28/05/2026");
-
-            dgvCanhBao.Rows.Add(1, "Lịch hẹn", "BN Nguyễn Văn A trễ 30 phút", "Cao", DateTime.Now.ToString("dd/MM/yyyy HH:mm"));
-
-            dgvCanhBao.Rows.Add(2, "Thanh toán", "HD02 chưa thanh toán", "Trung bình", DateTime.Now.ToString("dd/MM/yyyy HH:mm"));
-            dgvCanhBao.Rows.Add(3, "Kho thuốc", "Paracetamol sắp hết", "Thấp", DateTime.Now.ToString("dd/MM/yyyy HH:mm"));
-            dgvCanhBao.EnableHeadersVisualStyles = false;
-            dgvCanhBao.ColumnHeadersDefaultCellStyle.BackColor = Color.DarkRed;
-            dgvCanhBao.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            dgvCanhBao.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvCanhBao.RowTemplate.Height = 35;
-            dgvCanhBao.ColumnHeadersHeight = 40;
-            dgvCanhBao.RowTemplate.Height = 35;
-            dgvCanhBao.BorderStyle = BorderStyle.None;
-            dgvCanhBao.BackgroundColor = Color.White;
-            dgvCanhBao.GridColor = Color.LightGray;
-            dgvCanhBao.DefaultCellStyle.Font = new Font("Segoe UI", 12);
-            dgvCanhBao.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 12, FontStyle.Bold);
-            dgvCanhBao.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(0, 51, 102);
-            dgvCanhBao.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            dgvCanhBao.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvCanhBao.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvCanhBao.MultiSelect = false;
-            dgvCanhBao.RowHeadersVisible = false;
-            dgvCanhBao.DefaultCellStyle.SelectionBackColor = Color.FromArgb(0, 120, 215);
-            dgvCanhBao.DefaultCellStyle.SelectionForeColor = Color.White;
-            dgvCanhBao.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvCanhBao.AllowUserToAddRows = false;
-
-            foreach (DataGridViewRow row in dgvCanhBao.Rows)
-            {
-                if (row.Cells[3].Value == null)
-                    continue;
-
-                string mucDo = row.Cells[3].Value.ToString();
-
-                if (mucDo == "Cao")
-                {
-                    row.Cells[3].Style.BackColor = Color.Red;
-                    row.Cells[3].Style.ForeColor = Color.White;
-                }
-                else if (mucDo == "Trung bình")
-                {
-                    row.Cells[3].Style.BackColor = Color.Orange;
-                }
-                else
-                {
-                    row.Cells[3].Style.BackColor = Color.LightGreen;
-                }
-            }
-
-            chartCanhBao.Series.Clear();
-            chartCanhBao.Series.Add("CanhBao");
-            chartCanhBao.Series["CanhBao"].Points.AddXY("Quá giờ", 12);
-            chartCanhBao.Series["CanhBao"].Points.AddXY("Thanh toán", 5);
-            chartCanhBao.Series["CanhBao"].Points.AddXY("Khẩn", 2);
-            chartCanhBao.Series["CanhBao"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            chartCanhBao.Series["CanhBao"].IsValueShownAsLabel = true;
-
-            chartCanhBao.Series["CanhBao"].Points[0].Color = Color.Red;
-            chartCanhBao.Series["CanhBao"].Points[1].Color = Color.Orange;
-            chartCanhBao.Series["CanhBao"].Points[2].Color = Color.Purple;
-            chartCanhBao.ChartAreas[0].BackColor = Color.White;
-            chartCanhBao.Legends[0].Docking = Docking.Bottom;
-
-
-            chartKhoa.Series.Clear();
-            Series s = new Series("Số bệnh nhân");
-            s.ChartType = SeriesChartType.Column;
-            s.Points.AddXY("Nội khoa", 120);
-            s.Points.AddXY("Ngoại khoa", 80);
-            s.Points.AddXY("Nhi khoa", 150);
-            s.Points.AddXY("Da liễu", 60);
-            chartKhoa.Series.Add(s);
-            chartKhoa.ChartAreas[0].AxisY.Minimum = 0;
-            chartKhoa.ChartAreas[0].AxisY.Maximum = 200;
-            chartKhoa.ChartAreas[0].AxisX.Interval = 1;
-            chartKhoa.Series[0].IsValueShownAsLabel = true;
-            chartKhoa.Series[0]["PointWidth"] = "0.45";
-            chartKhoa.Series[0].Color = Color.RoyalBlue;
-
-            chartKhoa.Titles.Clear();
-            chartKhoa.Titles.Add("BIỂU ĐỒ THỐNG KÊ KHOA");
-            chartKhoa.Titles[0].Font = new Font("Segoe UI", 16, FontStyle.Bold);
-            chartKhoa.Titles[0].ForeColor = Color.DarkBlue;
-            chartKhoa.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
-            chartKhoa.ChartAreas[0].AxisY.MajorGrid.LineColor = Color.LightGray;
-            chartKhoa.BorderlineColor = Color.Silver;
-            chartKhoa.BorderlineDashStyle = ChartDashStyle.Solid;
-            chartKhoa.BorderlineWidth = 1;
-
-            dgvKhoa.Rows.Add(1, "K01", "Nội khoa", 5, 120, "50 triệu");
-            dgvKhoa.Rows.Add(2, "K02", "Ngoại khoa", 3, 80, "35 triệu");
-            dgvKhoa.Rows.Add(3, "K03", "Nhi khoa", 4, 150, "70 triệu");
-            dgvKhoa.EnableHeadersVisualStyles = false;
-            dgvKhoa.ColumnHeadersDefaultCellStyle.BackColor = Color.DarkBlue;
-            dgvKhoa.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            dgvKhoa.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 12, FontStyle.Bold);
-            dgvKhoa.ColumnHeadersHeight = 40;
-            dgvKhoa.DefaultCellStyle.Font = new Font("Segoe UI", 12, FontStyle.Bold);
-            dgvKhoa.RowTemplate.Height = 35;
-            dgvKhoa.AlternatingRowsDefaultCellStyle.BackColor = Color.AliceBlue;
-            dgvKhoa.ColumnHeadersDefaultCellStyle.Alignment =DataGridViewContentAlignment.MiddleCenter;
-
-        }
         private void ResetMenuColor()
         {
             btnDashboard.BackColor = Color.FromArgb(11, 42, 89);
@@ -404,32 +474,47 @@ namespace Bai_Lam_Nhom_LTHDT
             btnThongKeBS.ForeColor = Color.White;
             btnThongKeKhoa.ForeColor = Color.White;
             btnBaoCao.ForeColor = Color.White;
-            btnDangXuat.ForeColor =Color.White;
+            btnDangXuat.ForeColor = Color.White;
         }
 
         private void cboThangBS_SelectedIndexChanged(object sender, EventArgs e)
-        { 
+        {
 
         }
 
         private void btnXemThongKeBS_Click(object sender, EventArgs e)
         {
 
-            int thang;
+            int thang = Convert.ToInt32(cboThang.Text);
 
-            if (int.TryParse(cboThangBS.Text, out thang))
+            dgvThongKeBS.Rows.Clear();
+            chartThongKeBS.Series.Clear();
+
+            var series = chartThongKeBS.Series.Add("Số lịch hẹn");
+            series.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
+            series.IsValueShownAsLabel = true;
+
+            int stt = 1;
+
+            foreach (ThongKeBacSi item in thongKeBacSiDAL.GetThongKeBacSiTheoThang(thang))
             {
-                LoadThongKeBS(thang);
-            }
-            else
-            {
-                MessageBox.Show("Vui lòng chọn tháng");
+                dgvThongKeBS.Rows.Add(
+                    stt++,
+                    item.MaBS,
+                    item.TenBacSi,
+                    item.ChuyenKhoa,
+                    item.SoLichHen,
+                    item.DaKham,
+                    item.Huy
+                );
+
+                series.Points.AddXY(item.TenBacSi, item.SoLichHen);
             }
         }
 
         private void chart2_Click(object sender, EventArgs e)
         {
-                
+
         }
 
         private void grpBieuDo_Enter(object sender, EventArgs e)
@@ -530,10 +615,17 @@ namespace Bai_Lam_Nhom_LTHDT
 
         private void btnXemBaoCao_Click(object sender, EventArgs e)
         {
-            LoadBaoCao(
-                cboThangBC.Text,
-                cboNamBC.Text);
+            if (string.IsNullOrWhiteSpace(cboThangBC.Text) ||
+                string.IsNullOrWhiteSpace(cboNamBC.Text))
+            {
+                MessageBox.Show("Vui lòng chọn tháng và năm.");
+                return;
+            }
 
+            int thang = Convert.ToInt32(cboThangBC.Text);
+            int nam = Convert.ToInt32(cboNamBC.Text);
+
+            LoadBaoCao(thang, nam);
         }
 
         private void btnExcel_Click(object sender, EventArgs e)
@@ -543,7 +635,64 @@ namespace Bai_Lam_Nhom_LTHDT
 
         private void btnPDF_Click(object sender, EventArgs e)
         {
-            ExportToPDF();
+            SaveFileDialog save = new SaveFileDialog();
+
+            save.Filter = "PDF File|*.pdf";
+            save.Title = "Lưu báo cáo";
+
+            if (save.ShowDialog() != DialogResult.OK)
+                return;
+
+            Document document = new Document(PageSize.A4, 20, 20, 20, 20);
+
+            PdfWriter.GetInstance(document,
+                new FileStream(save.FileName, FileMode.Create));
+
+            document.Open();
+
+            Paragraph title = new Paragraph("BAO CAO PHONG KHAM");
+            title.Alignment = Element.ALIGN_CENTER;
+            title.SpacingAfter = 15;
+
+            document.Add(title);
+
+            document.Add(new Paragraph("Ngay lap: " +
+                DateTime.Now.ToString("dd/MM/yyyy")));
+
+            document.Add(new Paragraph(" "));
+
+            PdfPTable table =
+                new PdfPTable(dgvBaoCao.Columns.Count);
+
+            table.WidthPercentage = 100;
+
+            foreach (DataGridViewColumn col in dgvBaoCao.Columns)
+            {
+                table.AddCell(col.HeaderText);
+            }
+
+            foreach (DataGridViewRow row in dgvBaoCao.Rows)
+            {
+                if (row.IsNewRow)
+                    continue;
+
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    table.AddCell(cell.Value == null ? "" : cell.Value.ToString());
+                }
+            }
+
+            document.Add(table);
+
+            document.Add(new Paragraph(" "));
+
+            document.Add(new Paragraph(
+                "Tong doanh thu: "
+                + lblDoanhThu.Text));
+
+            document.Close();
+
+            MessageBox.Show("Xuất PDF thành công!");
         }
 
         private void btnInBaoCao_Click(object sender, EventArgs e)
@@ -562,10 +711,6 @@ namespace Bai_Lam_Nhom_LTHDT
             MessageBox.Show("Làm mới cảnh báo");
         }
 
-        private void LoadBaoCao(string thang, string nam)
-        {
-            MessageBox.Show("Báo cáo tháng " + thang + "/" + nam);
-        }
 
         private void ExportToExcel()
         {
@@ -591,6 +736,122 @@ namespace Bai_Lam_Nhom_LTHDT
         {
 
         }
+
+        private void lblSoDangCho_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void SetupDashboard()
+        {
+            dgvLichHen.EnableHeadersVisualStyles = false;
+            dgvLichHen.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(0, 0, 153);
+            dgvLichHen.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvLichHen.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 12, FontStyle.Bold);
+            dgvLichHen.ColumnHeadersHeight = 45;
+            dgvLichHen.RowTemplate.Height = 35;
+            dgvLichHen.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 10);
+            dgvLichHen.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvLichHen.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvLichHen.RowHeadersVisible = false;
+        }
+        private void SetupCanhBao()
+        {
+            dgvCanhBao.EnableHeadersVisualStyles = false;
+            dgvCanhBao.ColumnHeadersDefaultCellStyle.BackColor = Color.DarkRed;
+            dgvCanhBao.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvCanhBao.ColumnHeadersDefaultCellStyle.Font =
+                new System.Drawing.Font("Segoe UI", 12, FontStyle.Bold);
+
+            dgvCanhBao.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.Fill;
+
+            dgvCanhBao.RowTemplate.Height = 35;
+
+            dgvCanhBao.RowHeadersVisible = false;
+
+            dgvCanhBao.AllowUserToAddRows = false;
+        }
+        private void SetupThongKeBS()
+        {
+            if (chartThongKeBS.Series.Count > 0)
+            {
+                chartThongKeBS.Series[0].Color = Color.RoyalBlue;
+                chartThongKeBS.Series[0].IsValueShownAsLabel = true;
+            }
+
+            chartThongKeBS.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
+            chartThongKeBS.ChartAreas[0].AxisY.MajorGrid.LineColor = Color.LightGray;
+
+            dgvThongKeBS.EnableHeadersVisualStyles = false;
+            dgvThongKeBS.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
+            dgvThongKeBS.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+        }
+        private void SetupBaoCao()
+        {
+            dgvBaoCao.EnableHeadersVisualStyles = false;
+
+            dgvBaoCao.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
+
+            dgvBaoCao.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+            dgvBaoCao.ColumnHeadersDefaultCellStyle.Font =
+                new System.Drawing.Font("Segoe UI", 12, FontStyle.Bold);
+
+            dgvBaoCao.DefaultCellStyle.Font =
+                new System.Drawing.Font("Segoe UI", 12);
+
+            dgvBaoCao.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.Fill;
+        }
+        private void SetupThongKeKhoa()
+        {
+            dgvThongKeKhoa.EnableHeadersVisualStyles = false;
+
+            dgvThongKeKhoa.ColumnHeadersDefaultCellStyle.BackColor = Color.DarkBlue;
+
+            dgvThongKeKhoa.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+            dgvThongKeKhoa.ColumnHeadersDefaultCellStyle.Font =
+                new System.Drawing.Font("Segoe UI", 12, FontStyle.Bold);
+
+            dgvThongKeKhoa.DefaultCellStyle.Font =
+                new System.Drawing.Font("Segoe UI", 11);
+
+            dgvThongKeKhoa.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.Fill;
+        }
+        private void A_ThongKe_Load(object sender, EventArgs e)
+        {
+            LoadTongHen();
+            LoadDangCho();
+            LoadDaKham();
+            LoadDaHuy();
+
+            LoadDanhSachThongKe();
+            LoadChart();
+
+            LoadQuaGio();
+            LoadCanhBaoKhan();
+            LoadChuaThanhToan();
+            LoadCanhBao();
+            LoadChartCanhBao();
+
+            LoadThongKeBacSi();
+            LoadChartThongKeBacSi();
+
+            LoadThongKeKhoa();
+            LoadCardThongKeKhoa();
+            LoadChartThongKeKhoa();
+
+            LoadThang();
+
+            LoadNam();
+
+            cboThangBC.SelectedItem = DateTime.Now.Month;
+            cboNamBC.SelectedItem = DateTime.Now.Year;
+
+            LoadBaoCao(DateTime.Now.Month, DateTime.Now.Year);
+        }
     }
-    }
+}
 

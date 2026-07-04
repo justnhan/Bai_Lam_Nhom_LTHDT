@@ -31,35 +31,35 @@
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.pnlInfo = new System.Windows.Forms.Panel();
-            this.lblWelcome = new System.Windows.Forms.Label();
-            this.lblName = new System.Windows.Forms.Label();
-            this.lblRole = new System.Windows.Forms.Label();
-            this.lblTime = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.lblDate = new System.Windows.Forms.Label();
+            this.lblTime = new System.Windows.Forms.Label();
+            this.lblRole = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblWelcome = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panelReception = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panelReception = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnlBottom = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -70,10 +70,10 @@
             this.pnlHeader.SuspendLayout();
             this.pnlInfo.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.panelReception.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panelReception.SuspendLayout();
             this.pnlBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -124,25 +124,35 @@
             this.pnlInfo.TabIndex = 1;
             this.pnlInfo.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlInfo_Paint);
             // 
-            // lblWelcome
+            // panel4
             // 
-            this.lblWelcome.AutoSize = true;
-            this.lblWelcome.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblWelcome.Location = new System.Drawing.Point(90, 24);
-            this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(83, 23);
-            this.lblWelcome.TabIndex = 1;
-            this.lblWelcome.Text = "Xin chào:";
+            this.panel4.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel4.Location = new System.Drawing.Point(319, 20);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1, 35);
+            this.panel4.TabIndex = 6;
             // 
-            // lblName
+            // lblDate
             // 
-            this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblName.Location = new System.Drawing.Point(179, 24);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(123, 23);
-            this.lblName.TabIndex = 2;
-            this.lblName.Text = "Nguyễn Van A";
+            this.lblDate.AutoSize = true;
+            this.lblDate.ForeColor = System.Drawing.Color.Gray;
+            this.lblDate.Location = new System.Drawing.Point(1347, 38);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(96, 23);
+            this.lblDate.TabIndex = 5;
+            this.lblDate.Text = "03/07/2026";
+            this.lblDate.Click += new System.EventHandler(this.lblDate_Click);
+            // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblTime.Location = new System.Drawing.Point(1346, 10);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(65, 28);
+            this.lblTime.TabIndex = 4;
+            this.lblTime.Text = "09:30";
+            this.lblTime.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblRole
             // 
@@ -156,27 +166,25 @@
             this.lblRole.TabIndex = 3;
             this.lblRole.Text = "Admin";
             // 
-            // lblTime
+            // lblName
             // 
-            this.lblTime.AutoSize = true;
-            this.lblTime.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblTime.Location = new System.Drawing.Point(1346, 10);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(65, 28);
-            this.lblTime.TabIndex = 4;
-            this.lblTime.Text = "09:30";
-            this.lblTime.Click += new System.EventHandler(this.label1_Click);
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblName.Location = new System.Drawing.Point(179, 24);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(123, 23);
+            this.lblName.TabIndex = 2;
+            this.lblName.Text = "Nguyễn Van A";
             // 
-            // lblDate
+            // lblWelcome
             // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.ForeColor = System.Drawing.Color.Gray;
-            this.lblDate.Location = new System.Drawing.Point(1347, 38);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(96, 23);
-            this.lblDate.TabIndex = 5;
-            this.lblDate.Text = "03/07/2026";
-            this.lblDate.Click += new System.EventHandler(this.lblDate_Click);
+            this.lblWelcome.AutoSize = true;
+            this.lblWelcome.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblWelcome.Location = new System.Drawing.Point(90, 24);
+            this.lblWelcome.Name = "lblWelcome";
+            this.lblWelcome.Size = new System.Drawing.Size(83, 23);
+            this.lblWelcome.TabIndex = 1;
+            this.lblWelcome.Text = "Xin chào:";
             // 
             // tableLayoutPanel1
             // 
@@ -197,109 +205,67 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1628, 617);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
-            // label1
+            // panel3
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(307, 46);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(290, 41);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "PHÂN HỆ TIẾP TÂN";
+            this.panel3.BackColor = System.Drawing.Color.MediumPurple;
+            this.panel3.Controls.Add(this.panel8);
+            this.panel3.Controls.Add(this.label10);
+            this.panel3.Controls.Add(this.label11);
+            this.panel3.Controls.Add(this.label12);
+            this.panel3.Controls.Add(this.pictureBox4);
+            this.panel3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(834, 328);
+            this.panel3.Margin = new System.Windows.Forms.Padding(20);
+            this.panel3.Name = "panel3";
+            this.panel3.Padding = new System.Windows.Forms.Padding(40, 20, 40, 20);
+            this.panel3.Size = new System.Drawing.Size(774, 269);
+            this.panel3.TabIndex = 6;
+            this.panel3.Click += new System.EventHandler(this.panel3_Click);
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
-            // label2
+            // panel8
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(307, 106);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(176, 28);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Quản lý bệnh nhân\n";
+            this.panel8.BackColor = System.Drawing.Color.White;
+            this.panel8.ForeColor = System.Drawing.Color.White;
+            this.panel8.Location = new System.Drawing.Point(304, 90);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(240, 2);
+            this.panel8.TabIndex = 5;
+            this.panel8.Paint += new System.Windows.Forms.PaintEventHandler(this.panel8_Paint);
             // 
-            // label3
+            // label10
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(309, 139);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(157, 28);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "và lịch hẹn khám";
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(309, 139);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(157, 28);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "và lịch hẹn khám";
             // 
-            // panelReception
+            // label11
             // 
-            this.panelReception.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.panelReception.Controls.Add(this.panel5);
-            this.panelReception.Controls.Add(this.label3);
-            this.panelReception.Controls.Add(this.label2);
-            this.panelReception.Controls.Add(this.label1);
-            this.panelReception.Controls.Add(this.pictureBox1);
-            this.panelReception.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panelReception.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelReception.Location = new System.Drawing.Point(20, 20);
-            this.panelReception.Margin = new System.Windows.Forms.Padding(20);
-            this.panelReception.Name = "panelReception";
-            this.panelReception.Padding = new System.Windows.Forms.Padding(40, 20, 40, 20);
-            this.panelReception.Size = new System.Drawing.Size(774, 268);
-            this.panelReception.TabIndex = 0;
-            this.panelReception.Click += new System.EventHandler(this.panelReception_click);
-            this.panelReception.Paint += new System.Windows.Forms.PaintEventHandler(this.panelReception_Paint);
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(307, 106);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(176, 28);
+            this.label11.TabIndex = 2;
+            this.label11.Text = "Quản lý bệnh nhân\n";
             // 
-            // panel1
+            // label12
             // 
-            this.panel1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.panel1.Controls.Add(this.panel6);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(834, 20);
-            this.panel1.Margin = new System.Windows.Forms.Padding(20);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(40, 20, 40, 20);
-            this.panel1.Size = new System.Drawing.Size(774, 268);
-            this.panel1.TabIndex = 4;
-            this.panel1.Click += new System.EventHandler(this.panel1_Click);
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(309, 139);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(157, 28);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "và lịch hẹn khám";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(307, 106);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(176, 28);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Quản lý bệnh nhân\n";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(307, 46);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(253, 41);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "PHÂN HỆ BÁC SĨ";
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(307, 46);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(319, 41);
+            this.label12.TabIndex = 1;
+            this.label12.Text = "PHÂN HỆ THỐNG KÊ ";
             // 
             // panel2
             // 
@@ -319,6 +285,15 @@
             this.panel2.TabIndex = 5;
             this.panel2.Click += new System.EventHandler(this.panel2_Click);
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.White;
+            this.panel7.ForeColor = System.Drawing.Color.White;
+            this.panel7.Location = new System.Drawing.Point(304, 90);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(240, 2);
+            this.panel7.TabIndex = 5;
             // 
             // label7
             // 
@@ -354,57 +329,128 @@
             this.label9.TabIndex = 1;
             this.label9.Text = "PHÂN HỆ ĐIỀU PHỐI ";
             // 
-            // panel3
+            // panel1
             // 
-            this.panel3.BackColor = System.Drawing.Color.MediumPurple;
-            this.panel3.Controls.Add(this.panel8);
-            this.panel3.Controls.Add(this.label10);
-            this.panel3.Controls.Add(this.label11);
-            this.panel3.Controls.Add(this.label12);
-            this.panel3.Controls.Add(this.pictureBox4);
-            this.panel3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(834, 328);
-            this.panel3.Margin = new System.Windows.Forms.Padding(20);
-            this.panel3.Name = "panel3";
-            this.panel3.Padding = new System.Windows.Forms.Padding(40, 20, 40, 20);
-            this.panel3.Size = new System.Drawing.Size(774, 269);
-            this.panel3.TabIndex = 6;
-            this.panel3.Click += new System.EventHandler(this.panel3_Click);
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            this.panel1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel1.Controls.Add(this.panel6);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(834, 20);
+            this.panel1.Margin = new System.Windows.Forms.Padding(20);
+            this.panel1.Name = "panel1";
+            this.panel1.Padding = new System.Windows.Forms.Padding(40, 20, 40, 20);
+            this.panel1.Size = new System.Drawing.Size(774, 268);
+            this.panel1.TabIndex = 4;
+            this.panel1.Click += new System.EventHandler(this.panel1_Click);
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // label10
+            // panel6
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(309, 139);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(157, 28);
-            this.label10.TabIndex = 3;
-            this.label10.Text = "và lịch hẹn khám";
+            this.panel6.BackColor = System.Drawing.Color.White;
+            this.panel6.ForeColor = System.Drawing.Color.White;
+            this.panel6.Location = new System.Drawing.Point(304, 90);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(240, 2);
+            this.panel6.TabIndex = 5;
+            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
-            // label11
+            // label4
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(307, 106);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(176, 28);
-            this.label11.TabIndex = 2;
-            this.label11.Text = "Quản lý bệnh nhân\n";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(309, 139);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(157, 28);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "và lịch hẹn khám";
             // 
-            // label12
+            // label5
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(307, 46);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(319, 41);
-            this.label12.TabIndex = 1;
-            this.label12.Text = "PHÂN HỆ THỐNG KÊ ";
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(307, 106);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(176, 28);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Quản lý bệnh nhân\n";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(307, 46);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(253, 41);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "PHÂN HỆ BÁC SĨ";
+            // 
+            // panelReception
+            // 
+            this.panelReception.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.panelReception.Controls.Add(this.panel5);
+            this.panelReception.Controls.Add(this.label3);
+            this.panelReception.Controls.Add(this.label2);
+            this.panelReception.Controls.Add(this.label1);
+            this.panelReception.Controls.Add(this.pictureBox1);
+            this.panelReception.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panelReception.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelReception.Location = new System.Drawing.Point(20, 20);
+            this.panelReception.Margin = new System.Windows.Forms.Padding(20);
+            this.panelReception.Name = "panelReception";
+            this.panelReception.Padding = new System.Windows.Forms.Padding(40, 20, 40, 20);
+            this.panelReception.Size = new System.Drawing.Size(774, 268);
+            this.panelReception.TabIndex = 0;
+            this.panelReception.Click += new System.EventHandler(this.panelReception_click);
+            this.panelReception.Paint += new System.Windows.Forms.PaintEventHandler(this.panelReception_Paint);
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.ForeColor = System.Drawing.Color.White;
+            this.panel5.Location = new System.Drawing.Point(304, 90);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(240, 2);
+            this.panel5.TabIndex = 4;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(309, 139);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(157, 28);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "và lịch hẹn khám";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(307, 106);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(176, 28);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Quản lý bệnh nhân\n";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(307, 46);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(290, 41);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "PHÂN HỆ TIẾP TÂN";
             // 
             // pnlBottom
             // 
@@ -430,55 +476,9 @@
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel4.Location = new System.Drawing.Point(319, 20);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1, 35);
-            this.panel4.TabIndex = 6;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.ForeColor = System.Drawing.Color.White;
-            this.panel5.Location = new System.Drawing.Point(304, 90);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(240, 2);
-            this.panel5.TabIndex = 4;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.White;
-            this.panel6.ForeColor = System.Drawing.Color.White;
-            this.panel6.Location = new System.Drawing.Point(304, 90);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(240, 2);
-            this.panel6.TabIndex = 5;
-            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.White;
-            this.panel7.ForeColor = System.Drawing.Color.White;
-            this.panel7.Location = new System.Drawing.Point(304, 90);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(240, 2);
-            this.panel7.TabIndex = 5;
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.White;
-            this.panel8.ForeColor = System.Drawing.Color.White;
-            this.panel8.Location = new System.Drawing.Point(304, 90);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(240, 2);
-            this.panel8.TabIndex = 5;
-            this.panel8.Paint += new System.Windows.Forms.PaintEventHandler(this.panel8_Paint);
-            // 
             // pictureBox4
             // 
-
+            this.pictureBox4.Image = global::Bai_Lam_Nhom_LTHDT.Properties.Resources.aedb1e12_791b_48a5_9036_62193f38c946;
             this.pictureBox4.Location = new System.Drawing.Point(84, 21);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(200, 186);
@@ -488,7 +488,7 @@
             // 
             // pictureBox3
             // 
-
+            this.pictureBox3.Image = global::Bai_Lam_Nhom_LTHDT.Properties.Resources._4fe92996_20dd_4e9c_8518_3d80af06c5fa;
             this.pictureBox3.Location = new System.Drawing.Point(91, 29);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(191, 186);
@@ -498,7 +498,7 @@
             // 
             // pictureBox2
             // 
-
+            this.pictureBox2.Image = global::Bai_Lam_Nhom_LTHDT.Properties.Resources.f17c3c57_9789_47f0_8b64_a3c07f318c87;
             this.pictureBox2.Location = new System.Drawing.Point(80, 23);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(200, 184);
@@ -508,7 +508,7 @@
             // 
             // pictureBox1
             // 
-   
+            this.pictureBox1.Image = global::Bai_Lam_Nhom_LTHDT.Properties.Resources._3ae66226_b6cb_47fb_8d2f_7c404b9a40c2;
             this.pictureBox1.Location = new System.Drawing.Point(73, 28);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(209, 201);
@@ -528,7 +528,7 @@
             // 
             // picUser
             // 
-
+            this.picUser.Image = global::Bai_Lam_Nhom_LTHDT.Properties.Resources._3382aaad_7077_467d_9060_7d594a578811;
             this.picUser.Location = new System.Drawing.Point(30, 10);
             this.picUser.Name = "picUser";
             this.picUser.Size = new System.Drawing.Size(48, 48);
@@ -538,7 +538,7 @@
             // 
             // picLogo
             // 
-
+            this.picLogo.Image = global::Bai_Lam_Nhom_LTHDT.Properties.Resources._5754c668_4f31_4282_bc4c_acf2485b0ac4;
             this.picLogo.Location = new System.Drawing.Point(30, 20);
             this.picLogo.Name = "picLogo";
             this.picLogo.Size = new System.Drawing.Size(80, 80);
@@ -568,14 +568,14 @@
             this.pnlInfo.ResumeLayout(false);
             this.pnlInfo.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.panelReception.ResumeLayout(false);
-            this.panelReception.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panelReception.ResumeLayout(false);
+            this.panelReception.PerformLayout();
             this.pnlBottom.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -592,7 +592,6 @@
 
         private System.Windows.Forms.Panel pnlHeader;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.PictureBox picLogo;
         private System.Windows.Forms.Panel pnlInfo;
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Label lblRole;
@@ -629,5 +628,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panelReception;
         private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox picLogo;
     }
 }
