@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Bai_Lam_Nhom_LTHDT.DAL;
+using Bai_Lam_Nhom_LTHDT.Entity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,37 +14,41 @@ namespace Bai_Lam_Nhom_LTHDT
 {
     public partial class T_TrangChuTiepNhan : Form
     {
+        LichHenDAL lichHenDAL = new LichHenDAL();
+        BenhNhanDAL benhNhanDAL = new BenhNhanDAL();
+        KhungGioDAL khungGioDAL = new KhungGioDAL();
+
+
         public T_TrangChuTiepNhan()
         {
             InitializeComponent();
-            giuLieuMau();
             MauDGV(dgvLichHen);
+            RefereshData();
         }
-        private void giuLieuMau()
+
+        private void RefereshData()
         {
-            txtDiaChi.Text = "SONHA001";
-            txtHoVaTen.Text = "Nguyen Van A";
-            txtGhiChu.Text = "Đau đầu";
-            txtSDT.Text = "0123456789";
-            txtBacSi.Text = "Dr. Nguyen Van B";
-            dtpNgayHen.Value = DateTime.Now;
-            dtpNgaySinh.Value = new DateTime(1990, 1, 1);
-            cboTrangThai.Items.Add("Đang chờ");
-            cboTrangThai.Items.Add("Đã khám");
-            cboTrangThai.Items.Add("Hủy");
-            cboTrangThai.SelectedIndex = 0;
-            nudGioHen.Value = 10;
-            dgvLichHen.Rows.Add("08:00", "LH001", "Nguyễn Văn An", "0905123456", "BS. Trần Minh", "Đã xác nhận");
-            dgvLichHen.Rows.Add("08:30", "LH002", "Lê Thị Hoa", "0912345678", "BS. Nguyễn Hải", "Chờ khám");
-            dgvLichHen.Rows.Add("09:00", "LH003", "Phạm Quốc Bảo", "0987654321", "BS. Trần Minh", "Đang khám");
-            dgvLichHen.Rows.Add("09:30", "LH004", "Trần Thị Lan", "0978123456", "BS. Võ Anh", "Đã xác nhận");
-            dgvLichHen.Rows.Add("10:00", "LH005", "Nguyễn Minh Khang", "0934567890", "BS. Nguyễn Hải", "Chờ khám");
-            dgvLichHen.Rows.Add("10:30", "LH006", "Đặng Thu Hà", "0965123789", "BS. Võ Anh", "Đã hoàn thành");
-            dgvLichHen.Rows.Add("11:00", "LH007", "Phan Đức Tài", "0945678123", "BS. Trần Minh", "Đã xác nhận");
-            dgvLichHen.Rows.Add("13:30", "LH008", "Hoàng Ngọc Mai", "0923456789", "BS. Nguyễn Hải", "Chờ khám");
-            dgvLichHen.Rows.Add("14:00", "LH009", "Lê Quốc Huy", "0911223344", "BS. Võ Anh", "Đã xác nhận");
-            dgvLichHen.Rows.Add("15:00", "LH010", "Nguyễn Thị Yến", "0988112233", "BS. Trần Minh", "Đã hủy");
+            DataTable dt = new DataTable();
+
+            dt.Columns.Add("Mã hẹn");
+            dt.Columns.Add("Mã bệnh nhân");
+            dt.Columns.Add("Mã giờ");
+            dt.Columns.Add("Ngay đặt");
+            dt.Columns.Add("Trang thái");
+            dt.Columns.Add("Lý do khám");
+            dt.Columns.Add("Ghi chú");
+
+            foreach (LichHen lh in lichHenDAL.GetAllLichHen())
+            {
+                dt.Rows.Add(lh.MaHen, lh.MaBN, lh.MaGio, lh.NgayDat, lh.TrangThai, lh.LyDoKham, lh.GhiChu);
+            }
+
+            dgvLichHen.DataSource = dt;
         }
+
+        
+
+
         private void MauDGV(DataGridView dgv)
         {
             dgv.EnableHeadersVisualStyles = false;
@@ -92,6 +98,37 @@ namespace Bai_Lam_Nhom_LTHDT
             T_DanhSachBenhNhan f2 = new T_DanhSachBenhNhan();
             f2.ShowDialog();
 
+        }
+
+        private void dgvLichHen_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            string maHen = dgvLichHen.Rows[e.RowIndex].Cells["Mã hẹn"].Value.ToString();
+
+            txtMaHen.Text = maHen;
+
+            // Lấy đối tượng Lịch hẹn
+            LichHen lh = lichHenDAL.GetByMaHen(maHen);
+
+            if (lh == null) return;
+
+            // ===== Thông tin lịch hẹn =====
+            txtGhiChu.Text = lh.GhiChu;
+            dtpNgayHen.Value = lh.NgayDat;
+            cboTrangThai.SelectedItem = lh.TrangThai;
+
+            // Nếu giờ hẹn lưu dưới dạng MaGio thì đổi sang giờ
+            txtGioHen.Text = khungGioDAL.GetByMaGio(lh.MaGio).GioBatDau;
+
+            // ===== Thông tin bệnh nhân =====
+            txtHoVaTen.Text = benhNhanDAL.GetHoTenByMaHen(maHen);
+            txtSDT.Text = benhNhanDAL.GetSDTByMaHen(maHen);
+            dtpNgaySinh.Value = Convert.ToDateTime(benhNhanDAL.GetNgaySinhByMaHen(maHen));
+            txtDiaChi.Text = benhNhanDAL.GetDiaChiByMaHen(maHen);
+
+            // ===== Thông tin bác sĩ =====
+            txtBacSi.Text = lichHenDAL.GetHoTenBSByMaHen(maHen);
         }
     }
 }
