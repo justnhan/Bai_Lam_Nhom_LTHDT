@@ -171,6 +171,43 @@ namespace Bai_Lam_Nhom_LTHDT.DAL
             return pk;
         }
 
+        public List<PhongKham> GetByMaChuyenKhoa(string maChuyenKhoa)
+        {
+            List<PhongKham> list = new List<PhongKham>();
+            error = "";
+            try
+            {
+                con.Open();
+                string sql = "SELECT * FROM PHONGKHAM WHERE MACHUYENKHOA = @MACHUYENKHOA";
+                using (SQLiteCommand cmd = new SQLiteCommand(sql, con))
+                {
+                    cmd.Parameters.AddWithValue("@MACHUYENKHOA", maChuyenKhoa);
+                    using (SQLiteDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            PhongKham pk = new PhongKham(
+                                reader["MAPHONG"].ToString(),
+                                reader["TENPHONG"].ToString(),
+                                reader["TRANGTHAI"].ToString(),
+                                reader["GHICHU"].ToString(),
+                                reader["MACHUYENKHOA"].ToString()
+                            );
+                            list.Add(pk);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+            }
+            finally
+            {
+                con.Close();
+            }
+            return list;
+        }
 
         public bool Add(PhongKham phongKham)
         {

@@ -63,6 +63,7 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             this.dgvDanhSachBacSi = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
+            this.btnQuayLai = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -96,10 +97,10 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             this.btnLamMoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(193)))));
             this.btnLamMoi.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.btnLamMoi.ForeColor = System.Drawing.Color.White;
-            this.btnLamMoi.Location = new System.Drawing.Point(545, 236);
+            this.btnLamMoi.Location = new System.Drawing.Point(454, 228);
             this.btnLamMoi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.Size = new System.Drawing.Size(103, 35);
+            this.btnLamMoi.Size = new System.Drawing.Size(133, 46);
             this.btnLamMoi.TabIndex = 16;
             this.btnLamMoi.Text = "Làm mới";
             this.btnLamMoi.UseVisualStyleBackColor = false;
@@ -110,10 +111,10 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             this.btnXoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(57)))), ((int)(((byte)(53)))));
             this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.btnXoa.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.Location = new System.Drawing.Point(370, 235);
+            this.btnXoa.Location = new System.Drawing.Point(305, 228);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(106, 36);
+            this.btnXoa.Size = new System.Drawing.Size(118, 46);
             this.btnXoa.TabIndex = 15;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
@@ -124,10 +125,10 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             this.btnSua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(136)))), ((int)(((byte)(229)))));
             this.btnSua.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.btnSua.ForeColor = System.Drawing.Color.White;
-            this.btnSua.Location = new System.Drawing.Point(209, 235);
+            this.btnSua.Location = new System.Drawing.Point(174, 228);
             this.btnSua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(104, 36);
+            this.btnSua.Size = new System.Drawing.Size(104, 46);
             this.btnSua.TabIndex = 14;
             this.btnSua.Text = "Sửa ";
             this.btnSua.UseVisualStyleBackColor = false;
@@ -138,10 +139,10 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             this.btnThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(160)))), ((int)(((byte)(71)))));
             this.btnThem.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.btnThem.ForeColor = System.Drawing.Color.White;
-            this.btnThem.Location = new System.Drawing.Point(15, 232);
+            this.btnThem.Location = new System.Drawing.Point(24, 228);
             this.btnThem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(120, 39);
+            this.btnThem.Size = new System.Drawing.Size(120, 46);
             this.btnThem.TabIndex = 13;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
@@ -150,6 +151,7 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
+            this.groupBox2.Controls.Add(this.btnQuayLai);
             this.groupBox2.Controls.Add(this.cboLoai);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.txtKey);
@@ -167,8 +169,14 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             // 
             // cboLoai
             // 
+            this.cboLoai.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboLoai.ForeColor = System.Drawing.Color.Black;
             this.cboLoai.FormattingEnabled = true;
+            this.cboLoai.Items.AddRange(new object[] {
+            "Mã",
+            "Tên",
+            "SĐT",
+            "Chuyên khoa"});
             this.cboLoai.Location = new System.Drawing.Point(126, 71);
             this.cboLoai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboLoai.Name = "cboLoai";
@@ -188,6 +196,7 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             // 
             // txtKey
             // 
+            this.txtKey.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtKey.ForeColor = System.Drawing.Color.Black;
             this.txtKey.Location = new System.Drawing.Point(126, 37);
             this.txtKey.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -245,16 +254,21 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             // 
             // dtpNgaySinh
             // 
+            this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNgaySinh.Location = new System.Drawing.Point(566, 120);
             this.dtpNgaySinh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
-            this.dtpNgaySinh.Size = new System.Drawing.Size(250, 34);
+            this.dtpNgaySinh.Size = new System.Drawing.Size(200, 34);
             this.dtpNgaySinh.TabIndex = 16;
             // 
             // cboGioiTinh
             // 
             this.cboGioiTinh.ForeColor = System.Drawing.Color.Black;
             this.cboGioiTinh.FormattingEnabled = true;
+            this.cboGioiTinh.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ",
+            "Khác"});
             this.cboGioiTinh.Location = new System.Drawing.Point(178, 105);
             this.cboGioiTinh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboGioiTinh.Name = "cboGioiTinh";
@@ -439,6 +453,20 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             this.label11.TabIndex = 0;
             this.label11.Text = "Quản lý bác sĩ";
             // 
+            // btnQuayLai
+            // 
+            this.btnQuayLai.BackColor = System.Drawing.Color.LightBlue;
+            this.btnQuayLai.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.btnQuayLai.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.btnQuayLai.Location = new System.Drawing.Point(152, 126);
+            this.btnQuayLai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnQuayLai.Name = "btnQuayLai";
+            this.btnQuayLai.Size = new System.Drawing.Size(105, 46);
+            this.btnQuayLai.TabIndex = 15;
+            this.btnQuayLai.Text = "Quay lại";
+            this.btnQuayLai.UseVisualStyleBackColor = false;
+            this.btnQuayLai.Click += new System.EventHandler(this.btnQuayLai_Click);
+            // 
             // N_QuanLyBacSi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -497,5 +525,6 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
         private DataGridView dgvDanhSachBacSi;
         private Panel panel2;
         private Label label11;
+        private Button btnQuayLai;
     }
 }

@@ -1,6 +1,7 @@
-﻿using Bai_Lam_Nhom_LTHDT.Entity;
-using Bai_Lam_Nhom_LTHDT.DAL;
+﻿using Bai_Lam_Nhom_LTHDT.DAL;
+using Bai_Lam_Nhom_LTHDT.Entity;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,14 +16,92 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
     {
 
         BacSiDAL dal = new BacSiDAL();
+        ChuyenKhoaDAL dalck = new ChuyenKhoaDAL();
+        private bool isAdding = false;
+        private bool isEditing = false;
         public N_QuanLyBacSi()
         {
             InitializeComponent();
             RefreshData();
             MauDGV(dgvDanhSachBacSi);
-
+            LoadCboChuyenKhoa();
         }
 
+        // Hàm trung gian
+        private bool ValidateInput()
+        {
+
+            // Họ tên
+            if (Validator.IsEmpty(txtHoTen.Text))
+            {
+                MessageBox.Show("Họ tên bác sĩ không được để trống.");
+                txtHoTen.Focus();
+                return false;
+            }
+
+            if (!Validator.IsLetter(txtHoTen.Text))
+            {
+                MessageBox.Show("Họ tên chỉ được chứa chữ cái.");
+                txtHoTen.Focus();
+                return false;
+            }
+
+            // Giới tính
+            if (cboGioiTinh.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng chọn giới tính.");
+                cboGioiTinh.Focus();
+                return false;
+            }
+
+            // Số điện thoại
+            if (Validator.IsEmpty(txtSDT.Text))
+            {
+                MessageBox.Show("Số điện thoại không được để trống.");
+                txtSDT.Focus();
+                return false;
+            }
+
+            if (!Validator.IsPhoneNumber(txtSDT.Text))
+            {
+                MessageBox.Show("Số điện thoại không hợp lệ.");
+                txtSDT.Focus();
+                return false;
+            }
+
+            // Email
+            if (Validator.IsEmpty(txtEmail.Text))
+            {
+                MessageBox.Show("Email không được để trống.");
+                txtEmail.Focus();
+                return false;
+            }
+
+            if (!Validator.IsEmail(txtEmail.Text))
+            {
+                MessageBox.Show("Email không hợp lệ.");
+                txtEmail.Focus();
+                return false;
+            }
+
+            // Chuyên khoa
+            if (cboChuyenKhoa.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng chọn chuyên khoa.");
+                cboChuyenKhoa.Focus();
+                return false;
+            }
+
+            // Ngày sinh
+            if (dtpNgaySinh.Value.Date > DateTime.Today)
+            {
+                MessageBox.Show("Ngày sinh không được lớn hơn ngày hiện tại.");
+                dtpNgaySinh.Focus();
+                return false;
+            }
+
+            return true;
+        }
         private void RefreshData()
         {
             DataTable dt = new DataTable();
@@ -84,62 +163,231 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
                 Color.FromArgb(227, 242, 253); // #E3F2FD
         }
 
-
-        private void FrmQuanLyBacSi_Load(object sender, EventArgs e)
+        private void LoadCboChuyenKhoa()
         {
+            List<ChuyenKhoa> dt = dalck.GetAllChuyenKhoa();
+            cboChuyenKhoa.DataSource = dt;
+            cboChuyenKhoa.DisplayMember = "TenChuyenKhoa"; // Hiển thị tên chuyên khoa
+            cboChuyenKhoa.ValueMember = "MaChuyenKhoa"; // Giá trị là mã chuyên khoa
+            cboChuyenKhoa.SelectedIndex = -1; // Không chọn mục nào mặc định
 
         }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
+        
+        private void Khoa()
         {
-
+            txtMaBS.ReadOnly = true;
+            txtHoTen.ReadOnly = true;
+            cboGioiTinh.Enabled = false;
+            txtSDT.ReadOnly = true;
+            txtEmail.ReadOnly = true;
+            cboChuyenKhoa.Enabled = false;
+            dtpNgaySinh.Enabled = false;
+        }
+        private void Mo()
+        {
+            txtMaBS.ReadOnly = false;
+            txtHoTen.ReadOnly = false;
+            cboGioiTinh.Enabled = true;
+            txtSDT.ReadOnly = false;
+            txtEmail.ReadOnly = false;
+            cboChuyenKhoa.Enabled = true;
+            dtpNgaySinh.Enabled = true;
         }
 
-        private void FrmQuanLyBacSi_FormClosed(object sender, FormClosedEventArgs e)
-        {
 
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
+        // CRUD
         private void btnThem_Click(object sender, EventArgs e)
         {
+            if (!ValidateInput())
+            {
+                return;
+            }
+            Mo();
+
+
+            isAdding = true;
+            txtMaBS.Text = dal.MaBSGenerator();
+            txtMaBS.Enabled = false;
+
+            txtHoTen.Clear();
+            txtSDT.Clear();
+            txtEmail.Clear();
+
+            cboGioiTinh.SelectedIndex = -1;
+            cboChuyenKhoa.SelectedIndex = -1;
+
+            dtpNgaySinh.Value = DateTime.Today;
+
+            txtHoTen.Focus();
+
+
 
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+            
+            if (Validator.IsEmpty(txtMaBS.Text))
+            {
+                MessageBox.Show("Vui lòng chọn bác sĩ cần sửa.");
+                return;
+            }
+            if (!ValidateInput())
+            {
+                return;
+            }
+            Mo();
+            isEditing = true;
+            txtMaBS.Enabled = false;
+
+            txtHoTen.Focus();
+
 
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
-        {
-            
+        { 
+            if (Validator.IsEmpty(txtMaBS.Text))
+            {
+                MessageBox.Show("Vui lòng chọn bác sĩ cần xóa.");
+                return;
+            }
+            if (MessageBox.Show("Bạn chắc chắn muốn xóa bác sĩ này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                string maBS = txtMaBS.Text;
+                if (dal.DeleteByMaBS(maBS))
+                {
+                    MessageBox.Show("Xóa bác sĩ thành công.");
+                    RefreshData();
+                    // Xóa dữ liệu trong các TextBox và ComboBox
+                    txtMaBS.Clear();
+                    txtHoTen.Clear();
+                    cboGioiTinh.SelectedIndex = -1;
+                    txtSDT.Clear();
+                    txtEmail.Clear();
+                    cboChuyenKhoa.SelectedIndex = -1;
+                    dtpNgaySinh.Value = DateTime.Today;
+                }
+                else
+                {
+                    MessageBox.Show("Xóa bác sĩ thất bại.");
+                }
+            }
         }
 
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
+            if (!ValidateInput())
+                return;
 
+            BacSi bs = new BacSi(
+                txtMaBS.Text,
+                txtHoTen.Text,
+                cboGioiTinh.Text,
+                txtSDT.Text,
+                txtEmail.Text,
+                cboChuyenKhoa.SelectedValue.ToString(),
+                dtpNgaySinh.Value
+            );
+
+            if (isAdding)
+            {
+                if (dal.Add(bs))
+                {
+                    MessageBox.Show("Thêm thành công.");
+                }
+                else
+                {
+                    MessageBox.Show(dal.GetError());
+                }
+            }
+            else if (isEditing)
+            {
+                if (dal.Update(bs))
+                {
+                    MessageBox.Show("Cập nhật thành công.");
+                }
+                else
+                {
+                    MessageBox.Show(dal.GetError());
+                }
+            }
+
+            RefreshData();
+
+            Mo();
+            isEditing = false;
+            isAdding = false;
         }
+        
 
+        //Tìm kiếm
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            
-        }
+            if (cboLoai.Text == "Mã")
+            {
+                BacSi bs = dal.GetByMaBS(txtKey.Text.Trim());
+                dgvDanhSachBacSi.DataSource = bs;
+                if (bs != null)
+                {
+                    dgvDanhSachBacSi.DataSource = new List<BacSi> { bs };
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy bác sĩ.");
+                    RefreshData();
+                }
+            }
+            else if (cboLoai.Text == "Tên")
+            {
+                List<BacSi> list = dal.SearchByHoTen(txtKey.Text.Trim());
+                
+                if (list.Count > 0)
+                {
+                    dgvDanhSachBacSi.DataSource = list;
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy bác sĩ.");
+                    RefreshData();
+                }
+            }
+            else if (cboLoai.Text == "Chuyên khoa")
+            {
+                List<BacSi> list = dal.SearchByMaChuyenKhoa(txtKey.Text.Trim());
+                if (list.Count > 0)
+                {
+                    dgvDanhSachBacSi.DataSource = list;
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy bác sĩ.");
+                    RefreshData();
+                }
+            }
+            else
+            {
+                BacSi bs = dal.GetBySdt(txtKey.Text.Trim());
+                dgvDanhSachBacSi.DataSource = bs;
+                if (bs != null)
+                {
+                    dgvDanhSachBacSi.DataSource = new List<BacSi> { bs };
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy bác sĩ.");
+                    RefreshData();
+                }
 
-        private void dgvDanhSachBacSi_CellContentClick(object sender, DataGridViewCellEventArgs e)
+            }
+
+        }
+        private void btnQuayLai_Click(object sender, EventArgs e)
         {
-
+            RefreshData();
         }
 
+        // Chọn đổ dư liệu ra control
         private void dgvDanhSachBacSi_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0)
@@ -163,6 +411,41 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             {
                 dtpNgaySinh.Value = Convert.ToDateTime(row.Cells["Ngày sinh"].Value);
             }
+
+            Khoa();
         }
+
+
+
+
+        // bấm nhầm
+        private void FrmQuanLyBacSi_Load(object sender, EventArgs e)
+        {
+
+        }
+        private void dgvDanhSachBacSi_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmQuanLyBacSi_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

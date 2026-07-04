@@ -165,7 +165,7 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             this.nudGioBatDau.Location = new System.Drawing.Point(659, 6);
             this.nudGioBatDau.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nudGioBatDau.Name = "nudGioBatDau";
-            this.nudGioBatDau.Size = new System.Drawing.Size(131, 34);
+            this.nudGioBatDau.Size = new System.Drawing.Size(150, 34);
             this.nudGioBatDau.TabIndex = 14;
             // 
             // txtHoTenBS
@@ -272,16 +272,20 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             // 
             // dgvLichLamViec
             // 
+            this.dgvLichLamViec.AllowUserToAddRows = false;
+            this.dgvLichLamViec.AllowUserToDeleteRows = false;
             this.dgvLichLamViec.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvLichLamViec.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLichLamViec.Location = new System.Drawing.Point(6, 31);
             this.dgvLichLamViec.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvLichLamViec.MultiSelect = false;
             this.dgvLichLamViec.Name = "dgvLichLamViec";
+            this.dgvLichLamViec.ReadOnly = true;
             this.dgvLichLamViec.RowHeadersWidth = 51;
             this.dgvLichLamViec.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLichLamViec.Size = new System.Drawing.Size(875, 236);
             this.dgvLichLamViec.TabIndex = 0;
+            this.dgvLichLamViec.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLichLamViec_CellClick);
             // 
             // btnXemLichCuThe
             // 
