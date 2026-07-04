@@ -36,6 +36,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtGioHen = new System.Windows.Forms.TextBox();
+            this.txtMaHen = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.txtBacSi = new System.Windows.Forms.TextBox();
             this.cboTrangThai = new System.Windows.Forms.ComboBox();
             this.dtpNgayHen = new System.Windows.Forms.DateTimePicker();
@@ -56,9 +59,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dgvLichHen = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtMaHen = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.txtGioHen = new System.Windows.Forms.TextBox();
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -167,6 +167,30 @@
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "THÔNG TIN LỊCH HẸN";
+            // 
+            // txtGioHen
+            // 
+            this.txtGioHen.Location = new System.Drawing.Point(183, 186);
+            this.txtGioHen.Name = "txtGioHen";
+            this.txtGioHen.Size = new System.Drawing.Size(300, 30);
+            this.txtGioHen.TabIndex = 13;
+            // 
+            // txtMaHen
+            // 
+            this.txtMaHen.Location = new System.Drawing.Point(183, 37);
+            this.txtMaHen.Name = "txtMaHen";
+            this.txtMaHen.Size = new System.Drawing.Size(300, 30);
+            this.txtMaHen.TabIndex = 12;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(50, 40);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(78, 25);
+            this.label12.TabIndex = 11;
+            this.label12.Text = "Mã hẹn";
             // 
             // txtBacSi
             // 
@@ -350,12 +374,16 @@
             // 
             // dgvLichHen
             // 
+            this.dgvLichHen.AllowUserToAddRows = false;
+            this.dgvLichHen.AllowUserToDeleteRows = false;
             this.dgvLichHen.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvLichHen.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(242)))), ((int)(((byte)(253)))));
             this.dgvLichHen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLichHen.Location = new System.Drawing.Point(9, 67);
             this.dgvLichHen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvLichHen.MultiSelect = false;
             this.dgvLichHen.Name = "dgvLichHen";
+            this.dgvLichHen.ReadOnly = true;
             this.dgvLichHen.RowHeadersWidth = 51;
             this.dgvLichHen.RowTemplate.Height = 24;
             this.dgvLichHen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -374,30 +402,6 @@
             this.label2.Size = new System.Drawing.Size(234, 31);
             this.label2.TabIndex = 0;
             this.label2.Text = "LỊCH HẸN HÔM NAY";
-            // 
-            // txtMaHen
-            // 
-            this.txtMaHen.Location = new System.Drawing.Point(183, 37);
-            this.txtMaHen.Name = "txtMaHen";
-            this.txtMaHen.Size = new System.Drawing.Size(300, 30);
-            this.txtMaHen.TabIndex = 12;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(50, 40);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(78, 25);
-            this.label12.TabIndex = 11;
-            this.label12.Text = "Mã hẹn";
-            // 
-            // txtGioHen
-            // 
-            this.txtGioHen.Location = new System.Drawing.Point(183, 186);
-            this.txtGioHen.Name = "txtGioHen";
-            this.txtGioHen.Size = new System.Drawing.Size(300, 30);
-            this.txtGioHen.TabIndex = 13;
             // 
             // T_TrangChuTiepNhan
             // 
