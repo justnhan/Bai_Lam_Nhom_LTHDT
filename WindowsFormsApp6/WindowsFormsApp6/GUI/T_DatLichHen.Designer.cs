@@ -581,12 +581,18 @@
             // 
             // dgvChuyenKhoa
             // 
+            this.dgvChuyenKhoa.AllowUserToAddRows = false;
+            this.dgvChuyenKhoa.AllowUserToDeleteRows = false;
+            this.dgvChuyenKhoa.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvChuyenKhoa.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(242)))), ((int)(((byte)(253)))));
             this.dgvChuyenKhoa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvChuyenKhoa.Location = new System.Drawing.Point(7, 34);
+            this.dgvChuyenKhoa.MultiSelect = false;
             this.dgvChuyenKhoa.Name = "dgvChuyenKhoa";
+            this.dgvChuyenKhoa.ReadOnly = true;
             this.dgvChuyenKhoa.RowHeadersWidth = 51;
             this.dgvChuyenKhoa.RowTemplate.Height = 24;
+            this.dgvChuyenKhoa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvChuyenKhoa.Size = new System.Drawing.Size(316, 291);
             this.dgvChuyenKhoa.TabIndex = 0;
             this.dgvChuyenKhoa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChuyenKhoa_CellClick);
@@ -605,12 +611,18 @@
             // 
             // dgvLichTruc
             // 
+            this.dgvLichTruc.AllowUserToAddRows = false;
+            this.dgvLichTruc.AllowUserToDeleteRows = false;
+            this.dgvLichTruc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvLichTruc.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(242)))), ((int)(((byte)(253)))));
             this.dgvLichTruc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLichTruc.Location = new System.Drawing.Point(7, 34);
+            this.dgvLichTruc.MultiSelect = false;
             this.dgvLichTruc.Name = "dgvLichTruc";
+            this.dgvLichTruc.ReadOnly = true;
             this.dgvLichTruc.RowHeadersWidth = 51;
             this.dgvLichTruc.RowTemplate.Height = 24;
+            this.dgvLichTruc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLichTruc.Size = new System.Drawing.Size(316, 201);
             this.dgvLichTruc.TabIndex = 0;
             this.dgvLichTruc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLichTruc_CellClick);
@@ -628,12 +640,18 @@
             // 
             // dgvKhungGio
             // 
+            this.dgvKhungGio.AllowUserToAddRows = false;
+            this.dgvKhungGio.AllowUserToDeleteRows = false;
+            this.dgvKhungGio.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvKhungGio.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(242)))), ((int)(((byte)(253)))));
             this.dgvKhungGio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvKhungGio.Location = new System.Drawing.Point(14, 33);
+            this.dgvKhungGio.MultiSelect = false;
             this.dgvKhungGio.Name = "dgvKhungGio";
+            this.dgvKhungGio.ReadOnly = true;
             this.dgvKhungGio.RowHeadersWidth = 51;
             this.dgvKhungGio.RowTemplate.Height = 24;
+            this.dgvKhungGio.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvKhungGio.Size = new System.Drawing.Size(279, 201);
             this.dgvKhungGio.TabIndex = 1;
             // 
