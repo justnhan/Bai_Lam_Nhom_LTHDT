@@ -189,7 +189,97 @@ namespace Bai_Lam_Nhom_LTHDT.DAL
             return bn;
         }
 
+        public BenhNhan GetBySDT(string sdt)
+        {
+            error = "";
 
+            BenhNhan bn = null;
+
+            try
+            {
+                con.Open();
+
+                string sql = "SELECT * FROM BenhNhan WHERE SDT = @SDT";
+
+                using (SQLiteCommand cmd = new SQLiteCommand(sql, con))
+                {
+                    cmd.Parameters.AddWithValue("@SDT", sdt);
+
+                    using (SQLiteDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            bn = new BenhNhan(
+                                reader["MaBN"].ToString(),
+                                reader["HoTen"].ToString(),
+                                reader["GioiTinh"].ToString(),
+                                Convert.ToDateTime(reader["NgaySinh"]),
+                                reader["SDT"].ToString(),
+                                reader["DiaChi"].ToString(),
+                                reader["Email"].ToString()
+                            );
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return bn;
+        }
+        public BenhNhan Search(string keyword)
+        {
+            error = "";
+
+            BenhNhan bn = null;
+
+            try
+            {
+                con.Open();
+
+                string sql = @"SELECT *
+                       FROM BenhNhan
+                       WHERE MaBN=@keyword
+                          OR SDT=@keyword";
+
+                using (SQLiteCommand cmd = new SQLiteCommand(sql, con))
+                {
+                    cmd.Parameters.AddWithValue("@keyword", keyword);
+
+                    using (SQLiteDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            bn = new BenhNhan(
+                                reader["MaBN"].ToString(),
+                                reader["HoTen"].ToString(),
+                                reader["GioiTinh"].ToString(),
+                                Convert.ToDateTime(reader["NgaySinh"]),
+                                reader["SDT"].ToString(),
+                                reader["DiaChi"].ToString(),
+                                reader["Email"].ToString()
+                            );
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return bn;
+        }
         public bool Add(BenhNhan bn)
         {
             error = "";
@@ -297,7 +387,51 @@ namespace Bai_Lam_Nhom_LTHDT.DAL
                 con.Close();
             }
         }
+        public List<BenhNhan> TimKiem(string cot, string tuKhoa)
+        {
+            error = "";
 
+            List<BenhNhan> list = new List<BenhNhan>();
+
+            try
+            {
+                con.Open();
+
+                string sql = $"SELECT * FROM BenhNhan WHERE {cot} LIKE @TuKhoa";
+
+                using (SQLiteCommand cmd = new SQLiteCommand(sql, con))
+                {
+                    cmd.Parameters.AddWithValue("@TuKhoa", "%" + tuKhoa + "%");
+
+                    using (SQLiteDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            BenhNhan bn = new BenhNhan(
+                                reader["MaBN"].ToString(),
+                                reader["HoTen"].ToString(),
+                                reader["GioiTinh"].ToString(),
+                                Convert.ToDateTime(reader["NgaySinh"]),
+                                reader["SDT"].ToString(),
+                                reader["DiaChi"].ToString(),
+                                reader["Email"].ToString());
+
+                            list.Add(bn);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return list;
+        }
 
 
         public string GetError()

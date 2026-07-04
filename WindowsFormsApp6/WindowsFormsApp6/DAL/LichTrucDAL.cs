@@ -138,6 +138,56 @@ namespace Bai_Lam_Nhom_LTHDT.DAL
 
             return list;
         }
+        public List<LichTruc> GetByMaBS(string maBS)
+        {
+            error = "";
+
+            List<LichTruc> list = new List<LichTruc>();
+
+            try
+            {
+                con.Open();
+
+                string sql = @"SELECT *
+                       FROM LichTruc
+                       WHERE MaBS=@MaBS
+                       ORDER BY NgayTruc,GioBatDau";
+
+                using (SQLiteCommand cmd = new SQLiteCommand(sql, con))
+                {
+                    cmd.Parameters.AddWithValue("@MaBS", maBS);
+
+                    using (SQLiteDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            LichTruc lt = new LichTruc
+                            {
+                                MaLich = reader["MaLich"].ToString(),
+                                MaBS = reader["MaBS"].ToString(),
+                                MaPhong = reader["MaPhong"].ToString(),
+                                NgayTruc = Convert.ToDateTime(reader["NgayTruc"]),
+                                GioBatDau = TimeSpan.Parse(reader["GioBatDau"].ToString()),
+                                GioKetThuc = TimeSpan.Parse(reader["GioKetThuc"].ToString()),
+                                SoLuongToiDa = Convert.ToInt32(reader["SoLuongToiDa"])
+                            };
+
+                            list.Add(lt);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return list;
+        }
         public LichTruc GetByMaLT(string maLT)
         {
             LichTruc lichTruc = null;

@@ -59,12 +59,6 @@
             this.txtHoVaTen = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvLichHen = new System.Windows.Forms.DataGridView();
-            this.colGioHen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaHen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colBenhNhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colBacSi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -404,13 +398,6 @@
             this.dgvLichHen.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvLichHen.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(242)))), ((int)(((byte)(253)))));
             this.dgvLichHen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLichHen.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colGioHen,
-            this.colMaHen,
-            this.colBenhNhan,
-            this.colSDT,
-            this.colBacSi,
-            this.colTrangThai});
             this.dgvLichHen.Location = new System.Drawing.Point(9, 67);
             this.dgvLichHen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvLichHen.Name = "dgvLichHen";
@@ -419,42 +406,6 @@
             this.dgvLichHen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLichHen.Size = new System.Drawing.Size(1144, 238);
             this.dgvLichHen.TabIndex = 1;
-            // 
-            // colGioHen
-            // 
-            this.colGioHen.HeaderText = "Giờ hẹn";
-            this.colGioHen.MinimumWidth = 6;
-            this.colGioHen.Name = "colGioHen";
-            // 
-            // colMaHen
-            // 
-            this.colMaHen.HeaderText = "Mã hẹn";
-            this.colMaHen.MinimumWidth = 6;
-            this.colMaHen.Name = "colMaHen";
-            // 
-            // colBenhNhan
-            // 
-            this.colBenhNhan.HeaderText = "Bệnh nhân";
-            this.colBenhNhan.MinimumWidth = 6;
-            this.colBenhNhan.Name = "colBenhNhan";
-            // 
-            // colSDT
-            // 
-            this.colSDT.HeaderText = "SĐT";
-            this.colSDT.MinimumWidth = 6;
-            this.colSDT.Name = "colSDT";
-            // 
-            // colBacSi
-            // 
-            this.colBacSi.HeaderText = "Bác sĩ";
-            this.colBacSi.MinimumWidth = 6;
-            this.colBacSi.Name = "colBacSi";
-            // 
-            // colTrangThai
-            // 
-            this.colTrangThai.HeaderText = "Trạng thái";
-            this.colTrangThai.MinimumWidth = 6;
-            this.colTrangThai.Name = "colTrangThai";
             // 
             // label2
             // 
@@ -507,12 +458,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgvLichHen;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colGioHen;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMaHen;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colBenhNhan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSDT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colBacSi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtGhiChu;
         private System.Windows.Forms.TextBox txtDiaChi;

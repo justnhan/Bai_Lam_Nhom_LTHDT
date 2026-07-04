@@ -46,7 +46,51 @@ namespace Bai_Lam_Nhom_LTHDT.DAL
         }
 
 
+        public List<KhungGio> GetByMaLich(string maLich)
+        {
+            error = "";
 
+            List<KhungGio> list = new List<KhungGio>();
+
+            try
+            {
+                con.Open();
+
+                string sql = @"SELECT *
+                       FROM KhungGio
+                       WHERE MaLich=@MaLich
+                       ORDER BY GioBatDau";
+
+                using (SQLiteCommand cmd = new SQLiteCommand(sql, con))
+                {
+                    cmd.Parameters.AddWithValue("@MaLich", maLich);
+
+                    using (SQLiteDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            list.Add(new KhungGio(
+                                reader["MaGio"].ToString(),
+                                reader["MaLich"].ToString(),
+                                reader["GioBatDau"].ToString(),
+                                reader["GioKetThuc"].ToString(),
+                                reader["TrangThai"].ToString()
+                            ));
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return list;
+        }
 
         public List<KhungGio> GetAllKhungGio()
         {

@@ -16,7 +16,7 @@ namespace Bai_Lam_Nhom_LTHDT.DAL
 
         bool ExistsRoomSchedule(string maPhong, DateTime ngayTruc, TimeSpan gioBatDau, TimeSpan gioKetThuc);
 
-
+        List<LichTruc> GetByMaBS(string maBS);
         List <LichTruc> GetAllLichTruc();
         LichTruc GetByMaLT(string maLT);
         bool Add(LichTruc lichTruc);

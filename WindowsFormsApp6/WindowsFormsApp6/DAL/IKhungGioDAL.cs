@@ -5,6 +5,7 @@ namespace Bai_Lam_Nhom_LTHDT.DAL
 {
     public interface IKhungGioDAL
     {
+        List<KhungGio> GetByMaLich(string maLich);
         List<KhungGio> GetAllKhungGio();
 
         KhungGio GetByMaGio(string maGio);
