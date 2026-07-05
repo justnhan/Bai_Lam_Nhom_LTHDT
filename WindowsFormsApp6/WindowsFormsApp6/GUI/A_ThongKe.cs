@@ -43,6 +43,7 @@ namespace Bai_Lam_Nhom_LTHDT
             LoadNam();
 
             cboNamBC.SelectedItem = DateTime.Now.Year;
+            cboThangBC.SelectedItem = 6;
         }
         private void LoadNam()
         {
@@ -171,7 +172,7 @@ namespace Bai_Lam_Nhom_LTHDT
                 cboThangBC.Items.Add(i);
             }
 
-            cboThangBC.SelectedIndex = DateTime.Now.Month - 1;
+            cboThangBC.SelectedIndex = DateTime.Now.Month - 2;
         }
         private void LoadChartThongKeBacSi()
         {

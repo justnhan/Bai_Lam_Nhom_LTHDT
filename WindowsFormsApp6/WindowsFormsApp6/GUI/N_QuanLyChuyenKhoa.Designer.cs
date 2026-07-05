@@ -53,6 +53,7 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dgvDanhSachPhongKham = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -65,6 +66,7 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachPhongKham)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -252,12 +254,15 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             // 
             // dgvDanhSachChuyenKhoa
             // 
+            this.dgvDanhSachChuyenKhoa.AllowUserToAddRows = false;
+            this.dgvDanhSachChuyenKhoa.AllowUserToDeleteRows = false;
             this.dgvDanhSachChuyenKhoa.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDanhSachChuyenKhoa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDanhSachChuyenKhoa.Location = new System.Drawing.Point(6, 31);
             this.dgvDanhSachChuyenKhoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvDanhSachChuyenKhoa.MultiSelect = false;
             this.dgvDanhSachChuyenKhoa.Name = "dgvDanhSachChuyenKhoa";
+            this.dgvDanhSachChuyenKhoa.ReadOnly = true;
             this.dgvDanhSachChuyenKhoa.RowHeadersWidth = 51;
             this.dgvDanhSachChuyenKhoa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDanhSachChuyenKhoa.Size = new System.Drawing.Size(1327, 157);
@@ -281,11 +286,15 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             // 
             // dgvBSThuocKhoa
             // 
+            this.dgvBSThuocKhoa.AllowUserToAddRows = false;
+            this.dgvBSThuocKhoa.AllowUserToDeleteRows = false;
+            this.dgvBSThuocKhoa.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBSThuocKhoa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBSThuocKhoa.Location = new System.Drawing.Point(6, 31);
             this.dgvBSThuocKhoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvBSThuocKhoa.MultiSelect = false;
             this.dgvBSThuocKhoa.Name = "dgvBSThuocKhoa";
+            this.dgvBSThuocKhoa.ReadOnly = true;
             this.dgvBSThuocKhoa.RowHeadersWidth = 51;
             this.dgvBSThuocKhoa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBSThuocKhoa.Size = new System.Drawing.Size(659, 200);
@@ -309,12 +318,15 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             // 
             // dgvDanhSachPhongKham
             // 
+            this.dgvDanhSachPhongKham.AllowUserToAddRows = false;
+            this.dgvDanhSachPhongKham.AllowUserToDeleteRows = false;
             this.dgvDanhSachPhongKham.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDanhSachPhongKham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDanhSachPhongKham.Location = new System.Drawing.Point(10, 31);
             this.dgvDanhSachPhongKham.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvDanhSachPhongKham.MultiSelect = false;
             this.dgvDanhSachPhongKham.Name = "dgvDanhSachPhongKham";
+            this.dgvDanhSachPhongKham.ReadOnly = true;
             this.dgvDanhSachPhongKham.RowHeadersWidth = 51;
             this.dgvDanhSachPhongKham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDanhSachPhongKham.Size = new System.Drawing.Size(646, 200);
@@ -324,6 +336,7 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(136)))), ((int)(((byte)(229)))));
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Controls.Add(this.pictureBox5);
             this.panel2.Controls.Add(this.label8);
             this.panel2.ForeColor = System.Drawing.Color.White;
             this.panel2.Location = new System.Drawing.Point(-2, 1);
@@ -331,6 +344,16 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1387, 71);
             this.panel2.TabIndex = 5;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.BackgroundImage")));
+            this.pictureBox5.Location = new System.Drawing.Point(32, 0);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(93, 69);
+            this.pictureBox5.TabIndex = 6;
+            this.pictureBox5.TabStop = false;
             // 
             // label8
             // 
@@ -372,6 +395,7 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachPhongKham)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -400,5 +424,6 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
         private Button btnThem;
         private Panel panel2;
         private Label label8;
+        private PictureBox pictureBox5;
     }
 }

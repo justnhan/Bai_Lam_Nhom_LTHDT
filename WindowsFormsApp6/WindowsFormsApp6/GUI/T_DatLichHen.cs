@@ -393,7 +393,7 @@ namespace Bai_Lam_Nhom_LTHDT
 
         private void btnLuuTam_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Đã lưu tạm thông tin!");
+
         }
     }
 }

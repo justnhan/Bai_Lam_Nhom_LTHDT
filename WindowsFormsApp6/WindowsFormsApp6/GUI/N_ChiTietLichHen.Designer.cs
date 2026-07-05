@@ -42,6 +42,7 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             this.dgvDanhSachBenhNhan = new System.Windows.Forms.DataGridView();
             this.btnInDanhSach = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
@@ -50,6 +51,7 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachBenhNhan)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -160,7 +162,7 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             this.btnInDanhSach.Name = "btnInDanhSach";
             this.btnInDanhSach.Size = new System.Drawing.Size(175, 47);
             this.btnInDanhSach.TabIndex = 13;
-            this.btnInDanhSach.Text = "🖨️ In danh sách";
+            this.btnInDanhSach.Text = "🖨️ xem lịch hẹn";
             this.btnInDanhSach.UseVisualStyleBackColor = false;
             this.btnInDanhSach.Click += new System.EventHandler(this.btnInDanhSach_Click);
             // 
@@ -168,6 +170,7 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(136)))), ((int)(((byte)(229)))));
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel3.Controls.Add(this.pictureBox5);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.label5);
             this.panel3.ForeColor = System.Drawing.Color.White;
@@ -176,6 +179,16 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1159, 50);
             this.panel3.TabIndex = 14;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.BackgroundImage")));
+            this.pictureBox5.Location = new System.Drawing.Point(18, -4);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(93, 69);
+            this.pictureBox5.TabIndex = 3;
+            this.pictureBox5.TabStop = false;
             // 
             // label7
             // 
@@ -233,6 +246,7 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachBenhNhan)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -253,5 +267,6 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
         private Label label1;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private PrintPreviewDialog printPreviewDialog1;
+        private PictureBox pictureBox5;
     }
 }

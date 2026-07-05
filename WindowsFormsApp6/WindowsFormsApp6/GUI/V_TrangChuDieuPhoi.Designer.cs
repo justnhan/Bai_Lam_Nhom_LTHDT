@@ -31,84 +31,83 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_TrangChuDieuPhoi));
             this.btnTaoSlot = new System.Windows.Forms.Button();
             this.pnlMenu = new System.Windows.Forms.Panel();
-            this.btnPhanCong = new System.Windows.Forms.Button();
+            this.btnDangXuat = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnQuanLyPhong = new System.Windows.Forms.Button();
-            this.btnThongKe = new System.Windows.Forms.Button();
-            this.btnDanhSachSlot = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.pnlDashboard = new System.Windows.Forms.Panel();
-            this.pnlPercent = new System.Windows.Forms.Panel();
-            this.lblTextPercent = new System.Windows.Forms.Label();
-            this.lblPercent = new System.Windows.Forms.Label();
-            this.pnlDoctorToday = new System.Windows.Forms.Panel();
-            this.lblTextDoctorToday = new System.Windows.Forms.Label();
-            this.lblDoctorToday = new System.Windows.Forms.Label();
-            this.pnlRoomActive = new System.Windows.Forms.Panel();
-            this.lblTextRoomActive = new System.Windows.Forms.Label();
-            this.lblRoomActive = new System.Windows.Forms.Label();
-            this.pnlSlotToday = new System.Windows.Forms.Panel();
-            this.lblTextSlotToday = new System.Windows.Forms.Label();
-            this.lblSlotToday = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.pnlNoiDung = new System.Windows.Forms.Panel();
+            this.lblDanhSach = new System.Windows.Forms.Label();
+            this.dgvDashboard = new System.Windows.Forms.DataGridView();
+            this.pnlTongBacSi = new System.Windows.Forms.Panel();
+            this.lblTitleBacSi = new System.Windows.Forms.Label();
+            this.lblTongBacSi = new System.Windows.Forms.Label();
+            this.lblIconBacSi = new System.Windows.Forms.Label();
+            this.pnlTongSlot = new System.Windows.Forms.Panel();
+            this.lblTitleSlot = new System.Windows.Forms.Label();
+            this.lblTongSlot = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.pnlTongPhanCong = new System.Windows.Forms.Panel();
+            this.lblTitlePhanCong = new System.Windows.Forms.Label();
+            this.lblTongPhanCong = new System.Windows.Forms.Label();
+            this.lblIconPhanCong = new System.Windows.Forms.Label();
+            this.pnlTongPhong = new System.Windows.Forms.Panel();
+            this.lblTitlePhong = new System.Windows.Forms.Label();
+            this.lblTongPhong = new System.Windows.Forms.Label();
+            this.lblIconPhong = new System.Windows.Forms.Label();
             this.pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.pnlDashboard.SuspendLayout();
-            this.pnlPercent.SuspendLayout();
-            this.pnlDoctorToday.SuspendLayout();
-            this.pnlRoomActive.SuspendLayout();
-            this.pnlSlotToday.SuspendLayout();
+            this.pnlNoiDung.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDashboard)).BeginInit();
+            this.pnlTongBacSi.SuspendLayout();
+            this.pnlTongSlot.SuspendLayout();
+            this.pnlTongPhanCong.SuspendLayout();
+            this.pnlTongPhong.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnTaoSlot
             // 
+            this.btnTaoSlot.BackColor = System.Drawing.Color.Transparent;
             this.btnTaoSlot.FlatAppearance.BorderSize = 0;
             this.btnTaoSlot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTaoSlot.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTaoSlot.ForeColor = System.Drawing.Color.White;
-            this.btnTaoSlot.Location = new System.Drawing.Point(0, 80);
+            this.btnTaoSlot.Location = new System.Drawing.Point(0, 96);
             this.btnTaoSlot.Name = "btnTaoSlot";
             this.btnTaoSlot.Size = new System.Drawing.Size(250, 55);
             this.btnTaoSlot.TabIndex = 0;
-            this.btnTaoSlot.Text = "⏱ Tạo slot khám";
+            this.btnTaoSlot.Text = "⏱ Quản lý Slot";
             this.btnTaoSlot.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnTaoSlot.UseVisualStyleBackColor = true;
+            this.btnTaoSlot.UseVisualStyleBackColor = false;
             this.btnTaoSlot.Click += new System.EventHandler(this.btnTaoSlot_Click);
             // 
             // pnlMenu
             // 
-            this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(42)))), ((int)(((byte)(74)))));
-            this.pnlMenu.Controls.Add(this.btnPhanCong);
+            this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(101)))), ((int)(((byte)(192)))));
+            this.pnlMenu.Controls.Add(this.btnDangXuat);
             this.pnlMenu.Controls.Add(this.pictureBox1);
             this.pnlMenu.Controls.Add(this.btnQuanLyPhong);
-            this.pnlMenu.Controls.Add(this.btnThongKe);
-            this.pnlMenu.Controls.Add(this.btnDanhSachSlot);
             this.pnlMenu.Controls.Add(this.label2);
             this.pnlMenu.Controls.Add(this.btnTaoSlot);
             this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlMenu.ForeColor = System.Drawing.Color.Silver;
             this.pnlMenu.Location = new System.Drawing.Point(0, 0);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(272, 483);
+            this.pnlMenu.Size = new System.Drawing.Size(272, 605);
             this.pnlMenu.TabIndex = 5;
             // 
-            // btnPhanCong
+            // btnDangXuat
             // 
-            this.btnPhanCong.FlatAppearance.BorderSize = 0;
-            this.btnPhanCong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPhanCong.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPhanCong.ForeColor = System.Drawing.Color.White;
-            this.btnPhanCong.Location = new System.Drawing.Point(0, 245);
-            this.btnPhanCong.Name = "btnPhanCong";
-            this.btnPhanCong.Size = new System.Drawing.Size(250, 55);
-            this.btnPhanCong.TabIndex = 11;
-            this.btnPhanCong.Text = "👥 Phân công bác sĩ";
-            this.btnPhanCong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnPhanCong.UseVisualStyleBackColor = true;
-            this.btnPhanCong.Click += new System.EventHandler(this.btnPhanCong_Click);
+            this.btnDangXuat.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnDangXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDangXuat.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDangXuat.ForeColor = System.Drawing.Color.White;
+            this.btnDangXuat.Location = new System.Drawing.Point(17, 525);
+            this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.Size = new System.Drawing.Size(240, 50);
+            this.btnDangXuat.TabIndex = 12;
+            this.btnDangXuat.Text = "🚪  Đăng xuất";
+            this.btnDangXuat.UseVisualStyleBackColor = false;
+            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
             // 
             // pictureBox1
             // 
@@ -126,7 +125,7 @@
             this.btnQuanLyPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuanLyPhong.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuanLyPhong.ForeColor = System.Drawing.Color.White;
-            this.btnQuanLyPhong.Location = new System.Drawing.Point(0, 190);
+            this.btnQuanLyPhong.Location = new System.Drawing.Point(12, 157);
             this.btnQuanLyPhong.Name = "btnQuanLyPhong";
             this.btnQuanLyPhong.Size = new System.Drawing.Size(250, 55);
             this.btnQuanLyPhong.TabIndex = 10;
@@ -134,36 +133,6 @@
             this.btnQuanLyPhong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnQuanLyPhong.UseVisualStyleBackColor = true;
             this.btnQuanLyPhong.Click += new System.EventHandler(this.btnQuanLyPhong_Click);
-            // 
-            // btnThongKe
-            // 
-            this.btnThongKe.FlatAppearance.BorderSize = 0;
-            this.btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThongKe.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThongKe.ForeColor = System.Drawing.Color.White;
-            this.btnThongKe.Location = new System.Drawing.Point(0, 300);
-            this.btnThongKe.Name = "btnThongKe";
-            this.btnThongKe.Size = new System.Drawing.Size(250, 55);
-            this.btnThongKe.TabIndex = 9;
-            this.btnThongKe.Text = "📊 Thống kê";
-            this.btnThongKe.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnThongKe.UseVisualStyleBackColor = true;
-            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
-            // 
-            // btnDanhSachSlot
-            // 
-            this.btnDanhSachSlot.FlatAppearance.BorderSize = 0;
-            this.btnDanhSachSlot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDanhSachSlot.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDanhSachSlot.ForeColor = System.Drawing.Color.White;
-            this.btnDanhSachSlot.Location = new System.Drawing.Point(0, 135);
-            this.btnDanhSachSlot.Name = "btnDanhSachSlot";
-            this.btnDanhSachSlot.Size = new System.Drawing.Size(250, 55);
-            this.btnDanhSachSlot.TabIndex = 8;
-            this.btnDanhSachSlot.Text = "☰ Danh sách slot";
-            this.btnDanhSachSlot.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDanhSachSlot.UseVisualStyleBackColor = true;
-            this.btnDanhSachSlot.Click += new System.EventHandler(this.btnDanhSachSlot_Click);
             // 
             // label2
             // 
@@ -175,213 +144,247 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "MENU";
             // 
-            // pnlDashboard
+            // pnlNoiDung
             // 
-            this.pnlDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
-            this.pnlDashboard.Controls.Add(this.pnlPercent);
-            this.pnlDashboard.Controls.Add(this.pnlDoctorToday);
-            this.pnlDashboard.Controls.Add(this.pnlRoomActive);
-            this.pnlDashboard.Controls.Add(this.pnlSlotToday);
-            this.pnlDashboard.Controls.Add(this.label6);
-            this.pnlDashboard.Controls.Add(this.label5);
-            this.pnlDashboard.Controls.Add(this.label3);
-            this.pnlDashboard.Controls.Add(this.label1);
-            this.pnlDashboard.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlDashboard.Location = new System.Drawing.Point(290, 12);
-            this.pnlDashboard.Name = "pnlDashboard";
-            this.pnlDashboard.Size = new System.Drawing.Size(814, 435);
-            this.pnlDashboard.TabIndex = 9;
+            this.pnlNoiDung.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(236)))), ((int)(((byte)(248)))));
+            this.pnlNoiDung.Controls.Add(this.lblDanhSach);
+            this.pnlNoiDung.Controls.Add(this.dgvDashboard);
+            this.pnlNoiDung.Controls.Add(this.pnlTongBacSi);
+            this.pnlNoiDung.Controls.Add(this.pnlTongSlot);
+            this.pnlNoiDung.Controls.Add(this.pnlTongPhanCong);
+            this.pnlNoiDung.Controls.Add(this.pnlTongPhong);
+            this.pnlNoiDung.Location = new System.Drawing.Point(278, 3);
+            this.pnlNoiDung.Name = "pnlNoiDung";
+            this.pnlNoiDung.Size = new System.Drawing.Size(957, 602);
+            this.pnlNoiDung.TabIndex = 0;
+            this.pnlNoiDung.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlNoiDung_Paint);
             // 
-            // pnlPercent
+            // lblDanhSach
             // 
-            this.pnlPercent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(190)))), ((int)(((byte)(160)))));
-            this.pnlPercent.Controls.Add(this.lblTextPercent);
-            this.pnlPercent.Controls.Add(this.lblPercent);
-            this.pnlPercent.Location = new System.Drawing.Point(530, 120);
-            this.pnlPercent.Name = "pnlPercent";
-            this.pnlPercent.Size = new System.Drawing.Size(160, 96);
-            this.pnlPercent.TabIndex = 11;
+            this.lblDanhSach.AutoSize = true;
+            this.lblDanhSach.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDanhSach.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.lblDanhSach.Location = new System.Drawing.Point(20, 180);
+            this.lblDanhSach.Name = "lblDanhSach";
+            this.lblDanhSach.Size = new System.Drawing.Size(311, 31);
+            this.lblDanhSach.TabIndex = 5;
+            this.lblDanhSach.Text = "📋 Danh sách Slot hôm nay";
             // 
-            // lblTextPercent
+            // dgvDashboard
             // 
-            this.lblTextPercent.BackColor = System.Drawing.Color.Transparent;
-            this.lblTextPercent.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTextPercent.Location = new System.Drawing.Point(19, 58);
-            this.lblTextPercent.Name = "lblTextPercent";
-            this.lblTextPercent.Size = new System.Drawing.Size(130, 22);
-            this.lblTextPercent.TabIndex = 1;
-            this.lblTextPercent.Text = "Tỷ lệ lấp đầy";
+            this.dgvDashboard.AllowUserToAddRows = false;
+            this.dgvDashboard.AllowUserToDeleteRows = false;
+            this.dgvDashboard.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDashboard.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDashboard.Location = new System.Drawing.Point(20, 220);
+            this.dgvDashboard.MultiSelect = false;
+            this.dgvDashboard.Name = "dgvDashboard";
+            this.dgvDashboard.ReadOnly = true;
+            this.dgvDashboard.RowHeadersWidth = 51;
+            this.dgvDashboard.RowTemplate.Height = 24;
+            this.dgvDashboard.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDashboard.Size = new System.Drawing.Size(900, 350);
+            this.dgvDashboard.TabIndex = 4;
+            this.dgvDashboard.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDashboard_CellContentClick);
             // 
-            // lblPercent
+            // pnlTongBacSi
             // 
-            this.lblPercent.BackColor = System.Drawing.Color.Transparent;
-            this.lblPercent.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPercent.ForeColor = System.Drawing.Color.White;
-            this.lblPercent.Location = new System.Drawing.Point(15, 10);
-            this.lblPercent.Name = "lblPercent";
-            this.lblPercent.Size = new System.Drawing.Size(100, 48);
-            this.lblPercent.TabIndex = 0;
-            this.lblPercent.Text = "63%";
+            this.pnlTongBacSi.BackColor = System.Drawing.Color.Goldenrod;
+            this.pnlTongBacSi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlTongBacSi.Controls.Add(this.lblTitleBacSi);
+            this.pnlTongBacSi.Controls.Add(this.lblTongBacSi);
+            this.pnlTongBacSi.Controls.Add(this.lblIconBacSi);
+            this.pnlTongBacSi.Location = new System.Drawing.Point(467, 28);
+            this.pnlTongBacSi.Name = "pnlTongBacSi";
+            this.pnlTongBacSi.Size = new System.Drawing.Size(200, 120);
+            this.pnlTongBacSi.TabIndex = 3;
             // 
-            // pnlDoctorToday
+            // lblTitleBacSi
             // 
-            this.pnlDoctorToday.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(190)))), ((int)(((byte)(160)))));
-            this.pnlDoctorToday.Controls.Add(this.lblTextDoctorToday);
-            this.pnlDoctorToday.Controls.Add(this.lblDoctorToday);
-            this.pnlDoctorToday.Location = new System.Drawing.Point(190, 120);
-            this.pnlDoctorToday.Name = "pnlDoctorToday";
-            this.pnlDoctorToday.Size = new System.Drawing.Size(160, 96);
-            this.pnlDoctorToday.TabIndex = 5;
+            this.lblTitleBacSi.AutoSize = true;
+            this.lblTitleBacSi.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitleBacSi.Location = new System.Drawing.Point(81, 36);
+            this.lblTitleBacSi.Name = "lblTitleBacSi";
+            this.lblTitleBacSi.Size = new System.Drawing.Size(101, 23);
+            this.lblTitleBacSi.TabIndex = 2;
+            this.lblTitleBacSi.Text = "Tổng bác sĩ";
             // 
-            // lblTextDoctorToday
+            // lblTongBacSi
             // 
-            this.lblTextDoctorToday.BackColor = System.Drawing.Color.Transparent;
-            this.lblTextDoctorToday.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTextDoctorToday.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblTextDoctorToday.Location = new System.Drawing.Point(19, 58);
-            this.lblTextDoctorToday.Name = "lblTextDoctorToday";
-            this.lblTextDoctorToday.Size = new System.Drawing.Size(130, 22);
-            this.lblTextDoctorToday.TabIndex = 1;
-            this.lblTextDoctorToday.Text = "Bác sĩ trực";
+            this.lblTongBacSi.AutoSize = true;
+            this.lblTongBacSi.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTongBacSi.Location = new System.Drawing.Point(59, 59);
+            this.lblTongBacSi.Name = "lblTongBacSi";
+            this.lblTongBacSi.Size = new System.Drawing.Size(64, 50);
+            this.lblTongBacSi.TabIndex = 1;
+            this.lblTongBacSi.Text = "15";
             // 
-            // lblDoctorToday
+            // lblIconBacSi
             // 
-            this.lblDoctorToday.BackColor = System.Drawing.Color.Transparent;
-            this.lblDoctorToday.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDoctorToday.ForeColor = System.Drawing.Color.White;
-            this.lblDoctorToday.Location = new System.Drawing.Point(15, 10);
-            this.lblDoctorToday.Name = "lblDoctorToday";
-            this.lblDoctorToday.Size = new System.Drawing.Size(100, 48);
-            this.lblDoctorToday.TabIndex = 0;
-            this.lblDoctorToday.Text = "8";
+            this.lblIconBacSi.AutoSize = true;
+            this.lblIconBacSi.Font = new System.Drawing.Font("Segoe UI Emoji", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIconBacSi.Location = new System.Drawing.Point(3, 13);
+            this.lblIconBacSi.Name = "lblIconBacSi";
+            this.lblIconBacSi.Size = new System.Drawing.Size(73, 49);
+            this.lblIconBacSi.TabIndex = 0;
+            this.lblIconBacSi.Text = "👨‍⚕️";
             // 
-            // pnlRoomActive
+            // pnlTongSlot
             // 
-            this.pnlRoomActive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(190)))), ((int)(((byte)(160)))));
-            this.pnlRoomActive.Controls.Add(this.lblTextRoomActive);
-            this.pnlRoomActive.Controls.Add(this.lblRoomActive);
-            this.pnlRoomActive.Location = new System.Drawing.Point(360, 120);
-            this.pnlRoomActive.Name = "pnlRoomActive";
-            this.pnlRoomActive.Size = new System.Drawing.Size(160, 96);
-            this.pnlRoomActive.TabIndex = 10;
+            this.pnlTongSlot.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.pnlTongSlot.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlTongSlot.Controls.Add(this.lblTitleSlot);
+            this.pnlTongSlot.Controls.Add(this.lblTongSlot);
+            this.pnlTongSlot.Controls.Add(this.label8);
+            this.pnlTongSlot.Location = new System.Drawing.Point(238, 28);
+            this.pnlTongSlot.Name = "pnlTongSlot";
+            this.pnlTongSlot.Size = new System.Drawing.Size(200, 120);
+            this.pnlTongSlot.TabIndex = 3;
             // 
-            // lblTextRoomActive
+            // lblTitleSlot
             // 
-            this.lblTextRoomActive.BackColor = System.Drawing.Color.Transparent;
-            this.lblTextRoomActive.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTextRoomActive.Location = new System.Drawing.Point(19, 58);
-            this.lblTextRoomActive.Name = "lblTextRoomActive";
-            this.lblTextRoomActive.Size = new System.Drawing.Size(130, 22);
-            this.lblTextRoomActive.TabIndex = 1;
-            this.lblTextRoomActive.Text = "Phòng hoạt động";
+            this.lblTitleSlot.AutoSize = true;
+            this.lblTitleSlot.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitleSlot.Location = new System.Drawing.Point(81, 36);
+            this.lblTitleSlot.Name = "lblTitleSlot";
+            this.lblTitleSlot.Size = new System.Drawing.Size(88, 23);
+            this.lblTitleSlot.TabIndex = 2;
+            this.lblTitleSlot.Text = "Tổng Slot";
             // 
-            // lblRoomActive
+            // lblTongSlot
             // 
-            this.lblRoomActive.BackColor = System.Drawing.Color.Transparent;
-            this.lblRoomActive.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRoomActive.ForeColor = System.Drawing.Color.White;
-            this.lblRoomActive.Location = new System.Drawing.Point(15, 10);
-            this.lblRoomActive.Name = "lblRoomActive";
-            this.lblRoomActive.Size = new System.Drawing.Size(100, 48);
-            this.lblRoomActive.TabIndex = 0;
-            this.lblRoomActive.Text = "12";
+            this.lblTongSlot.AutoSize = true;
+            this.lblTongSlot.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTongSlot.Location = new System.Drawing.Point(59, 59);
+            this.lblTongSlot.Name = "lblTongSlot";
+            this.lblTongSlot.Size = new System.Drawing.Size(64, 50);
+            this.lblTongSlot.TabIndex = 1;
+            this.lblTongSlot.Text = "48";
             // 
-            // pnlSlotToday
+            // label8
             // 
-            this.pnlSlotToday.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(190)))), ((int)(((byte)(160)))));
-            this.pnlSlotToday.Controls.Add(this.lblTextSlotToday);
-            this.pnlSlotToday.Controls.Add(this.lblSlotToday);
-            this.pnlSlotToday.Location = new System.Drawing.Point(20, 120);
-            this.pnlSlotToday.Name = "pnlSlotToday";
-            this.pnlSlotToday.Size = new System.Drawing.Size(160, 96);
-            this.pnlSlotToday.TabIndex = 4;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI Emoji", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(9, 14);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(73, 49);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "📅";
             // 
-            // lblTextSlotToday
+            // pnlTongPhanCong
             // 
-            this.lblTextSlotToday.BackColor = System.Drawing.Color.Transparent;
-            this.lblTextSlotToday.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTextSlotToday.Location = new System.Drawing.Point(19, 58);
-            this.lblTextSlotToday.Name = "lblTextSlotToday";
-            this.lblTextSlotToday.Size = new System.Drawing.Size(130, 51);
-            this.lblTextSlotToday.TabIndex = 1;
-            this.lblTextSlotToday.Text = "Slot hôm nay";
+            this.pnlTongPhanCong.BackColor = System.Drawing.Color.SteelBlue;
+            this.pnlTongPhanCong.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlTongPhanCong.Controls.Add(this.lblTitlePhanCong);
+            this.pnlTongPhanCong.Controls.Add(this.lblTongPhanCong);
+            this.pnlTongPhanCong.Controls.Add(this.lblIconPhanCong);
+            this.pnlTongPhanCong.Location = new System.Drawing.Point(705, 28);
+            this.pnlTongPhanCong.Name = "pnlTongPhanCong";
+            this.pnlTongPhanCong.Size = new System.Drawing.Size(200, 120);
+            this.pnlTongPhanCong.TabIndex = 1;
             // 
-            // lblSlotToday
+            // lblTitlePhanCong
             // 
-            this.lblSlotToday.BackColor = System.Drawing.Color.Transparent;
-            this.lblSlotToday.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSlotToday.ForeColor = System.Drawing.Color.White;
-            this.lblSlotToday.Location = new System.Drawing.Point(15, 10);
-            this.lblSlotToday.Name = "lblSlotToday";
-            this.lblSlotToday.Size = new System.Drawing.Size(100, 48);
-            this.lblSlotToday.TabIndex = 0;
-            this.lblSlotToday.Text = "24";
+            this.lblTitlePhanCong.AutoSize = true;
+            this.lblTitlePhanCong.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitlePhanCong.Location = new System.Drawing.Point(81, 36);
+            this.lblTitlePhanCong.Name = "lblTitlePhanCong";
+            this.lblTitlePhanCong.Size = new System.Drawing.Size(121, 23);
+            this.lblTitlePhanCong.TabIndex = 2;
+            this.lblTitlePhanCong.Text = "Đã phân công";
             // 
-            // label6
+            // lblTongPhanCong
             // 
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(210)))), ((int)(((byte)(180)))));
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(472, 36);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(218, 35);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "● Hệ thống đang hoạt động";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTongPhanCong.AutoSize = true;
+            this.lblTongPhanCong.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTongPhanCong.Location = new System.Drawing.Point(59, 59);
+            this.lblTongPhanCong.Name = "lblTongPhanCong";
+            this.lblTongPhanCong.Size = new System.Drawing.Size(64, 50);
+            this.lblTongPhanCong.TabIndex = 1;
+            this.lblTongPhanCong.Text = "28";
             // 
-            // label5
+            // lblIconPhanCong
             // 
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(24, 40);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(50, 50);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "🏥";
+            this.lblIconPhanCong.AutoSize = true;
+            this.lblIconPhanCong.Font = new System.Drawing.Font("Segoe UI Emoji", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIconPhanCong.Location = new System.Drawing.Point(3, 14);
+            this.lblIconPhanCong.Name = "lblIconPhanCong";
+            this.lblIconPhanCong.Size = new System.Drawing.Size(73, 49);
+            this.lblIconPhanCong.TabIndex = 0;
+            this.lblIconPhanCong.Text = "📋";
             // 
-            // label3
+            // pnlTongPhong
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(80, 70);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(312, 20);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Khung giờ & Phòng khám – Hệ thống HIS 2.0";
+            this.pnlTongPhong.BackColor = System.Drawing.Color.SteelBlue;
+            this.pnlTongPhong.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlTongPhong.Controls.Add(this.lblTitlePhong);
+            this.pnlTongPhong.Controls.Add(this.lblTongPhong);
+            this.pnlTongPhong.Controls.Add(this.lblIconPhong);
+            this.pnlTongPhong.Location = new System.Drawing.Point(20, 28);
+            this.pnlTongPhong.Name = "pnlTongPhong";
+            this.pnlTongPhong.Size = new System.Drawing.Size(200, 120);
+            this.pnlTongPhong.TabIndex = 0;
             // 
-            // label1
+            // lblTitlePhong
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(80, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(311, 41);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "PHÂN HỆ ĐIỀU PHỐI";
+            this.lblTitlePhong.AutoSize = true;
+            this.lblTitlePhong.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitlePhong.Location = new System.Drawing.Point(81, 36);
+            this.lblTitlePhong.Name = "lblTitlePhong";
+            this.lblTitlePhong.Size = new System.Drawing.Size(113, 23);
+            this.lblTitlePhong.TabIndex = 2;
+            this.lblTitlePhong.Text = "Tổng phòng ";
             // 
-            // FormMenu
+            // lblTongPhong
+            // 
+            this.lblTongPhong.AutoSize = true;
+            this.lblTongPhong.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTongPhong.Location = new System.Drawing.Point(59, 59);
+            this.lblTongPhong.Name = "lblTongPhong";
+            this.lblTongPhong.Size = new System.Drawing.Size(64, 50);
+            this.lblTongPhong.TabIndex = 1;
+            this.lblTongPhong.Text = "12";
+            // 
+            // lblIconPhong
+            // 
+            this.lblIconPhong.Font = new System.Drawing.Font("Segoe UI Emoji", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIconPhong.Location = new System.Drawing.Point(15, 9);
+            this.lblIconPhong.Name = "lblIconPhong";
+            this.lblIconPhong.Size = new System.Drawing.Size(60, 53);
+            this.lblIconPhong.TabIndex = 0;
+            this.lblIconPhong.Text = "🏥";
+            this.lblIconPhong.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblIconPhong.Click += new System.EventHandler(this.lblIconPhong_Click);
+            // 
+            // V_TrangChuDieuPhoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.ClientSize = new System.Drawing.Size(1123, 483);
-            this.Controls.Add(this.pnlDashboard);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.ClientSize = new System.Drawing.Size(1284, 605);
+            this.Controls.Add(this.pnlNoiDung);
             this.Controls.Add(this.pnlMenu);
             this.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "FormMenu";
+            this.Name = "V_TrangChuDieuPhoi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clinic Appointment Center";
             this.pnlMenu.ResumeLayout(false);
             this.pnlMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.pnlDashboard.ResumeLayout(false);
-            this.pnlDashboard.PerformLayout();
-            this.pnlPercent.ResumeLayout(false);
-            this.pnlDoctorToday.ResumeLayout(false);
-            this.pnlRoomActive.ResumeLayout(false);
-            this.pnlSlotToday.ResumeLayout(false);
+            this.pnlNoiDung.ResumeLayout(false);
+            this.pnlNoiDung.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDashboard)).EndInit();
+            this.pnlTongBacSi.ResumeLayout(false);
+            this.pnlTongBacSi.PerformLayout();
+            this.pnlTongSlot.ResumeLayout(false);
+            this.pnlTongSlot.PerformLayout();
+            this.pnlTongPhanCong.ResumeLayout(false);
+            this.pnlTongPhanCong.PerformLayout();
+            this.pnlTongPhong.ResumeLayout(false);
+            this.pnlTongPhong.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -391,27 +394,27 @@
         private System.Windows.Forms.Button btnTaoSlot;
         private System.Windows.Forms.Panel pnlMenu;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnPhanCong;
         private System.Windows.Forms.Button btnQuanLyPhong;
-        private System.Windows.Forms.Button btnThongKe;
-        private System.Windows.Forms.Button btnDanhSachSlot;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel pnlDashboard;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel pnlDoctorToday;
-        private System.Windows.Forms.Panel pnlSlotToday;
-        private System.Windows.Forms.Panel pnlRoomActive;
-        private System.Windows.Forms.Panel pnlPercent;
-        private System.Windows.Forms.Label lblTextSlotToday;
-        private System.Windows.Forms.Label lblSlotToday;
-        private System.Windows.Forms.Label lblTextDoctorToday;
-        private System.Windows.Forms.Label lblDoctorToday;
-        private System.Windows.Forms.Label lblPercent;
-        private System.Windows.Forms.Label lblTextRoomActive;
-        private System.Windows.Forms.Label lblRoomActive;
-        private System.Windows.Forms.Label lblTextPercent;
+        private System.Windows.Forms.Button btnDangXuat;
+        private System.Windows.Forms.Panel pnlNoiDung;
+        private System.Windows.Forms.Panel pnlTongBacSi;
+        private System.Windows.Forms.Label lblTitleBacSi;
+        private System.Windows.Forms.Label lblTongBacSi;
+        private System.Windows.Forms.Label lblIconBacSi;
+        private System.Windows.Forms.Panel pnlTongSlot;
+        private System.Windows.Forms.Label lblTitleSlot;
+        private System.Windows.Forms.Label lblTongSlot;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Panel pnlTongPhanCong;
+        private System.Windows.Forms.Label lblTitlePhanCong;
+        private System.Windows.Forms.Label lblTongPhanCong;
+        private System.Windows.Forms.Label lblIconPhanCong;
+        private System.Windows.Forms.Panel pnlTongPhong;
+        private System.Windows.Forms.Label lblTitlePhong;
+        private System.Windows.Forms.Label lblTongPhong;
+        private System.Windows.Forms.Label lblIconPhong;
+        private System.Windows.Forms.DataGridView dgvDashboard;
+        private System.Windows.Forms.Label lblDanhSach;
     }
 }

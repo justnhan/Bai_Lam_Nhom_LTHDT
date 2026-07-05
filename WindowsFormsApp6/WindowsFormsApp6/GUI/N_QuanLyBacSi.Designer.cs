@@ -39,6 +39,7 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnQuayLai = new System.Windows.Forms.Button();
             this.cboLoai = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtKey = new System.Windows.Forms.TextBox();
@@ -63,13 +64,14 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             this.dgvDanhSachBacSi = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
-            this.btnQuayLai = new System.Windows.Forms.Button();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachBacSi)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -166,6 +168,20 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tìm kiếm";
+            // 
+            // btnQuayLai
+            // 
+            this.btnQuayLai.BackColor = System.Drawing.Color.LightBlue;
+            this.btnQuayLai.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.btnQuayLai.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.btnQuayLai.Location = new System.Drawing.Point(152, 126);
+            this.btnQuayLai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnQuayLai.Name = "btnQuayLai";
+            this.btnQuayLai.Size = new System.Drawing.Size(105, 46);
+            this.btnQuayLai.TabIndex = 15;
+            this.btnQuayLai.Text = "Quay lại";
+            this.btnQuayLai.UseVisualStyleBackColor = false;
+            this.btnQuayLai.Click += new System.EventHandler(this.btnQuayLai_Click);
             // 
             // cboLoai
             // 
@@ -433,6 +449,7 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(136)))), ((int)(((byte)(229)))));
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Controls.Add(this.pictureBox5);
             this.panel2.Controls.Add(this.label11);
             this.panel2.ForeColor = System.Drawing.Color.White;
             this.panel2.Location = new System.Drawing.Point(-4, 2);
@@ -453,19 +470,15 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             this.label11.TabIndex = 0;
             this.label11.Text = "Quản lý bác sĩ";
             // 
-            // btnQuayLai
+            // pictureBox5
             // 
-            this.btnQuayLai.BackColor = System.Drawing.Color.LightBlue;
-            this.btnQuayLai.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.btnQuayLai.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.btnQuayLai.Location = new System.Drawing.Point(152, 126);
-            this.btnQuayLai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnQuayLai.Name = "btnQuayLai";
-            this.btnQuayLai.Size = new System.Drawing.Size(105, 46);
-            this.btnQuayLai.TabIndex = 15;
-            this.btnQuayLai.Text = "Quay lại";
-            this.btnQuayLai.UseVisualStyleBackColor = false;
-            this.btnQuayLai.Click += new System.EventHandler(this.btnQuayLai_Click);
+            this.pictureBox5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.BackgroundImage")));
+            this.pictureBox5.Location = new System.Drawing.Point(40, 2);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(93, 69);
+            this.pictureBox5.TabIndex = 3;
+            this.pictureBox5.TabStop = false;
             // 
             // N_QuanLyBacSi
             // 
@@ -489,6 +502,7 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachBacSi)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -526,5 +540,6 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
         private Panel panel2;
         private Label label11;
         private Button btnQuayLai;
+        private PictureBox pictureBox5;
     }
 }

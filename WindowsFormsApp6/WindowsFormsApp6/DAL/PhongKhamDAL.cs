@@ -85,6 +85,43 @@ namespace Bai_Lam_Nhom_LTHDT.DAL
             con.Close();
         }
 
+        public string MaPhongGenerator()
+        {
+            error = "";
+            string nextMaPhong = "PK001"; // Gán mặc định phòng đầu tiên ở đây
+
+            try
+            {
+                con.Open();
+                string sql = "SELECT MAX(MAPHONG) FROM PHONGKHAM";
+
+                using (SQLiteCommand cmd = new SQLiteCommand(sql, con))
+                {
+                    object result = cmd.ExecuteScalar();
+                    // SQLite trả về null hoặc DBNull nếu bảng trống
+                    if (result != null && result != DBNull.Value && !string.IsNullOrEmpty(result.ToString()))
+                    {
+                        string maxMaPhong = result.ToString();
+                        // Cắt chuỗi từ vị trí thứ 2 đến hết
+                        int nextNumber = int.Parse(maxMaPhong.Substring(2)) + 1;
+
+                        // Trả về định dạng PK001, PK010, PK100...
+                        nextMaPhong = "PK" + nextNumber.ToString("D3");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+                return null; // Trả về null nếu lỗi để tầng giao diện biết và xử lý
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return nextMaPhong;
+        }
         // ===========================
         // CRUD
         // ===========================
@@ -209,6 +246,43 @@ namespace Bai_Lam_Nhom_LTHDT.DAL
             return list;
         }
 
+        public List <PhongKham> SearchByTenPhong(string tenPhong)
+        {
+            List<PhongKham> list = new List<PhongKham>();
+            error = "";
+            try
+            {
+                con.Open();
+                string sql = "SELECT * FROM PHONGKHAM WHERE TENPHONG LIKE @TENPHONG";
+                using (SQLiteCommand cmd = new SQLiteCommand(sql, con))
+                {
+                    cmd.Parameters.AddWithValue("@TENPHONG", "%" + tenPhong + "%");
+                    using (SQLiteDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            PhongKham pk = new PhongKham(
+                                reader["MAPHONG"].ToString(),
+                                reader["TENPHONG"].ToString(),
+                                reader["TRANGTHAI"].ToString(),
+                                reader["GHICHU"].ToString(),
+                                reader["MACHUYENKHOA"].ToString()
+                            );
+                            list.Add(pk);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+            }
+            finally
+            {
+                con.Close();
+            }
+            return list;
+        }
         public bool Add(PhongKham phongKham)
         {
             error = "";

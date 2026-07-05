@@ -19,18 +19,77 @@ namespace Bai_Lam_Nhom_LTHDT.DAL
         {
             con = Database.GetConnection();
         }
-        public bool existMaLich (string maLT)
+
+
+        public string TaoMaLichMoi()
         {
             error = "";
+
             try
             {
-                con.Open ();
-                string sql = "SELECT COUNT(*) FROM LichTruc WHERE MaLich = @maLT";
+                con.Open();
+
+                string sql = @"SELECT MALICH
+                       FROM LICHTRUC
+                       ORDER BY MALICH DESC
+                       LIMIT 1";
+
                 using (SQLiteCommand cmd = new SQLiteCommand(sql, con))
                 {
-                    cmd.Parameters.AddWithValue("@maLT", maLT);
-                    int count = Convert.ToInt32(cmd.ExecuteScalar());
-                    return count > 0;
+                    object obj = cmd.ExecuteScalar();
+
+                    if (obj == null)
+                        return "LT001";
+
+                    string maCu = obj.ToString();
+
+                    int so = int.Parse(maCu.Substring(2));
+
+                    so++;
+
+                    return "LT" + so.ToString("000");
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+                return "";
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public bool ExistsDoctorSchedule(
+     string maBS,
+     DateTime ngayTruc,
+     TimeSpan gioBatDau,
+     TimeSpan gioKetThuc)
+        {
+            error = "";
+
+            try
+            {
+                con.Open();
+
+                string sql = @"
+        SELECT COUNT(*)
+        FROM LichTruc
+        WHERE MaBS=@maBS
+        AND NgayTruc=@ngayTruc
+        AND (
+            GioBatDau<@gioKetThuc
+            AND GioKetThuc>@gioBatDau
+        )";
+
+                using (SQLiteCommand cmd = new SQLiteCommand(sql, con))
+                {
+                    cmd.Parameters.AddWithValue("@maBS", maBS);
+                    cmd.Parameters.AddWithValue("@ngayTruc", ngayTruc);
+                    cmd.Parameters.AddWithValue("@gioBatDau", gioBatDau);
+                    cmd.Parameters.AddWithValue("@gioKetThuc", gioKetThuc);
+
+                    return Convert.ToInt32(cmd.ExecuteScalar()) > 0;
                 }
             }
             catch (Exception ex)
@@ -40,24 +99,42 @@ namespace Bai_Lam_Nhom_LTHDT.DAL
             }
             finally
             {
-                con.Close ();
+                con.Close();
             }
         }
-        public bool ExistsDoctorSchedule(string maBS, DateTime ngayTruc, TimeSpan gioBatDau, TimeSpan gioKetThuc)
+        public bool ExistsDoctorScheduleExcept(
+        string maLich,
+        string maBS,
+        DateTime ngayTruc,
+        TimeSpan gioBatDau,
+        TimeSpan gioKetThuc)
         {
             error = "";
+
             try
             {
                 con.Open();
-                string sql = "SELECT COUNT(*) FROM LichTruc WHERE MaBS = @maBS AND NgayTruc = @ngayTruc AND ((GioBatDau < @gioKetThuc) AND (GioKetThuc > @gioBatDau))";
+
+                string sql = @"
+                SELECT COUNT(*)
+                FROM LichTruc
+                WHERE MaBS=@maBS
+                AND NgayTruc=@ngayTruc
+                AND MaLich<>@maLich
+                AND (
+                    GioBatDau<@gioKetThuc
+                    AND GioKetThuc>@gioBatDau
+                )";
+
                 using (SQLiteCommand cmd = new SQLiteCommand(sql, con))
                 {
+                    cmd.Parameters.AddWithValue("@maLich", maLich);
                     cmd.Parameters.AddWithValue("@maBS", maBS);
                     cmd.Parameters.AddWithValue("@ngayTruc", ngayTruc);
                     cmd.Parameters.AddWithValue("@gioBatDau", gioBatDau);
                     cmd.Parameters.AddWithValue("@gioKetThuc", gioKetThuc);
-                    int count = Convert.ToInt32(cmd.ExecuteScalar());
-                    return count > 0;
+
+                    return Convert.ToInt32(cmd.ExecuteScalar()) > 0;
                 }
             }
             catch (Exception ex)
@@ -96,6 +173,77 @@ namespace Bai_Lam_Nhom_LTHDT.DAL
             finally
             {
                 con.Close();
+            }
+
+        }
+        public bool ExistsRoomScheduleExcept(
+        string maLT,
+        string maPhong,
+        DateTime ngayTruc,
+        TimeSpan gioBatDau,
+        TimeSpan gioKetThuc)
+        {
+            error = "";
+
+            try
+            {
+                con.Open();
+
+                string sql = @"
+                SELECT COUNT(*)
+                FROM LICHTRUC
+                WHERE MAPHONG = @MAPHONG
+                AND NGAYTRUC = @NGAYTRUC
+                AND MALT <> @MALT
+                AND (
+                    (@GIOBATDAU < GIOKETTHUC)
+                    AND
+                    (@GIOKETTHUC > GIOBATDAU)
+                )";
+
+                using (SQLiteCommand cmd = new SQLiteCommand(sql, con))
+                {
+                    cmd.Parameters.AddWithValue("@MAPHONG", maPhong);
+                    cmd.Parameters.AddWithValue("@NGAYTRUC", ngayTruc);
+                    cmd.Parameters.AddWithValue("@GIOBATDAU", gioBatDau);
+                    cmd.Parameters.AddWithValue("@GIOKETTHUC", gioKetThuc);
+                    cmd.Parameters.AddWithValue("@MALT", maLT);
+
+                    return Convert.ToInt32(cmd.ExecuteScalar()) > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+                return false;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public bool existMaLich (string maLT)
+        {
+            error = "";
+            try
+            {
+                con.Open ();
+                string sql = "SELECT COUNT(*) FROM LichTruc WHERE MaLich = @maLT";
+                using (SQLiteCommand cmd = new SQLiteCommand(sql, con))
+                {
+                    cmd.Parameters.AddWithValue("@maLT", maLT);
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+                    return count > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+                return false;
+            }
+            finally
+            {
+                con.Close ();
             }
         }
         public List <LichTruc> GetAllLichTruc()

@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(A_ThongKe));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend11 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea12 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend12 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea13 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend13 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series13 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea14 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend14 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series14 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea15 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend15 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series15 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.pnlSidebar = new System.Windows.Forms.Panel();
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.lblMEDICALCENTER = new System.Windows.Forms.Label();
@@ -486,17 +486,17 @@
             // 
             // chartLichHen
             // 
-            chartArea11.Name = "ChartArea1";
-            this.chartLichHen.ChartAreas.Add(chartArea11);
+            chartArea8.Name = "ChartArea1";
+            this.chartLichHen.ChartAreas.Add(chartArea8);
             this.chartLichHen.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend11.Name = "Legend1";
-            this.chartLichHen.Legends.Add(legend11);
+            legend8.Name = "Legend1";
+            this.chartLichHen.Legends.Add(legend8);
             this.chartLichHen.Location = new System.Drawing.Point(3, 18);
             this.chartLichHen.Name = "chartLichHen";
-            series11.ChartArea = "ChartArea1";
-            series11.Legend = "Legend1";
-            series11.Name = "Series1";
-            this.chartLichHen.Series.Add(series11);
+            series8.ChartArea = "ChartArea1";
+            series8.Legend = "Legend1";
+            series8.Name = "Series1";
+            this.chartLichHen.Series.Add(series8);
             this.chartLichHen.Size = new System.Drawing.Size(1151, 379);
             this.chartLichHen.TabIndex = 0;
             this.chartLichHen.Text = "chart1";
@@ -533,6 +533,7 @@
             this.dgvLichHen.ReadOnly = true;
             this.dgvLichHen.RowHeadersWidth = 51;
             this.dgvLichHen.RowTemplate.Height = 24;
+            this.dgvLichHen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLichHen.Size = new System.Drawing.Size(1151, 229);
             this.dgvLichHen.TabIndex = 0;
             // 
@@ -1007,17 +1008,17 @@
             // 
             this.chartCanhBao.BorderlineColor = System.Drawing.Color.Gray;
             this.chartCanhBao.BorderlineWidth = 2;
-            chartArea12.Name = "ChartArea1";
-            this.chartCanhBao.ChartAreas.Add(chartArea12);
-            legend12.Name = "Legend1";
-            this.chartCanhBao.Legends.Add(legend12);
+            chartArea6.Name = "ChartArea1";
+            this.chartCanhBao.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.chartCanhBao.Legends.Add(legend6);
             this.chartCanhBao.Location = new System.Drawing.Point(355, 194);
             this.chartCanhBao.Name = "chartCanhBao";
             this.chartCanhBao.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
-            series12.ChartArea = "ChartArea1";
-            series12.Legend = "Legend1";
-            series12.Name = "Series1";
-            this.chartCanhBao.Series.Add(series12);
+            series6.ChartArea = "ChartArea1";
+            series6.Legend = "Legend1";
+            series6.Name = "Series1";
+            this.chartCanhBao.Series.Add(series6);
             this.chartCanhBao.Size = new System.Drawing.Size(420, 250);
             this.chartCanhBao.TabIndex = 7;
             this.chartCanhBao.Text = "chart2";
@@ -1037,6 +1038,8 @@
             // 
             // dgvCanhBao
             // 
+            this.dgvCanhBao.AllowUserToAddRows = false;
+            this.dgvCanhBao.AllowUserToDeleteRows = false;
             this.dgvCanhBao.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCanhBao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCanhBao.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1047,9 +1050,12 @@
             this.colThoiGian});
             this.dgvCanhBao.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCanhBao.Location = new System.Drawing.Point(10, 10);
+            this.dgvCanhBao.MultiSelect = false;
             this.dgvCanhBao.Name = "dgvCanhBao";
+            this.dgvCanhBao.ReadOnly = true;
             this.dgvCanhBao.RowHeadersWidth = 51;
             this.dgvCanhBao.RowTemplate.Height = 35;
+            this.dgvCanhBao.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCanhBao.Size = new System.Drawing.Size(1156, 328);
             this.dgvCanhBao.TabIndex = 3;
             this.dgvCanhBao.ColumnHeadersHeightSizeModeChanged += new System.Windows.Forms.DataGridViewAutoSizeModeEventHandler(this.dgvCanhBao_ColumnHeadersHeightSizeModeChanged);
@@ -1059,30 +1065,35 @@
             this.colSTT.HeaderText = "STT";
             this.colSTT.MinimumWidth = 6;
             this.colSTT.Name = "colSTT";
+            this.colSTT.ReadOnly = true;
             // 
             // colLoai
             // 
             this.colLoai.HeaderText = "Loại cảnh báo ";
             this.colLoai.MinimumWidth = 6;
             this.colLoai.Name = "colLoai";
+            this.colLoai.ReadOnly = true;
             // 
             // colNoiDung
             // 
             this.colNoiDung.HeaderText = "Nội dung";
             this.colNoiDung.MinimumWidth = 6;
             this.colNoiDung.Name = "colNoiDung";
+            this.colNoiDung.ReadOnly = true;
             // 
             // colMucDo
             // 
             this.colMucDo.HeaderText = "Mức độ";
             this.colMucDo.MinimumWidth = 6;
             this.colMucDo.Name = "colMucDo";
+            this.colMucDo.ReadOnly = true;
             // 
             // colThoiGian
             // 
             this.colThoiGian.HeaderText = "Thời gian";
             this.colThoiGian.MinimumWidth = 6;
             this.colThoiGian.Name = "colThoiGian";
+            this.colThoiGian.ReadOnly = true;
             // 
             // btnRefreshCanhBao
             // 
@@ -1231,18 +1242,18 @@
             // 
             // chartThongKeBS
             // 
-            chartArea13.Name = "ChartArea1";
-            this.chartThongKeBS.ChartAreas.Add(chartArea13);
+            chartArea9.Name = "ChartArea1";
+            this.chartThongKeBS.ChartAreas.Add(chartArea9);
             this.chartThongKeBS.Dock = System.Windows.Forms.DockStyle.Top;
-            legend13.Name = "Legend1";
-            this.chartThongKeBS.Legends.Add(legend13);
+            legend9.Name = "Legend1";
+            this.chartThongKeBS.Legends.Add(legend9);
             this.chartThongKeBS.Location = new System.Drawing.Point(3, 26);
             this.chartThongKeBS.Margin = new System.Windows.Forms.Padding(3, 60, 3, 3);
             this.chartThongKeBS.Name = "chartThongKeBS";
-            series13.ChartArea = "ChartArea1";
-            series13.Legend = "Legend1";
-            series13.Name = "Series1";
-            this.chartThongKeBS.Series.Add(series13);
+            series9.ChartArea = "ChartArea1";
+            series9.Legend = "Legend1";
+            series9.Name = "Series1";
+            this.chartThongKeBS.Series.Add(series9);
             this.chartThongKeBS.Size = new System.Drawing.Size(1172, 500);
             this.chartThongKeBS.TabIndex = 3;
             this.chartThongKeBS.Text = "chart2";
@@ -1503,19 +1514,19 @@
             // 
             // chartThongKeKhoa
             // 
-            chartArea14.Name = "ChartArea1";
-            this.chartThongKeKhoa.ChartAreas.Add(chartArea14);
+            chartArea7.Name = "ChartArea1";
+            this.chartThongKeKhoa.ChartAreas.Add(chartArea7);
             this.chartThongKeKhoa.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend14.Name = "Legend1";
-            this.chartThongKeKhoa.Legends.Add(legend14);
+            legend7.Name = "Legend1";
+            this.chartThongKeKhoa.Legends.Add(legend7);
             this.chartThongKeKhoa.Location = new System.Drawing.Point(25, 135);
             this.chartThongKeKhoa.Margin = new System.Windows.Forms.Padding(10);
             this.chartThongKeKhoa.Name = "chartThongKeKhoa";
             this.chartThongKeKhoa.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
-            series14.ChartArea = "ChartArea1";
-            series14.Legend = "Legend1";
-            series14.Name = "Series1";
-            this.chartThongKeKhoa.Series.Add(series14);
+            series7.ChartArea = "ChartArea1";
+            series7.Legend = "Legend1";
+            series7.Name = "Series1";
+            this.chartThongKeKhoa.Series.Add(series7);
             this.chartThongKeKhoa.Size = new System.Drawing.Size(1128, 220);
             this.chartThongKeKhoa.TabIndex = 1;
             this.chartThongKeKhoa.Text = "chart2";
@@ -1538,6 +1549,7 @@
             // dgvThongKeKhoa
             // 
             this.dgvThongKeKhoa.AllowUserToAddRows = false;
+            this.dgvThongKeKhoa.AllowUserToDeleteRows = false;
             this.dgvThongKeKhoa.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvThongKeKhoa.BackgroundColor = System.Drawing.Color.White;
             this.dgvThongKeKhoa.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -1552,10 +1564,13 @@
             this.dgvThongKeKhoa.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvThongKeKhoa.Location = new System.Drawing.Point(30, 413);
             this.dgvThongKeKhoa.Margin = new System.Windows.Forms.Padding(15, 0, 15, 15);
+            this.dgvThongKeKhoa.MultiSelect = false;
             this.dgvThongKeKhoa.Name = "dgvThongKeKhoa";
+            this.dgvThongKeKhoa.ReadOnly = true;
             this.dgvThongKeKhoa.RowHeadersVisible = false;
             this.dgvThongKeKhoa.RowHeadersWidth = 51;
             this.dgvThongKeKhoa.RowTemplate.Height = 24;
+            this.dgvThongKeKhoa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvThongKeKhoa.Size = new System.Drawing.Size(1118, 238);
             this.dgvThongKeKhoa.TabIndex = 2;
             this.dgvThongKeKhoa.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhoa_CellContentClick);
@@ -1627,6 +1642,7 @@
             // dgvBaoCao
             // 
             this.dgvBaoCao.AllowUserToAddRows = false;
+            this.dgvBaoCao.AllowUserToDeleteRows = false;
             this.dgvBaoCao.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBaoCao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBaoCao.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1640,10 +1656,13 @@
             this.dgvBaoCao.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvBaoCao.Location = new System.Drawing.Point(10, 10);
             this.dgvBaoCao.Margin = new System.Windows.Forms.Padding(15, 10, 15, 15);
+            this.dgvBaoCao.MultiSelect = false;
             this.dgvBaoCao.Name = "dgvBaoCao";
+            this.dgvBaoCao.ReadOnly = true;
             this.dgvBaoCao.RowHeadersVisible = false;
             this.dgvBaoCao.RowHeadersWidth = 51;
             this.dgvBaoCao.RowTemplate.Height = 24;
+            this.dgvBaoCao.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBaoCao.Size = new System.Drawing.Size(1156, 188);
             this.dgvBaoCao.TabIndex = 3;
             // 
@@ -1738,18 +1757,18 @@
             // 
             // chartBaoCao
             // 
-            chartArea15.Name = "ChartArea1";
-            this.chartBaoCao.ChartAreas.Add(chartArea15);
+            chartArea10.Name = "ChartArea1";
+            this.chartBaoCao.ChartAreas.Add(chartArea10);
             this.chartBaoCao.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend15.Name = "Legend1";
-            this.chartBaoCao.Legends.Add(legend15);
+            legend10.Name = "Legend1";
+            this.chartBaoCao.Legends.Add(legend10);
             this.chartBaoCao.Location = new System.Drawing.Point(15, 15);
             this.chartBaoCao.Margin = new System.Windows.Forms.Padding(15, 15, 15, 10);
             this.chartBaoCao.Name = "chartBaoCao";
-            series15.ChartArea = "ChartArea1";
-            series15.Legend = "Legend1";
-            series15.Name = "Series1";
-            this.chartBaoCao.Series.Add(series15);
+            series10.ChartArea = "ChartArea1";
+            series10.Legend = "Legend1";
+            series10.Name = "Series1";
+            this.chartBaoCao.Series.Add(series10);
             this.chartBaoCao.Size = new System.Drawing.Size(1146, 368);
             this.chartBaoCao.TabIndex = 2;
             this.chartBaoCao.Text = "chart2";

@@ -165,12 +165,6 @@
     <Compile Include="GUI\T_TrangChuTiepNhan.Designer.cs">
       <DependentUpon>T_TrangChuTiepNhan.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\V_TrangChuDieuPhoi.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\V_TrangChuDieuPhoi.Designer.cs">
-      <DependentUpon>V_TrangChuDieuPhoi.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\Main_DangKy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,41 +177,11 @@
     <Compile Include="GUI\Main_DangNhap.Designer.cs">
       <DependentUpon>Main_DangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\V_DanhSachSlot.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\V_DanhSachSlot.Designer.cs">
-      <DependentUpon>V_DanhSachSlot.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\V_PhanCong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\V_PhanCong.Designer.cs">
-      <DependentUpon>V_PhanCong.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\V_QuanLyPhong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\V_QuanLyPhong.Designer.cs">
-      <DependentUpon>V_QuanLyPhong.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\V_QuanLySlot.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\V_QuanLySlot.Designer.cs">
-      <DependentUpon>V_QuanLySlot.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\A_ThongKe.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\A_ThongKe.Designer.cs">
       <DependentUpon>A_ThongKe.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\V_ThongKeSlot.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\V_ThongKeSlot.Designer.cs">
-      <DependentUpon>V_ThongKeSlot.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\N_LichLamViec.cs">
       <SubType>Form</SubType>
@@ -242,6 +206,24 @@
     </Compile>
     <Compile Include="GUI\N_TrangChuBacSi.Designer.cs">
       <DependentUpon>N_TrangChuBacSi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\V_QuanLyPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\V_QuanLyPhong.Designer.cs">
+      <DependentUpon>V_QuanLyPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\V_QuanLySlotTong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\V_QuanLySlotTong.Designer.cs">
+      <DependentUpon>V_QuanLySlotTong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\V_TrangChuDieuPhoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\V_TrangChuDieuPhoi.Designer.cs">
+      <DependentUpon>V_TrangChuDieuPhoi.cs</DependentUpon>
     </Compile>
     <Compile Include="Security.cs" />
     <Compile Include="UiHelper.cs" />
@@ -270,32 +252,14 @@
     <EmbeddedResource Include="GUI\T_TrangChuTiepNhan.resx">
       <DependentUpon>T_TrangChuTiepNhan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\V_TrangChuDieuPhoi.resx">
-      <DependentUpon>V_TrangChuDieuPhoi.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Main_DangKy.resx">
       <DependentUpon>Main_DangKy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Main_DangNhap.resx">
       <DependentUpon>Main_DangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\V_DanhSachSlot.resx">
-      <DependentUpon>V_DanhSachSlot.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\V_PhanCong.resx">
-      <DependentUpon>V_PhanCong.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\V_QuanLyPhong.resx">
-      <DependentUpon>V_QuanLyPhong.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\V_QuanLySlot.resx">
-      <DependentUpon>V_QuanLySlot.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\A_ThongKe.resx">
       <DependentUpon>A_ThongKe.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\V_ThongKeSlot.resx">
-      <DependentUpon>V_ThongKeSlot.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\N_LichLamViec.resx">
       <DependentUpon>N_LichLamViec.cs</DependentUpon>
@@ -308,6 +272,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\N_TrangChuBacSi.resx">
       <DependentUpon>N_TrangChuBacSi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\V_QuanLyPhong.resx">
+      <DependentUpon>V_QuanLyPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\V_QuanLySlotTong.resx">
+      <DependentUpon>V_QuanLySlotTong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\V_TrangChuDieuPhoi.resx">
+      <DependentUpon>V_TrangChuDieuPhoi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -361,6 +334,7 @@
     <None Include="Resources\chiakhoa.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\schedule.png" />
     <None Include="Resources\ChatGPT Image 21_49_05 3 thg 7, 2026.png" />
     <None Include="Resources\ChatGPT Image 21_02_13 3 thg 7, 2026.png" />
     <None Include="Resources\3ae66226-b6cb-47fb-8d2f-7c404b9a40c2.png" />
@@ -369,6 +343,9 @@
     <None Include="Resources\f17c3c57-9789-47f0-8b64-a3c07f318c87.png" />
     <None Include="Resources\3382aaad-7077-467d-9060-7d594a578811.png" />
     <None Include="Resources\5754c668-4f31-4282-bc4c-acf2485b0ac4.png" />
+    <None Include="Resources\hospital.png" />
+    <None Include="Resources\doctor.png" />
+    <None Include="Resources\hospitalisation.png" />
     <Content Include="Resources\nền.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

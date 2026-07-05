@@ -41,9 +41,9 @@ namespace Bai_Lam_Nhom_LTHDT
 
             TaiKhoan tk = new TaiKhoan(
                 txtTaiKhoan.Text.Trim(),
-                txtMatKhau.Text,
+                Security.Hash(txtMatKhau.Text),
                 cboQuyen.SelectedValue.ToString(),
-                "Hoạt động"
+                "Hoat dong"
             );
 
             if (taiKhoanDAL.Add(tk))

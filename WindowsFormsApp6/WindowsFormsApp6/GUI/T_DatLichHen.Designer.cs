@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(T_DatLichHen));
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtMaBenhNhan = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -68,7 +67,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.btnDatLichHen = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
-            this.btnLuuTam = new System.Windows.Forms.Button();
             this.btnLamMoi = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvChuyenKhoa = new System.Windows.Forms.DataGridView();
@@ -76,6 +74,9 @@
             this.dgvLichTruc = new System.Windows.Forms.DataGridView();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dgvKhungGio = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -86,19 +87,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvLichTruc)).BeginInit();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhungGio)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label1.Location = new System.Drawing.Point(16, 16);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(248, 31);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "ĐẶT LỊCH HẸN KHÁM";
             // 
             // groupBox1
             // 
@@ -122,7 +113,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(15, 57);
+            this.groupBox1.Location = new System.Drawing.Point(13, 116);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
@@ -388,7 +379,7 @@
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(15, 396);
+            this.groupBox2.Location = new System.Drawing.Point(13, 455);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
@@ -523,7 +514,7 @@
             // btnDatLichHen
             // 
             this.btnDatLichHen.BackColor = System.Drawing.Color.Aquamarine;
-            this.btnDatLichHen.Location = new System.Drawing.Point(23, 672);
+            this.btnDatLichHen.Location = new System.Drawing.Point(21, 731);
             this.btnDatLichHen.Margin = new System.Windows.Forms.Padding(4);
             this.btnDatLichHen.Name = "btnDatLichHen";
             this.btnDatLichHen.Size = new System.Drawing.Size(244, 61);
@@ -535,7 +526,7 @@
             // btnHuy
             // 
             this.btnHuy.BackColor = System.Drawing.Color.Pink;
-            this.btnHuy.Location = new System.Drawing.Point(1243, 672);
+            this.btnHuy.Location = new System.Drawing.Point(1241, 731);
             this.btnHuy.Margin = new System.Windows.Forms.Padding(4);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(244, 61);
@@ -544,22 +535,10 @@
             this.btnHuy.UseVisualStyleBackColor = false;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
-            // btnLuuTam
-            // 
-            this.btnLuuTam.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnLuuTam.Location = new System.Drawing.Point(842, 672);
-            this.btnLuuTam.Margin = new System.Windows.Forms.Padding(4);
-            this.btnLuuTam.Name = "btnLuuTam";
-            this.btnLuuTam.Size = new System.Drawing.Size(244, 61);
-            this.btnLuuTam.TabIndex = 5;
-            this.btnLuuTam.Text = "💾Lưu tạm";
-            this.btnLuuTam.UseVisualStyleBackColor = false;
-            this.btnLuuTam.Click += new System.EventHandler(this.btnLuuTam_Click);
-            // 
             // btnLamMoi
             // 
             this.btnLamMoi.BackColor = System.Drawing.Color.Moccasin;
-            this.btnLamMoi.Location = new System.Drawing.Point(422, 672);
+            this.btnLamMoi.Location = new System.Drawing.Point(420, 731);
             this.btnLamMoi.Margin = new System.Windows.Forms.Padding(4);
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.Size = new System.Drawing.Size(244, 61);
@@ -572,7 +551,7 @@
             // 
             this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(242)))), ((int)(((byte)(253)))));
             this.groupBox3.Controls.Add(this.dgvChuyenKhoa);
-            this.groupBox3.Location = new System.Drawing.Point(1182, 57);
+            this.groupBox3.Location = new System.Drawing.Point(1180, 116);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(329, 331);
             this.groupBox3.TabIndex = 7;
@@ -581,12 +560,18 @@
             // 
             // dgvChuyenKhoa
             // 
+            this.dgvChuyenKhoa.AllowUserToAddRows = false;
+            this.dgvChuyenKhoa.AllowUserToDeleteRows = false;
+            this.dgvChuyenKhoa.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvChuyenKhoa.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(242)))), ((int)(((byte)(253)))));
             this.dgvChuyenKhoa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvChuyenKhoa.Location = new System.Drawing.Point(7, 34);
+            this.dgvChuyenKhoa.MultiSelect = false;
             this.dgvChuyenKhoa.Name = "dgvChuyenKhoa";
+            this.dgvChuyenKhoa.ReadOnly = true;
             this.dgvChuyenKhoa.RowHeadersWidth = 51;
             this.dgvChuyenKhoa.RowTemplate.Height = 24;
+            this.dgvChuyenKhoa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvChuyenKhoa.Size = new System.Drawing.Size(316, 291);
             this.dgvChuyenKhoa.TabIndex = 0;
             this.dgvChuyenKhoa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChuyenKhoa_CellClick);
@@ -596,7 +581,7 @@
             // 
             this.groupBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(242)))), ((int)(((byte)(253)))));
             this.groupBox4.Controls.Add(this.dgvLichTruc);
-            this.groupBox4.Location = new System.Drawing.Point(1182, 394);
+            this.groupBox4.Location = new System.Drawing.Point(1180, 453);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(329, 249);
             this.groupBox4.TabIndex = 8;
@@ -605,12 +590,18 @@
             // 
             // dgvLichTruc
             // 
+            this.dgvLichTruc.AllowUserToAddRows = false;
+            this.dgvLichTruc.AllowUserToDeleteRows = false;
+            this.dgvLichTruc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvLichTruc.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(242)))), ((int)(((byte)(253)))));
             this.dgvLichTruc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLichTruc.Location = new System.Drawing.Point(7, 34);
+            this.dgvLichTruc.MultiSelect = false;
             this.dgvLichTruc.Name = "dgvLichTruc";
+            this.dgvLichTruc.ReadOnly = true;
             this.dgvLichTruc.RowHeadersWidth = 51;
             this.dgvLichTruc.RowTemplate.Height = 24;
+            this.dgvLichTruc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLichTruc.Size = new System.Drawing.Size(316, 201);
             this.dgvLichTruc.TabIndex = 0;
             this.dgvLichTruc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLichTruc_CellClick);
@@ -619,7 +610,7 @@
             // 
             this.groupBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(242)))), ((int)(((byte)(253)))));
             this.groupBox5.Controls.Add(this.dgvKhungGio);
-            this.groupBox5.Location = new System.Drawing.Point(870, 394);
+            this.groupBox5.Location = new System.Drawing.Point(868, 453);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(306, 249);
             this.groupBox5.TabIndex = 8;
@@ -628,31 +619,70 @@
             // 
             // dgvKhungGio
             // 
+            this.dgvKhungGio.AllowUserToAddRows = false;
+            this.dgvKhungGio.AllowUserToDeleteRows = false;
+            this.dgvKhungGio.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvKhungGio.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(242)))), ((int)(((byte)(253)))));
             this.dgvKhungGio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvKhungGio.Location = new System.Drawing.Point(14, 33);
+            this.dgvKhungGio.MultiSelect = false;
             this.dgvKhungGio.Name = "dgvKhungGio";
+            this.dgvKhungGio.ReadOnly = true;
             this.dgvKhungGio.RowHeadersWidth = 51;
             this.dgvKhungGio.RowTemplate.Height = 24;
+            this.dgvKhungGio.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvKhungGio.Size = new System.Drawing.Size(279, 201);
             this.dgvKhungGio.TabIndex = 1;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(136)))), ((int)(((byte)(229)))));
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel2.Controls.Add(this.pictureBox5);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.ForeColor = System.Drawing.Color.Black;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1597, 88);
+            this.panel2.TabIndex = 9;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.BackgroundImage")));
+            this.pictureBox5.Location = new System.Drawing.Point(24, 7);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(93, 69);
+            this.pictureBox5.TabIndex = 2;
+            this.pictureBox5.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Transparent;
+            this.label1.Location = new System.Drawing.Point(530, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(509, 62);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "ĐẶT LỊCH HẸN KHÁM";
             // 
             // T_DatLichHen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1523, 763);
+            this.ClientSize = new System.Drawing.Size(1523, 818);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnLamMoi);
-            this.Controls.Add(this.btnLuuTam);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnDatLichHen);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -672,14 +702,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvLichTruc)).EndInit();
             this.groupBox5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhungGio)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -708,7 +738,6 @@
         private System.Windows.Forms.TextBox txtLyDoKham;
         private System.Windows.Forms.Button btnDatLichHen;
         private System.Windows.Forms.Button btnHuy;
-        private System.Windows.Forms.Button btnLuuTam;
         private System.Windows.Forms.Button btnLamMoi;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label15;
@@ -726,5 +755,8 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.DataGridView dgvKhungGio;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Label label1;
     }
 }

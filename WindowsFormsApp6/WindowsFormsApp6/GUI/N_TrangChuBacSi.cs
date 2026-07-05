@@ -48,7 +48,7 @@ namespace Bai_Lam_Nhom_LTHDT
 
         private void btnLichLamViec_Click(object sender, EventArgs e)
         {
-            N_LichLamViec f1 = new N_LichLamViec();
+            V_TrangChuDieuPhoi f1 = new V_TrangChuDieuPhoi();
             f1.ShowDialog();
         }
 
@@ -64,6 +64,12 @@ namespace Bai_Lam_Nhom_LTHDT
             {
                 this.Close();
             }
+        }
+
+        private void btnThongBao_Click(object sender, EventArgs e)
+        {
+            T_TrangChuTiepNhan f1 = new T_TrangChuTiepNhan();
+            f1.ShowDialog();
         }
     }
 }

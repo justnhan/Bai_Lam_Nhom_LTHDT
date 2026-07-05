@@ -222,7 +222,7 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
                 }
                 else
                 {
-                    MessageBox.Show("Xóa chuyên khoa thất bại.");
+                    MessageBox.Show(chuyenKhoaDAL.GetError(), "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 
@@ -248,7 +248,7 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
             {
                 if (chuyenKhoaDAL.ExistsMaCK(ck.MaChuyenKhoa))
                 {
-                    MessageBox.Show("Mã chuyên khoa đã tồn tại. Vui lòng nhập mã khác.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(chuyenKhoaDAL.GetError(), "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 if (chuyenKhoaDAL.Add(ck))
@@ -272,7 +272,7 @@ namespace Bai_Lam_Nhom_LTHDT.GUI
                 }
                 else
                 {
-                    MessageBox.Show("Cập nhật chuyên khoa thất bại.");
+                    MessageBox.Show(chuyenKhoaDAL.GetError(), "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

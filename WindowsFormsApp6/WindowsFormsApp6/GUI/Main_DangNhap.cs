@@ -17,9 +17,11 @@ namespace Bai_Lam_Nhom_LTHDT
     public partial class Main_DangNhap : Form
     {
         private TaiKhoanDAL taiKhoanDAL = new TaiKhoanDAL();
+        
         public Main_DangNhap()
         {
             InitializeComponent();
+
         }
 
         private void txtMatKhau_TextChanged(object sender, EventArgs e)
@@ -45,7 +47,7 @@ namespace Bai_Lam_Nhom_LTHDT
 
             TaiKhoan tk = taiKhoanDAL.Login(
                 txtTaiKhoan.Text.Trim(),
-                txtMatKhau.Text.Trim()
+                Security.Hash(txtMatKhau.Text.Trim())
             );
 
             if (tk == null)
@@ -59,7 +61,7 @@ namespace Bai_Lam_Nhom_LTHDT
             switch (tk.MaQuyen)
             {
                 case "Q001":
-                    new A_ThongKe().ShowDialog();
+                    new AdminHomeForm().ShowDialog();
                     break;
 
                 case "Q002":
@@ -67,11 +69,11 @@ namespace Bai_Lam_Nhom_LTHDT
                     break;
 
                 case "Q003":
-                    new V_TrangChuDieuPhoi().ShowDialog();
+                    new T_TrangChuTiepNhan().ShowDialog();
                     break;
 
                 case "Q004":
-                    new T_TrangChuTiepNhan().ShowDialog();
+                    new V_TrangChuDieuPhoi().ShowDialog();
                     break;
 
                 default:

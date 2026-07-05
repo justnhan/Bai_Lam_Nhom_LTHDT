@@ -35,8 +35,6 @@
             this.lblDate = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
             this.lblRole = new System.Windows.Forms.Label();
-            this.lblName = new System.Windows.Forms.Label();
-            this.lblWelcome = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -114,8 +112,6 @@
             this.pnlInfo.Controls.Add(this.lblDate);
             this.pnlInfo.Controls.Add(this.lblTime);
             this.pnlInfo.Controls.Add(this.lblRole);
-            this.pnlInfo.Controls.Add(this.lblName);
-            this.pnlInfo.Controls.Add(this.lblWelcome);
             this.pnlInfo.Controls.Add(this.picUser);
             this.pnlInfo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlInfo.Location = new System.Drawing.Point(0, 120);
@@ -160,31 +156,11 @@
             this.lblRole.BackColor = System.Drawing.Color.AliceBlue;
             this.lblRole.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblRole.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblRole.Location = new System.Drawing.Point(345, 24);
+            this.lblRole.Location = new System.Drawing.Point(132, 30);
             this.lblRole.Name = "lblRole";
             this.lblRole.Size = new System.Drawing.Size(68, 25);
             this.lblRole.TabIndex = 3;
             this.lblRole.Text = "Admin";
-            // 
-            // lblName
-            // 
-            this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblName.Location = new System.Drawing.Point(179, 24);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(123, 23);
-            this.lblName.TabIndex = 2;
-            this.lblName.Text = "Nguyễn Van A";
-            // 
-            // lblWelcome
-            // 
-            this.lblWelcome.AutoSize = true;
-            this.lblWelcome.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblWelcome.Location = new System.Drawing.Point(90, 24);
-            this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(83, 23);
-            this.lblWelcome.TabIndex = 1;
-            this.lblWelcome.Text = "Xin chào:";
             // 
             // tableLayoutPanel1
             // 
@@ -241,9 +217,9 @@
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(309, 139);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(157, 28);
+            this.label10.Size = new System.Drawing.Size(115, 28);
             this.label10.TabIndex = 3;
-            this.label10.Text = "và lịch hẹn khám";
+            this.label10.Text = "và thống kê";
             // 
             // label11
             // 
@@ -252,9 +228,9 @@
             this.label11.ForeColor = System.Drawing.Color.White;
             this.label11.Location = new System.Drawing.Point(307, 106);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(176, 28);
+            this.label11.Size = new System.Drawing.Size(154, 28);
             this.label11.TabIndex = 2;
-            this.label11.Text = "Quản lý bệnh nhân\n";
+            this.label11.Text = "Quản lý báo cáo";
             // 
             // label12
             // 
@@ -302,9 +278,9 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(309, 139);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(157, 28);
+            this.label7.Size = new System.Drawing.Size(107, 28);
             this.label7.TabIndex = 3;
-            this.label7.Text = "và lịch hẹn khám";
+            this.label7.Text = "và lịch trực";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
@@ -314,9 +290,9 @@
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(307, 106);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(176, 28);
+            this.label8.Size = new System.Drawing.Size(194, 28);
             this.label8.TabIndex = 2;
-            this.label8.Text = "Quản lý bệnh nhân\n";
+            this.label8.Text = "Quản lý Phòng khám";
             // 
             // label9
             // 
@@ -365,9 +341,9 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(309, 139);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(157, 28);
+            this.label4.Size = new System.Drawing.Size(147, 28);
             this.label4.TabIndex = 3;
-            this.label4.Text = "và lịch hẹn khám";
+            this.label4.Text = "và chuyên khoa";
             // 
             // label5
             // 
@@ -376,9 +352,9 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(307, 106);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(176, 28);
+            this.label5.Size = new System.Drawing.Size(132, 28);
             this.label5.TabIndex = 2;
-            this.label5.Text = "Quản lý bệnh nhân\n";
+            this.label5.Text = "Quản lý Bác sĩ";
             // 
             // label6
             // 
@@ -595,8 +571,6 @@
         private System.Windows.Forms.Panel pnlInfo;
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Label lblRole;
-        private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.PictureBox picUser;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;

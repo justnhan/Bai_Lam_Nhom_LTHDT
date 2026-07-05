@@ -46,10 +46,10 @@ namespace Bai_Lam_Nhom_LTHDT
             this.lbSoChuyenKhoa = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnThongBao = new System.Windows.Forms.Button();
+            this.btnTiepTan = new System.Windows.Forms.Button();
             this.btnDangXuat = new System.Windows.Forms.Button();
             this.btnChiTietLich = new System.Windows.Forms.Button();
-            this.btnLichLamViec = new System.Windows.Forms.Button();
+            this.btnDieuPhoi = new System.Windows.Forms.Button();
             this.btnQLBS = new System.Windows.Forms.Button();
             this.btnQLChuyenKhoa = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -157,7 +157,7 @@ namespace Bai_Lam_Nhom_LTHDT
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::Bai_Lam_Nhom_LTHDT.Properties.Resources.doctor;
             this.pictureBox1.Location = new System.Drawing.Point(14, 17);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
@@ -213,7 +213,7 @@ namespace Bai_Lam_Nhom_LTHDT
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Image = global::Bai_Lam_Nhom_LTHDT.Properties.Resources.hospital;
             this.pictureBox2.Location = new System.Drawing.Point(7, 17);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
@@ -225,10 +225,10 @@ namespace Bai_Lam_Nhom_LTHDT
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(242)))), ((int)(((byte)(253)))));
-            this.groupBox1.Controls.Add(this.btnThongBao);
+            this.groupBox1.Controls.Add(this.btnTiepTan);
             this.groupBox1.Controls.Add(this.btnDangXuat);
             this.groupBox1.Controls.Add(this.btnChiTietLich);
-            this.groupBox1.Controls.Add(this.btnLichLamViec);
+            this.groupBox1.Controls.Add(this.btnDieuPhoi);
             this.groupBox1.Controls.Add(this.btnQLBS);
             this.groupBox1.Controls.Add(this.btnQLChuyenKhoa);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -242,17 +242,18 @@ namespace Bai_Lam_Nhom_LTHDT
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chức năng";
             // 
-            // btnThongBao
+            // btnTiepTan
             // 
-            this.btnThongBao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnThongBao.Location = new System.Drawing.Point(75, 314);
-            this.btnThongBao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnThongBao.Name = "btnThongBao";
-            this.btnThongBao.Size = new System.Drawing.Size(210, 83);
-            this.btnThongBao.TabIndex = 5;
-            this.btnThongBao.Text = "🔔 Thông báo";
-            this.btnThongBao.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnThongBao.UseVisualStyleBackColor = true;
+            this.btnTiepTan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnTiepTan.Location = new System.Drawing.Point(75, 314);
+            this.btnTiepTan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnTiepTan.Name = "btnTiepTan";
+            this.btnTiepTan.Size = new System.Drawing.Size(210, 83);
+            this.btnTiepTan.TabIndex = 5;
+            this.btnTiepTan.Text = "🛎️ Phân hệ Tiếp tân";
+            this.btnTiepTan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTiepTan.UseVisualStyleBackColor = true;
+            this.btnTiepTan.Click += new System.EventHandler(this.btnThongBao_Click);
             // 
             // btnDangXuat
             // 
@@ -280,18 +281,18 @@ namespace Bai_Lam_Nhom_LTHDT
             this.btnChiTietLich.UseVisualStyleBackColor = true;
             this.btnChiTietLich.Click += new System.EventHandler(this.btnChiTietLich_Click);
             // 
-            // btnLichLamViec
+            // btnDieuPhoi
             // 
-            this.btnLichLamViec.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLichLamViec.Location = new System.Drawing.Point(75, 179);
-            this.btnLichLamViec.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnLichLamViec.Name = "btnLichLamViec";
-            this.btnLichLamViec.Size = new System.Drawing.Size(210, 83);
-            this.btnLichLamViec.TabIndex = 2;
-            this.btnLichLamViec.Text = "📅 Lịch làm việc";
-            this.btnLichLamViec.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnLichLamViec.UseVisualStyleBackColor = true;
-            this.btnLichLamViec.Click += new System.EventHandler(this.btnLichLamViec_Click);
+            this.btnDieuPhoi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDieuPhoi.Location = new System.Drawing.Point(75, 179);
+            this.btnDieuPhoi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDieuPhoi.Name = "btnDieuPhoi";
+            this.btnDieuPhoi.Size = new System.Drawing.Size(210, 83);
+            this.btnDieuPhoi.TabIndex = 2;
+            this.btnDieuPhoi.Text = "📅 Phân hệ điều phối";
+            this.btnDieuPhoi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDieuPhoi.UseVisualStyleBackColor = true;
+            this.btnDieuPhoi.Click += new System.EventHandler(this.btnLichLamViec_Click);
             // 
             // btnQLBS
             // 
@@ -366,7 +367,7 @@ namespace Bai_Lam_Nhom_LTHDT
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Image = global::Bai_Lam_Nhom_LTHDT.Properties.Resources.schedule;
             this.pictureBox3.Location = new System.Drawing.Point(14, 17);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox3.Name = "pictureBox3";
@@ -422,7 +423,7 @@ namespace Bai_Lam_Nhom_LTHDT
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Image = global::Bai_Lam_Nhom_LTHDT.Properties.Resources.hospitalisation;
             this.pictureBox4.Location = new System.Drawing.Point(7, 10);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox4.Name = "pictureBox4";
@@ -508,9 +509,9 @@ namespace Bai_Lam_Nhom_LTHDT
         private Button btnQLChuyenKhoa;
         private Label label2;
         private Button btnChiTietLich;
-        private Button btnLichLamViec;
+        private Button btnDieuPhoi;
         private Button btnQLBS;
-        private Button btnThongBao;
+        private Button btnTiepTan;
         private Button btnDangXuat;
         private PictureBox pictureBox5;
     }
